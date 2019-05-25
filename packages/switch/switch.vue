@@ -1,0 +1,104 @@
+<template>
+  <div
+    class="m-switch"
+    :class="[open && 'open', disabled && 'disabled']"
+    :style="`font-size:${size}px`"
+    @click="_change($event)"
+  >
+    <div class="m-switch-node">
+      <div class="m-switch-loading" v-if="loading">loding</div>
+    </div>
+  </div>
+</template>
+
+<script type="text/ecmascript-6">
+export default {
+  name: "m-switch",
+  props: {
+    value: {
+      type: Boolean,
+      default: false
+    },
+    size: {
+      type: [Number, String],
+      default: 30
+    },
+    loadingSize: {
+      type: [Number, String],
+      default: 40
+    },
+    loading: {
+      type: Boolean,
+      default: false
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    }
+  },
+  data() {
+    return {
+      open: this.value
+    };
+  },
+  watch: {
+    open(val) {
+      this.$emit("input", val);
+    }
+  },
+  methods: {
+    _change(e) {
+      if (this.disabled || this.loading) return;
+      this.open = !this.open;
+      this.$emit("change", e);
+    }
+  }
+};
+</script>
+
+<style lang="scss" rel="stylesheet/scss">
+/*switch*/
+$switch-background-color: #fafafa;
+$switch-node-background-color: #fff;
+$switch-active-background-color: #ff8200;
+
+.m-switch {
+  box-sizing: content-box;
+  position: relative;
+  display: inline-block;
+  width: 2em;
+  height: 1em;
+  border-radius: 1em;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: $switch-background-color;
+  transition: background-color 0.3s;
+  &-node {
+    position: absolute;
+    top: 0em;
+    left: 0em;
+    border-radius: 100%;
+    width: 1em;
+    height: 1em;
+    z-index: 1;
+    background-color: $switch-node-background-color;
+    box-shadow: 0 3px 1px 0 rgba(0, 0, 0, 0.05), 0 2px 2px 0 rgba(0, 0, 0, 0.1),
+      0 3px 3px 0 rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s;
+  }
+  &-loading {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &.open {
+    background-color: $switch-active-background-color;
+    .m-switch-node {
+      transform: translateX(0.99em);
+    }
+  }
+  &.disabled {
+    opacity: 0.4;
+  }
+}
+</style>
