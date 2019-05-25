@@ -1,16 +1,25 @@
 {
-  "name": "moew-ui",
+  "name": "vue-meow-ui",
   "version": "1.0.0",
-  "private": true,
+  "private": false,
+  "description": "喵呜～个人练手组件库",
+  "author": "Justin <nbilly@163.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MrTenger/meow-ui.git"
+  },
+  "main": "lib/meow-ui.umd.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit",
+    "lib": "vue-cli-service build --target lib --name meow-ui --dest lib packages/index.js"
   },
   "dependencies": {
     "core-js": "^2.6.5",
     "vue": "^2.6.10",
+    "vue-meow-ui": "^1.0.0",
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1"
   },

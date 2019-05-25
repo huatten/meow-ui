@@ -2,9 +2,11 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-import meow from '../packages/index'
+import MEOW from '../packages/index.js'
+Vue.use(MEOW)
+
 Vue.config.productionTip = false;
-Vue.use(meow)
+
 new Vue({
   router,
   store,
