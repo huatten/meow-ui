@@ -1,15 +1,7 @@
 ## Switch 开关
-### 使用指南
-``` javascript
-import MButton from "components/layout/button";
-
-Vue.component(MButton);
-```
+### 功能说明
+表单组件, 用来表示状态切换, 支持v-model
 ### 代码演示
-#### 基础用法
-```html
- <m-button>按钮</m-button>
-```
 #### 按钮类型
 通过 `type` 属性设置 Button 类型，一共有 `defalut` 、`primary` 、`info` 、`danger` 、`warning`  五种类型 、默认为 `defalut`。
 ```html

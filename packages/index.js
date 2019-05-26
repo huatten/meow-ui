@@ -1,5 +1,6 @@
 import MSwitch from './switch'
-const components = { MSwitch }
+import MIcon from './icon'
+const components = { MSwitch, MIcon }
 
 //定义插件安装方法
 const install = function (Vue) {

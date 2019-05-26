@@ -1,19 +1,19 @@
 <template>
   <div
-    class="m-switch"
+    class="mw-switch"
     :class="[open && 'open', disabled && 'disabled']"
     :style="`font-size:${size}px`"
     @click="_change($event)"
   >
-    <div class="m-switch-node">
-      <div class="m-switch-loading" v-if="loading">loding</div>
+    <div class="mw-switch-node">
+      <div class="mw-switch-loading" v-if="loading">loding</div>
     </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
 export default {
-  name: "m-switch",
+  name: "mw-switch",
   props: {
     value: {
       type: Boolean,
@@ -62,7 +62,7 @@ $switch-background-color: #fafafa;
 $switch-node-background-color: #fff;
 $switch-active-background-color: #ff8200;
 
-.m-switch {
+.mw-switch {
   box-sizing: content-box;
   position: relative;
   display: inline-block;
@@ -93,7 +93,7 @@ $switch-active-background-color: #ff8200;
   }
   &.open {
     background-color: $switch-active-background-color;
-    .m-switch-node {
+    .mw-switch-node {
       transform: translateX(0.99em);
     }
   }

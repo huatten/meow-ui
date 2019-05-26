@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-    <m-switch v-model="isClose"></m-switch>
+    <mw-switch v-model="isClose"></mw-switch>
+    <span><mw-icon name="done" :svg="true" size="33"></mw-icon></span>
+    <span><mw-icon name="settings" size="30"></mw-icon></span>
   </div>
 </template>
 
@@ -14,3 +16,9 @@ export default {
   }
 };
 </script>
+<style lang="scss" scoped>
+span{
+  color: red;
+}
+</style>
+
