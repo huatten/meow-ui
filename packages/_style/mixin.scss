@@ -1,0 +1,47 @@
+@charset "UTF-8";
+@mixin clearfix {
+  *zoom:1;
+  &:after{
+    clear: both;
+    content:"";
+    display: block;
+    height: 0;
+  }
+}
+
+@mixin bg-image($url, $ext:".png") {
+  background-image: url($url + "@2x" + $ext);
+  background-repeat: no-repeat;
+  @media(-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+    background-image: url($url + "@3x" + $ext);
+    background-repeat: no-repeat;
+  }
+}
+
+@mixin hairline-common($position){
+  content: "";
+  position: absolute;
+  z-index: 2;
+  transform-origin: 100% 50%;
+  @if $position == 'top' {
+    transform: scaleY(0.5) ranslateY(-100%);
+    @media(-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+      transform: scaleY(0.3333) translateY(-100%);
+    }
+  }@else if $position == 'bottom'{
+    transform: scaleY(0.5), translateY(100%);
+    @media(-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+      transform: scaleY(0.3333) translateY(100%);
+    }
+  }@else if $position == 'left'{
+    transform: scaleX(0.5) translateX(-100%);
+    @media(-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+      transform: scaleX(0.3333) translateX(-100%);
+    }
+  }@else if $position == 'right'{
+    transform: scaleX(0.5) translateX(100%);
+    @media(-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio: 3) {
+      transform: scaleX(0.3333) translateX(100%);
+    }
+  }
+}

@@ -57,11 +57,7 @@ export default {
 </script>
 
 <style lang="scss" rel="stylesheet/scss">
-/*switch*/
-$switch-background-color: #fafafa;
-$switch-node-background-color: #fff;
-$switch-active-background-color: #ff8200;
-
+@import '~/_style/var.scss';
 .mw-switch {
   box-sizing: content-box;
   position: relative;

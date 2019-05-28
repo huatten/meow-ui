@@ -1,7 +1,8 @@
+@import './var.scss';
 body{
   font-family :$font-family-normal;
-  -webkit-tap-highlight-color: transparent;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: $color-body;
 }
   

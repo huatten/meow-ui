@@ -17,6 +17,7 @@ module.exports = {
     // 目录别名alias
     config.resolve.alias
       .set("@", resolve("examples"))
+      .set("~", resolve("packages"))
       .set("assets", resolve("examples/assets"))
       .set("components", resolve("examples/components"))
       .set("router", resolve("examples/router"))
@@ -57,5 +58,15 @@ module.exports = {
     const imagesRule = config.module.rule("images");
     imagesRule.exclude.add(resolve("examples/assets/svg-icon"));
     config.module.rule("images").test(/\.(png|jpe?g|gif|svg)(\?.*)?$/);
-  }
+  },
+  // css: {
+  //   // 是否使用css分离插件
+  //   extract: true,
+  //   loaderOptions: {
+  //     // 配置scss全局变量
+  //     sass: {
+  //       data: `@import "~/_style/index.scss";`
+  //     }
+  //   }
+  // }
 };
