@@ -8,7 +8,7 @@ Vue.component(MIndicator.name, MIndicator);
 ### 代码演示
 #### 基础用法
 ```html
- <m-indicator></m-indicator>
+ <mw-indicator></mw-indicator>
 ```
 ### Props
 | 属性 | 说明 | 类型 | 默认值 | 备注 |
