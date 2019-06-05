@@ -61,13 +61,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss" rel="stylesheet/scss">
-.mw-indicator--carousel {
-  @include clearfix();
-  .carousel-svg {
-    float: left;
-    overflow: visible;
-  }
-}
-</style>

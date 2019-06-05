@@ -1,3 +1,53 @@
+//carousel component
+.mw-indicator--carousel {
+  @include clearfix();
+  .carousel-svg {
+    float: left;
+    overflow: visible;
+  }
+}
+//roller carousel
+.mw-indicator--roller {
+  z-index: 1;
+  position: relative;
+  display: inline-block;
+  box-sizing: border-box;
+  -webkit-animation: rotate 0.8s linear infinite;
+  animation: rotate 0.8s linear infinite;
+  animation-duration: 2s;
+  .roller-svg {
+    circle {
+      stroke: currentColor;
+      stroke-linecap: round;
+      -webkit-animation: roller 1.5s ease-in-out infinite;
+      animation: roller 1.5s ease-in-out infinite;
+    }
+  }
+  /* indicator roller*/
+  @keyframes roller {
+    0% {
+      stroke-dasharray: 1, 200;
+      stroke-dashoffset: 0;
+    }
+    50% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -40;
+    }
+    100% {
+      stroke-dasharray: 90, 150;
+      stroke-dashoffset: -120;
+    }
+  }
+  /*indicator roller rotate*/
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
 .mw-indicator {
   &__cont {
     display: flex;
