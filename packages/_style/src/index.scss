@@ -1,0 +1,15 @@
+//base 
+@import "./common/reset.scss";
+@import "./common/var.scss";
+@import "./mixins/mixin.scss";
+@import "./common/golbal.scss";
+@import "./common/transition.scss";
+
+//components
+@import "./button.scss";
+@import "./cell.scss";
+@import "./icon.scss";
+@import "./indicator.scss";
+@import "./marquee.scss";
+@import "./noticebar.scss";
+@import "./switch.scss";

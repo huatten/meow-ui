@@ -2,7 +2,6 @@
 ### 使用指南
 ``` javascript
 import MIndicator from "vue-meow-ui";
-
 Vue.component(MIndicator.name, MIndicator);
 ```
 ### 代码演示

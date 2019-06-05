@@ -63,7 +63,6 @@ export default {
 </script>
 
 <style lang="scss" rel="stylesheet/scss">
-@import "~/_style/mixin.scss";
 .mw-indicator--carousel {
   @include clearfix();
   .carousel-svg {

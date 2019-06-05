@@ -59,25 +59,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss" rel="stylesheet/scss">
-@import "~/_style/var.scss";
-.mw-indicator {
-  &__cont {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  &__icon {
-    z-index: 0;
-    font-size: 0;
-    line-height: 0;
-    position: relative;
-    vertical-align: middle;
-  }
-  &__text {
-    font-size: 28px;
-    margin-left: 14px;
-  }
-}
-</style>

@@ -7,7 +7,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" rel="stylesheet/scss">
-@import '~/_style/transition.scss';
-</style>

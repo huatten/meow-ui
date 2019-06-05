@@ -36,6 +36,7 @@ module.exports = {
         collapsable: false,
         children: [
           '/components/button',
+          '/components/icon',
           '/components/cell',
           '/components/indicator',
           '/components/noticebar',

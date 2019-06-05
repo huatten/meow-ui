@@ -4,7 +4,6 @@
 ### 使用指南
 ``` javascript
 import { MButton } from "vue-meow-ui";
-
 Vue.component(MButton.name, MButton);
 ```
 ### 代码演示

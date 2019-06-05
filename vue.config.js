@@ -17,7 +17,7 @@ module.exports = {
     // 目录别名alias
     config.resolve.alias
       .set("@", resolve("examples"))
-      .set("~", resolve("packages"))
+      .set("packages", resolve("packages"))
       .set("assets", resolve("examples/assets"))
       .set("components", resolve("examples/components"))
       .set("router", resolve("examples/router"))

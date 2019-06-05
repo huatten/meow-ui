@@ -44,36 +44,3 @@ export default {
   }
 };
 </script>
-<style lang="scss" rel="stylesheet/scss">
-.mw-marquee {
-  width: 100%;
-  min-height: 50px;
-  overflow: hidden;
-  position: relative;
-  margin: 0 auto;
-  &__cont {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: #eeb75c;
-    li {
-      line-height: 50px;
-      display: flex;
-      justify-content: space-between;
-      flex-direction: row;
-      flex-wrap: nowrap;
-    }
-    span {
-      flex: 1;
-      width: 105px;
-      text-align: center;
-      font-size: 14px;
-      color: #fff;
-    }
-  }
-  &__top {
-    transition: all 0.5s linear;
-    margin-top: -50px;
-  }
-}
-</style>

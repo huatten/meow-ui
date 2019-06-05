@@ -4,7 +4,6 @@
 ### 使用指南
 ``` javascript
 import { MCell } from "vue-meow-ui";
-
 Vue.component(MCell.name, MCell);
 ```
 ### 代码演示
