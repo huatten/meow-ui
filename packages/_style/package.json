@@ -18,11 +18,5 @@
     "gulp-sass": "^4.0.2",
     "gulp-autoprefixer": "^6.1.0"
   },
-  "dependencies": {},
-  "browserslist": [
-    "> 0.01%",
-    "Android >= 4.0",
-    "Firefox ESR",
-    "Ios >= 8.0"
-  ]
+  "dependencies": {}
 }
