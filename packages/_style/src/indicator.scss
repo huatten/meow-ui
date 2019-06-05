@@ -1,3 +1,5 @@
+@import "./common/var.scss";
+@import "./mixins/mixin.scss";
 //carousel component
 .mw-indicator--carousel {
   @include clearfix();

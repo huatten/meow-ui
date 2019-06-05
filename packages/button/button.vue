@@ -44,10 +44,12 @@ const DEFAULT_COLOR = "#000";
 export default {
   name: "mw-button",
   props: {
+    //样式类型
     type: {
       type: String,
       default: "default"
     },
+    //是否为行内按钮
     inline: {
       type: Boolean,
       default: true
@@ -135,6 +137,7 @@ export default {
       // 透明度的速度
       const w = getStyleNumber(oBtn, "width");
       this.speedOpacity = ((this.speed * 1) / w) * this.opacity;
+      // 若为朴素按钮则取值当前color为默认色值
       this.color = this.plain
         ? DEFAULT_COLOR
         : getStyle(el.parentElement, "color");

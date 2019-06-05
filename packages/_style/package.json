@@ -15,7 +15,14 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-cssmin": "^0.2.0",
-    "gulp-postcss": "^7.0.1"
+    "gulp-sass": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "browserslist": [
+    "> 0.01%",
+    "Android >= 4.0",
+    "Firefox ESR",
+    "Ios >= 8.0"
+  ]
 }

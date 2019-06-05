@@ -9,17 +9,21 @@
     "url": "https://github.com/MrTenger/meow-ui.git"
   },
   "main": "lib/meow-ui.umd.min.js",
+  "style": "lib/_style/meow-ui.css",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
-    "lib": "vue-cli-service build --target lib --name meow-ui --dest lib packages/index.js",
+    "clean": "rimraf lib && rimraf packages/*/lib",
+    "lib": "npm run clean && vue-cli-service build --target lib --name meow-ui --dest lib packages/index.js && npm run build:style",
+    "build:style": "gulp build --gulpfile packages/_style/gulpfile.js && rimraf lib/meow-css && cp-cli packages/_style/lib lib/meow-css",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "cp-cli": "^2.0.0",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3",
     "vuepress": "^0.14.11"
@@ -38,5 +42,11 @@
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.5.21"
-  }
+  },
+  "browserslist": [
+    "> 0.01%",
+    "Android >= 4.0",
+    "Firefox ESR",
+    "Ios >= 8.0"
+  ]
 }
