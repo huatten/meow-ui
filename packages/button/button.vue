@@ -21,7 +21,7 @@
     <div class="mw-button__cont">
       <template v-if="iconName">
         <div class="mw-button__icon">
-          <mw-icon :name="iconName" :svg="svg" :size="iconSize"></mw-icon>
+          <mw-icon :name="iconName" :svg="iconSvg" :size="iconSize"></mw-icon>
         </div>
       </template>
       <template v-if="loading">
@@ -82,7 +82,7 @@ export default {
       type: String,
       default: ""
     },
-    svg: {
+    iconSvg: {
       type: Boolean,
       default: false //svg、font
     },

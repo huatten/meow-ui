@@ -4,12 +4,18 @@
   "private": false,
   "description": "喵呜～个人练手组件库",
   "author": "Justin <nbilly@163.com>",
+  "homepage": "https://github.com/MrTenger/meow-ui.git",
   "repository": {
     "type": "git",
     "url": "https://github.com/MrTenger/meow-ui.git"
   },
+  "keywords": [
+    "meow-ui",
+    "vue",
+    "component"
+  ],
   "main": "lib/meow-ui.umd.min.js",
-  "style": "lib/_style/meow-ui.css",
+  "style": "lib/meow-css/index.css",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
