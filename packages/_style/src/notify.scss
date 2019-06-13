@@ -1,0 +1,23 @@
+@import "./common/var.scss";
+.mw-notify {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-white;
+  font-size: $notify-font-size;
+  padding: 10px;
+  white-space: pre-wrap;
+  &--default{
+    background-color: $notify-default-color;
+  }
+  &--success{
+    background-color: $notify-success-color;
+  }
+  &--failed{
+    background-color: $notify-failed-color;
+  }
+  &--warning{
+    background-color: $notify-warning-color;
+  }
+}

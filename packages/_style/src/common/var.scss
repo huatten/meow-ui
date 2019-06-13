@@ -20,6 +20,10 @@ $color-body:#f3f4f5; //body b背景色
 $font-family-normal :"Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
 $font-family-number: DINPro-Medium, DIN Alternate, "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
 
+// z-index
+$overlay-index: 1000;
+$popup-index: 2019;
+
 /************   switch component  **************/
 $switch-background-color: #fafafa;
 $switch-node-background-color: #fff;
@@ -100,4 +104,9 @@ $noticebar-left-icon-width: 24px;
 $noticebar-left-icon-height: 24px;
 $noticebar-right-icon-width: 24px;
 $noticebar-right-icon-height: 24px;
-/************   button component  **************/
+/************   notify component  **************/
+$notify-font-size: 14px;
+$notify-default-color: rgba(0, 0, 0, 0.7);
+$notify-success-color: #07c160;
+$notify-failed-color: #fd4c4f;
+$notify-warning-color: #ff976a;

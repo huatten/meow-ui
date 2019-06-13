@@ -3,7 +3,6 @@
 @import "./common/var.scss";
 @import "./mixins/mixin.scss";
 @import "./common/golbal.scss";
-@import "./common/transition.scss";
 
 //components
 @import "./button.scss";
@@ -13,3 +12,7 @@
 @import "./marquee.scss";
 @import "./noticebar.scss";
 @import "./switch.scss";
+@import "./transition.scss";
+@import "./overlay.scss";
+@import "./popup.scss";
+@import "./notify.scss";

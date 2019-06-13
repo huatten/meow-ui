@@ -5,8 +5,23 @@ import MIndicator from './indicator'
 import MSwitch from './switch'
 import MMarquee from './marquee'
 import MNoticeBar from './noticebar'
-import MTransition from './transtion'
-const components = [MButton, MCell, MIcon, MIndicator, MSwitch, MMarquee, MNoticeBar, MTransition]
+import MTransition from './transition'
+import MOverlay from './overlay'
+import MPopup from './popup'
+import MNotify from './notify'
+const components = [
+  MButton, 
+  MCell, 
+  MIcon, 
+  MIndicator, 
+  MSwitch, 
+  MMarquee, 
+  MNoticeBar, 
+  MTransition, 
+  MOverlay, 
+  MPopup, 
+  MNotify
+]
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，则所有的组件都将被注册
 const install = function (Vue) {
@@ -29,7 +44,10 @@ const MEOW = {
   MSwitch,
   MMarquee,
   MNoticeBar,
-  MTransition
+  MTransition,
+  MOverlay,
+  MPopup,
+  MNotify
 }
 export default MEOW
 

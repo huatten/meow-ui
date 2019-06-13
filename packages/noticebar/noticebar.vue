@@ -56,7 +56,7 @@
   </mw-transition>
 </template>
 <script type="text/ecmascript-6">
-import MTransition from "../transtion";
+import MTransition from "../transition";
 export default {
   name: "mw-noticebar",
   props: {

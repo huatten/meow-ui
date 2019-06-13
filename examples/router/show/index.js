@@ -33,5 +33,37 @@ export default [
     meta: {
       docTitle: "noticebar 通知栏"
     }
-  }
+  },
+  {
+    path: "/popup",
+    name: "popup",
+    component: resolve => {
+      require.ensure(
+        ["@/views/popup/index.vue"],
+        () => {
+          resolve(require("@/views/popup/index.vue"));
+        },
+        "popup"
+      );
+    },
+    meta: {
+      docTitle: "popup 弹出层"
+    }
+  },
+  {
+    path: "/notify",
+    name: "notify",
+    component: resolve => {
+      require.ensure(
+        ["@/views/notify/index.vue"],
+        () => {
+          resolve(require("@/views/notify/index.vue"));
+        },
+        "notify"
+      );
+    },
+    meta: {
+      docTitle: "notify 通知栏"
+    }
+  },
 ];
