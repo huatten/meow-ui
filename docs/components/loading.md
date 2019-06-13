@@ -1,13 +1,13 @@
-## Indicator 指示器
+## loading 指示器
 ### 使用指南
 ``` javascript
-import MIndicator from "vue-meow-ui";
-Vue.component(MIndicator.name, MIndicator);
+import Mloading from "vue-meow-ui";
+Vue.component(Mloading.name, Mloading);
 ```
 ### 代码演示
 #### 基础用法
 ```html
- <mw-indicator></mw-indicator>
+ <mw-loading></mw-loading>
 ```
 ### Props
 | 属性 | 说明 | 类型 | 默认值 | 备注 |
@@ -18,3 +18,5 @@ Vue.component(MIndicator.name, MIndicator);
 | fill | 图标填充色 | `String` | `#fff` | `spinner`类型除外 |
 | text | 提示文字 | `String` | - | - |
 | color | 文字颜色 | `String` | `#666f83` | - |
+| vertical | 垂直排列 | `Boolean` | `#false` | - |
+| fullScreen | 全屏展示 | `Boolean` | `false` | - |

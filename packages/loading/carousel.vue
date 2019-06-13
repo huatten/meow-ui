@@ -1,5 +1,5 @@
 <template>
-  <div class="mw-indicator--carousel">
+  <div class="mw-loading-carousel">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       class="carousel-svg"

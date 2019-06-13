@@ -1,7 +1,7 @@
 @import "./common/var.scss";
 @import "./mixins/mixin.scss";
 //carousel component
-.mw-indicator--carousel {
+.mw-loading-carousel {
   @include clearfix();
   .carousel-svg {
     float: left;
@@ -9,7 +9,7 @@
   }
 }
 //roller carousel
-.mw-indicator--roller {
+.mw-loading-roller {
   z-index: 1;
   position: relative;
   display: inline-block;
@@ -25,7 +25,7 @@
       animation: roller 1.5s ease-in-out infinite;
     }
   }
-  /* indicator roller*/
+  /* loading roller*/
   @keyframes roller {
     0% {
       stroke-dasharray: 1, 200;
@@ -40,7 +40,7 @@
       stroke-dashoffset: -120;
     }
   }
-  /*indicator roller rotate*/
+  /*loading roller rotate*/
   @keyframes rotate {
     from {
       transform: rotate(0deg);
@@ -50,7 +50,30 @@
     }
   }
 }
-.mw-indicator {
+.mw-loading {
+  &--vertical{
+    .mw-loading__cont{
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .mw-loading__text{
+      margin: 6px 0 0;
+    }
+  }
+  &--fullScreen{
+    .mw-loading__cont{
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2019;
+      padding: 20px 22px;
+      border-radius: 4px;
+      background: rgba(0, 0, 0, 0.7);
+    }
+  }
   &__cont {
     display: flex;
     flex-direction: row;
@@ -64,7 +87,8 @@
     vertical-align: middle;
   }
   &__text {
-    font-size: 28px;
+    display: inline-block;
+    font-size: 14px;
     margin-left: 14px;
   }
 }

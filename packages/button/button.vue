@@ -26,7 +26,7 @@
       </template>
       <template v-if="loading">
         <div class="mw-button__icon">
-          <mw-indicator :type="loadingType" :size="loadingSize"></mw-indicator>
+          <mw-loading :type="loadingType" :size="loadingSize"></mw-loading>
         </div>
       </template>
       <p class="mw-button__text">
@@ -39,7 +39,7 @@
 <script type="text/ecmascript-6">
 import { getStyle, getStyleNumber } from "../_util/dom";
 import MIcon from "../icon";
-import MIndicator from "../indicator";
+import Mloading from "../loading";
 const DEFAULT_COLOR = "#000";
 export default {
   name: "mw-button",
@@ -130,7 +130,7 @@ export default {
       }
     };
   },
-  component: { MIcon, MIndicator },
+  component: { MIcon, Mloading },
   methods: {
     $_init(el) {
       const oBtn = el.parentElement;

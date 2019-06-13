@@ -35,19 +35,19 @@ export default [
     }
   },
   {
-    path: "/indicator",
-    name: "indicator",
+    path: "/loading",
+    name: "loading",
     component: resolve => {
       require.ensure(
-        ["@/views/indicator/index.vue"],
+        ["@/views/loading/index.vue"],
         () => {
-          resolve(require("@/views/indicator/index.vue"));
+          resolve(require("@/views/loading/index.vue"));
         },
-        "indicator"
+        "loading"
       );
     },
     meta: {
-      docTitle: "indicator加载状态"
+      docTitle: "loading加载状态"
     }
   },
   {

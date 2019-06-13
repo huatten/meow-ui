@@ -1,5 +1,5 @@
 <template>
-  <div class="mw-indicator--spinner">
+  <div class="mw-loading-spinner">
     <mw-icon name="spinner" :svg="true" :size="size"></mw-icon>
   </div>
 </template>

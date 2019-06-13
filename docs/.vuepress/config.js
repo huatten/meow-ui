@@ -38,7 +38,7 @@ module.exports = {
           '/components/button',
           '/components/icon',
           '/components/cell',
-          '/components/indicator',
+          '/components/loading',
           '/components/noticebar',
           '/components/switch',
           '/components/transition',

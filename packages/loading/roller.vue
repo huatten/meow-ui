@@ -1,5 +1,5 @@
 <template>
-  <div class="mw-indicator--roller" :style="`color:${fill}`">
+  <div class="mw-loading-roller" :style="`color:${fill}`">
     <svg
       viewBox="25 25 50 50"
       :style="{width: `${size}px`, height: `${size}px`}"

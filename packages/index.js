@@ -1,7 +1,7 @@
 import MButton from './button'
 import MCell from './cell'
 import MIcon from './icon'
-import MIndicator from './indicator'
+import Mloading from './loading'
 import MSwitch from './switch'
 import MMarquee from './marquee'
 import MNoticeBar from './noticebar'
@@ -13,7 +13,7 @@ const components = [
   MButton, 
   MCell, 
   MIcon, 
-  MIndicator, 
+  Mloading, 
   MSwitch, 
   MMarquee, 
   MNoticeBar, 
@@ -40,7 +40,7 @@ const MEOW = {
   MButton,
   MCell,
   MIcon,
-  MIndicator,
+  Mloading,
   MSwitch,
   MMarquee,
   MNoticeBar,
