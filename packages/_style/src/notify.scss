@@ -1,5 +1,11 @@
 @import "./common/var.scss";
 .mw-notify {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom: auto;
   box-sizing: border-box;
   display: flex;
   align-items: center;

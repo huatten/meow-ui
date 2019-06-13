@@ -1,22 +1,16 @@
 <template>
-  <mw-popup
-    v-model="notifyShow"
-    :hasMask="false"
-    position="top"
-    @input="_onInput"
-    @open="_onOpen"
-    @close="_onClose"
-  >
-    <div :class="['mw-notify', `mw-notify--${type}`]">{{message}}</div>
-  </mw-popup>
+  <mw-transition name="mw-slide-top">
+    <div :class="['mw-notify', `mw-notify--${type}`]" v-show="notifyShow">{{message}}</div>
+  </mw-transition>
 </template>
 
 <script type="text/ecmascript-6">
-import MPopup from "../popup";
+import MTransition from "../transition";
 export default {
   name: "mw-notify",
   props: {
-    value: {
+    notifyShow: {
+      //展示
       type: Boolean,
       default: false
     },
@@ -28,7 +22,7 @@ export default {
     duration: {
       //展示时长（ms）
       type: [Number, String],
-      default: 3000
+      default: 2500
     },
     type: {
       //展示类型（default success failed warning）
@@ -38,25 +32,22 @@ export default {
   },
   data() {
     return {
-      notifyShow: this.value
+      show: false
     };
   },
   watch: {
-    value(newVal) {
-      this.notifyShow = newVal;
+    notifyShow(val) {
+      this.show = val;
     }
   },
-  components: { MPopup },
+  components: { MTransition },
   methods: {
-    _onInput(val) {
-      this.$emit("input", val);
-    },
-    _onOpen() {
-      this.$emit("show");
-    },
-    _onClose() {
-      this.$emit("hide");
+    _show() {
+      this.show = true;
     }
+  },
+  beforeDestroy() {
+    this.$el.remove();
   }
 };
 </script>
