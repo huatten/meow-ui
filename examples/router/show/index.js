@@ -66,4 +66,20 @@ export default [
       docTitle: "notify 通知栏"
     }
   },
+  {
+    path: "/toast",
+    name: "toast",
+    component: resolve => {
+      require.ensure(
+        ["@/views/toast/index.vue"],
+        () => {
+          resolve(require("@/views/toast/index.vue"));
+        },
+        "toast"
+      );
+    },
+    meta: {
+      docTitle: "toast 轻提示"
+    }
+  }
 ];

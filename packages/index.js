@@ -9,18 +9,20 @@ import MTransition from './transition'
 import MOverlay from './overlay'
 import MPopup from './popup'
 import MNotify from './notify'
+import MToast from './toast'
 const components = [
-  MButton, 
-  MCell, 
-  MIcon, 
+  MButton,
+  MCell,
+  MIcon,
   Mloading, 
-  MSwitch, 
-  MMarquee, 
-  MNoticeBar, 
-  MTransition, 
-  MOverlay, 
-  MPopup, 
-  MNotify
+  MSwitch,
+  MMarquee,
+  MNoticeBar,
+  MTransition,
+  MOverlay,
+  MPopup,
+  MNotify,
+  MToast
 ]
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，则所有的组件都将被注册
@@ -47,7 +49,8 @@ const MEOW = {
   MTransition,
   MOverlay,
   MPopup,
-  MNotify
+  MNotify,
+  MToast
 }
 export default MEOW
 

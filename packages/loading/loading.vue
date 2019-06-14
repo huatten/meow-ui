@@ -7,9 +7,7 @@
       fullScreen && 'mw-loading--fullScreen'
     ]"
   >
-    <mw-transition name="mw-fade">
-      <mw-overlay opacity="0.4" v-if="fullScreen"></mw-overlay>
-    </mw-transition>
+    <mw-overlay opacity="0.4" v-if="fullScreen"></mw-overlay>
     <div class="mw-loading__cont">
       <div class="mw-loading__icon">
         <template v-if="type === 'roller'">

@@ -25,7 +25,8 @@ const Notify = (message, {
     vm.notifyShow = false;
   }
   timer = setTimeout(() => {
-    vm.notifyShow = timer = false;
+    vm.notifyShow = false;
+    timer = null;
     vm.callback = callback();
   }, vm.duration)
   return vm;

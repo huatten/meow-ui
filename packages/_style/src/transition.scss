@@ -11,12 +11,26 @@
     transition: opacity 0.25s linear;
   }
 }
-/*mw-fade-up*/
-.mw-fade-up{
+/*mw-fade-bottom*/
+.mw-fade-bottom{
   &-enter,
   &-leave-to{
     opacity: 0.01;
-    transform: translate3d(0, 20%, 0)
+    transform: translate3d(0, 4%, 0)
+  }
+  &-enter-active{
+    transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
+  }
+  &-leave-active{
+    transition: all 0.25s linear;
+  }
+}
+/*mw-fade-top*/
+.mw-fade-top{
+  &-enter,
+  &-leave-to{
+    opacity: 0.01;
+    transform: translate3d(0, -4%, 0)
   }
   &-enter-active{
     transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
