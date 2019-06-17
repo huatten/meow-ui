@@ -1,9 +1,10 @@
 import MButton from './button'
 import MCell from './cell'
 import MIcon from './icon'
-import Mloading from './loading'
+import MLoading from './loading'
 import MSwitch from './switch'
 import MMarquee from './marquee'
+import MMarqueeItem from './marquee-item'
 import MNoticeBar from './noticebar'
 import MTransition from './transition'
 import MOverlay from './overlay'
@@ -14,9 +15,10 @@ const components = [
   MButton,
   MCell,
   MIcon,
-  Mloading, 
+  MLoading, 
   MSwitch,
   MMarquee,
+  MMarqueeItem,
   MNoticeBar,
   MTransition,
   MOverlay,
@@ -42,9 +44,10 @@ const MEOW = {
   MButton,
   MCell,
   MIcon,
-  Mloading,
+  MLoading,
   MSwitch,
   MMarquee,
+  MMarqueeItem,
   MNoticeBar,
   MTransition,
   MOverlay,

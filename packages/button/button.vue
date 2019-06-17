@@ -39,7 +39,7 @@
 <script type="text/ecmascript-6">
 import { getStyle, getStyleNumber } from "../_util/dom";
 import MIcon from "../icon";
-import Mloading from "../loading";
+import MLoading from "../loading";
 const DEFAULT_COLOR = "#000";
 export default {
   name: "mw-button",
@@ -130,7 +130,7 @@ export default {
       }
     };
   },
-  component: { MIcon, Mloading },
+  component: { MIcon, MLoading },
   methods: {
     $_init(el) {
       const oBtn = el.parentElement;

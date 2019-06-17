@@ -1,8 +1,8 @@
 ## loading 指示器
 ### 使用指南
 ``` javascript
-import Mloading from "vue-meow-ui";
-Vue.component(Mloading.name, Mloading);
+import MLoading from "vue-meow-ui";
+Vue.component(MLoading.name, MLoading);
 ```
 ### 代码演示
 #### 基础用法
@@ -20,3 +20,4 @@ Vue.component(Mloading.name, Mloading);
 | color | 文字颜色 | `String` | `#666f83` | - |
 | vertical | 垂直排列 | `Boolean` | `#false` | - |
 | fullScreen | 全屏展示 | `Boolean` | `false` | - |
+| hasMask | 是否展示蒙层| `Boolean` | `true` | 只再全屏loading状态下生效 |

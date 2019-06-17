@@ -1,45 +1,101 @@
 <template>
-  <div class="mw-marquee">
-    <ul class="mw-marquee__cont" :class="{ 'mw-marquee__top': animate }">
-      <li v-for="(item, index) in scrollList" :key="index" @click="_onClick(item)">
-        <span>{{ item.mobile }}</span>
-        <span>{{ item.nick }}</span>
-        <span>{{ item.prize }}</span>
-        <span>{{ item.time }}</span>
-      </li>
-    </ul>
+  <div class="mw-marquee" :style="{height: `${height}px`}" v-on="$listeners">
+    <div class="mw-marquee__cont" :style="transition" :class="`mw-marquee-align--${align}`">
+      <div class="mw-marquee-item" v-html="lastItem" v-if="total>1" @click="itemClick"></div>
+      <slot></slot>
+      <div class="mw-marquee-item" v-html="firstItem" @click="itemClick"></div>
+    </div>
   </div>
 </template>
 <script type="text/ecmascript-6">
 export default {
   name: "mw-marquee",
   props: {
-    scrollList: {
-      type: Array,
-      default() {
-        return [];
-      }
+    height: {
+      type: [String, Number],
+      default: 35
+    },
+    align: {
+      type: String,
+      default: "left"
+    },
+    speed: {
+      type: [String, Number],
+      default: 500
+    },
+    duration: {
+      type: [String, Number],
+      default: 2500
+    },
+    direction: {
+      type: String,
+      default: "up"
     }
   },
   data() {
     return {
-      animate: false
+      timer: null,
+      index: 1,
+      total: 0,
+      firstItem: "",
+      lastItem: "",
+      transition: {
+        transform: 0,
+        transitionDuration: 0
+      }
     };
   },
   mounted() {
-    setInterval(this._onScroll, 3000);
+    this.$_init();
   },
   methods: {
-    _onScroll() {
-      this.animate = true;
-      setTimeout(() => {
-        this.scrollList.push(this.scrollList[0]);
-        this.scrollList.shift();
-        this.animate = false;
-      }, 500);
+    $_init() {
+      this._destroy();
+      this.items = this.$children.filter(
+        item => item.$options.name === "mw-marquee-item"
+      );
+      this.total = this.items.length;
+      if(this.total<=1) return; //list小于1条时不滚动
+      this.firstItem = this.items[0].$el.innerHTML;
+      this.lastItem = this.items[this.total - 1].$el.innerHTML;
+      this._setTranslate(0, -this.height);
+      this._onScroll();
     },
-    _onClick(item) {
-      this.$emit("click", item);
+    _onScroll() {
+      this.timer = setInterval(() => {
+        if (this.direction === "up") {
+          this.index++;
+          this._setTranslate(this.speed, -(this.index * this.height));
+          if (this.index >= this.total) {
+            this.index = 0;
+            setTimeout(() => {
+              this._setTranslate(0, 0);
+            }, this.speed);
+          }
+        } else {
+          this.index--;
+          this._setTranslate(this.speed, -(this.index * this.height));
+          if (this.index <= 0) {
+            this.index = this.total;
+            setTimeout(() => {
+              this._setTranslate(0, -this.total * this.height);
+            }, this.speed);
+          }
+        }
+      }, this.duration);
+    },
+    _setTranslate(speed, translate) {
+      this.transition.transitionDuration = `${speed}ms`;
+      this.transition.transform = `translate3d(0, ${translate}px, 0)`;
+    },
+    itemClick(e){
+      this.$emit("click", e)
+    },
+    _destroy() {
+      clearInterval(this.timer);
+    },
+    beforeDestroy() {
+      this._destroy();
     }
   }
 };

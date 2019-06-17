@@ -1,5 +1,5 @@
-import Mloading from "./loading";
-Mloading.install = function (Vue) {
-  Vue.component(Mloading.name, Mloading);
+import MLoading from "./loading";
+MLoading.install = function (Vue) {
+  Vue.component(MLoading.name, MLoading);
 }
-export default Mloading;
+export default MLoading;

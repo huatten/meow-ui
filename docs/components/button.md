@@ -75,8 +75,8 @@ Vue.component(MButton.name, MButton);
 | icon-name | 按钮icon名称 | `String` | - | 不传值则icon不显示，可选值请参考组件 `MIcon` 组件 |
 | icon-svg | 按钮icon类型 | `Boolean` | `false` | 默认类型为字体图标，为true则是svg图标 |
 | loading | 是否显示加载状态 | `Boolean` | `false` | - |
-| loading-type | 加载图标类型 | `String` | `roller` | 可选值请参考组件 `Mloading` 组件，可选 `carousel`、`spinner` |
-| loading-size | 加载图标大小 | `Number` | `70` | 可选值请参考组件 `Mloading` 组件 |
+| loading-type | 加载图标类型 | `String` | `roller` | 可选值请参考组件 `MLoading` 组件，可选 `carousel`、`spinner` |
+| loading-size | 加载图标大小 | `Number` | `70` | 可选值请参考组件 `MLoading` 组件 |
 | ripple | 是否开启波纹点击效果 | `Boolean` | `false` | - |
 | speed | 波纹展开速度 | `Number` | `11` | - |
 | opacity | 波纹透明度 | `Boolean` | `0.3` | - |

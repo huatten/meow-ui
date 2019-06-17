@@ -42,6 +42,7 @@ module.exports = {
           '/components/noticebar',
           '/components/switch',
           '/components/transition',
+          '/components/marquee',
         ]
       }
     ]

@@ -90,8 +90,10 @@ $cell-right-font-color: #bdbdbd;
 
 $cell-disabled-color: #c5cad5;
 
-/************   marqueen component  **************/
-
+/************   marquee component  **************/
+$marquee-font-size: 14px;
+$marquee-text-color: #333;
+$marquee-background-color: #fff;
 /************   noticebar component  *************/
 $noticebar-min-height: 46px;
 $noticebar-line-height: 46px;
@@ -110,3 +112,7 @@ $notify-default-color: rgba(0, 0, 0, 0.7);
 $notify-success-color: #07c160;
 $notify-failed-color: #fd4c4f;
 $notify-warning-color: #ff976a;
+/************   toast component  **************/
+$toast-font-size: 14px;
+$toast-border-radius: 5px;
+$toast-background-color: rgba(0, 0, 0, 0.7);

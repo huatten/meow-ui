@@ -26,14 +26,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(0, 0, 0, 0.6);
+    background: $toast-background-color;
     color: $color-white;
-    font-size: $notify-font-size;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: $toast-border-radius;
     white-space: pre-wrap;
   }
   &__icon{
     flex-shrink: 0;
+  }
+  &__text{
+    font-size: $toast-font-size;
   }
 }
