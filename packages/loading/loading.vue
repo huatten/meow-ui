@@ -7,7 +7,7 @@
       fullScreen && 'mw-loading--fullScreen'
     ]"
   >
-    <mw-overlay opacity="0.4" v-if="fullScreen"></mw-overlay>
+    <mw-overlay opacity="0.5" v-if="fullScreen && hasMask"></mw-overlay>
     <div class="mw-loading__cont">
       <div class="mw-loading__icon">
         <template v-if="type === 'roller'">
@@ -40,7 +40,7 @@ export default {
     },
     text: {
       type: String,
-      default: "加载中..."
+      default: ""
     },
     fill: {
       type: String,
@@ -65,6 +65,10 @@ export default {
     fullScreen: {
       type: Boolean,
       default: false
+    },
+    hasMask: {
+      type: Boolean,
+      default: true
     }
   },
   data() {

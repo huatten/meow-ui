@@ -15,6 +15,7 @@ const Notify = (message, {
   vm.type = type;
   vm.message = message;
   vm.duration = duration;
+  vm.callback = callback;
   // 防止两次 notifyShow的改变被合并成一次, 防止watch失效
   vm.$nextTick(() => {
     vm.notifyShow = true;
