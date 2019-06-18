@@ -124,7 +124,7 @@ export default {
       xml: null
     };
   },
-  async monted() {
+  async created() {
     if (!this.name) {
       return;
     }
