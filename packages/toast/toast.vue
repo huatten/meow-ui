@@ -82,7 +82,7 @@ export default {
   },
   computed: {
     size(){
-      return this.loadingType === "roller" ? "36" : this.loadingType === "carousel" ? "12" : "20";
+      return this.loadingType === "roller" ? "36" : this.loadingType === "carousel" ? "12" : "40";
     },
     icon() {
       const icon = this.type;

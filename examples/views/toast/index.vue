@@ -22,6 +22,9 @@
       <mw-button type="info" :inline="false" @click="_loading('roller', false)">加载中弹出</mw-button>
     </div>
     <div class="mw-field">
+      <mw-button type="info" :inline="false" @click="_loading('spinner', false)">加载中弹出</mw-button>
+    </div>
+    <div class="mw-field">
       <mw-button type="info" :inline="false" @click="_loading('carousel', true)">加载中弹出显示遮罩层</mw-button>
     </div>
   </div>
@@ -47,7 +50,7 @@ export default {
     _loading(type, flag){
       this.$toast("加载中...",{type: "loading", loadingType: type, hasMask: flag});
       setTimeout(()=>{
-        this.$toast.close();
+        //this.$toast.close();
       }, 3000)
     }
   }

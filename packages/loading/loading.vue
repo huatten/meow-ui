@@ -47,7 +47,7 @@ export default {
       default: "#fff"
     },
     width: {
-      type: Number,
+      type: [Number, String],
       default: 3
     },
     size: {
