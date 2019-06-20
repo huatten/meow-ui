@@ -33,7 +33,14 @@ export default{
 ```html
  <mw-switch v-model="openFlag" size="20"></mw-switch>
 ```
-#### 自定义开关加载图标大小
+#### 自定义开关颜色
 ```html
- <mw-switch v-model="openFlag" loading-size="40"></mw-switch>
+ <mw-switch v-model="openFlag" background="#3483ff"></mw-switch>
 ```
+### Props
+| 属性 | 说明 | 类型 | 默认值 | 备注 |
+|------|------|------|------|------|
+| size | 开关大小 | `Number` | `28` | 单位`px` |
+| background | 开关颜色 | `String` | `#ff8200` | - |
+| disabled | 是否禁用 | `Boolean` | `false` | 不可点击 |
+| loading | 开启加载状态 | `Boolean` | `false` | 不可点击 |

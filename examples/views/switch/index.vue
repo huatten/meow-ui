@@ -1,6 +1,37 @@
 <template>
-  <div>
-    <mw-switch v-model="isClose"></mw-switch>
+  <div class="demo-switch">
+    <div class="mw-field">
+      <mw-cell title="基础开关" >
+        <div slot="right" class="right">
+          <mw-switch v-model="isClose"></mw-switch>
+        </div>
+      </mw-cell>
+      <mw-cell title="禁用开关关闭状态" >
+        <div slot="right" class="right">
+          <mw-switch v-model="isClose" disabled></mw-switch>
+        </div>
+      </mw-cell>
+      <mw-cell title="禁用开关打开状态" >
+        <div slot="right" class="right">
+          <mw-switch v-model="isOpen" disabled></mw-switch>
+        </div>
+      </mw-cell>
+      <mw-cell title="开关加载状态" >
+        <div slot="right" class="right">
+          <mw-switch v-model="isOpen" loading></mw-switch>
+        </div>
+      </mw-cell>
+      <mw-cell title="自定义开关大小" >
+        <div slot="right" class="right">
+          <mw-switch v-model="isClose" size="24"></mw-switch>
+        </div>
+      </mw-cell>
+      <mw-cell title="自定义开关颜色" >
+        <div slot="right" class="right">
+          <mw-switch v-model="isOpen" size="24" background="#3483ff" loading></mw-switch>
+        </div>
+      </mw-cell>
+    </div>
   </div>
 </template>
 
@@ -8,12 +39,16 @@
 export default {
   data() {
     return {
-      isClose: true
+      isClose: false,
+      isOpen: true
     };
-  },
-  components: {}
+  }
 };
 </script>
 
 <style scoped lang="scss" rel="stylesheet/scss">
+.mw-field {
+  padding: 0 15px;
+  background: #fff;
+}
 </style>

@@ -2,11 +2,13 @@
   <div
     class="mw-switch"
     :class="[open && 'open', disabled && 'disabled']"
-    :style="`font-size:${size}px`"
+    :style="[sizeStyle, backgrundStyle]"
     @click="_change($event)"
   >
     <div class="mw-switch-node">
-      <div class="mw-switch-loading" v-if="loading">loding</div>
+      <div class="mw-switch-loading" v-if="loading">
+        <mw-loading :fill="background" :size="loadingSize"></mw-loading>
+      </div>
     </div>
   </div>
 </template>
@@ -21,11 +23,11 @@ export default {
     },
     size: {
       type: [Number, String],
-      default: 30
+      default: 28
     },
-    loadingSize: {
-      type: [Number, String],
-      default: 40
+    background: {
+      type: String,
+      default: "#ff8200"
     },
     loading: {
       type: Boolean,
@@ -40,6 +42,19 @@ export default {
     return {
       open: this.value
     };
+  },
+  computed: {
+    sizeStyle() {
+      return {
+        fontSize: this.size + "px"
+      };
+    },
+    backgrundStyle() {
+      return this.open && { background: this.background };
+    },
+    loadingSize() {
+      return this.size * 1 - 12;
+    }
   },
   watch: {
     open(val) {
