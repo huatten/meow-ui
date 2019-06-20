@@ -13,12 +13,12 @@
       </mw-cell>
       <mw-cell title="禁用开关打开状态" >
         <div slot="right" class="right">
-          <mw-switch v-model="isOpen" disabled></mw-switch>
+          <mw-switch v-model="isClose" disabled></mw-switch>
         </div>
       </mw-cell>
-      <mw-cell title="开关加载状态" >
+      <mw-cell title="不同状态下的加载状态" >
         <div slot="right" class="right">
-          <mw-switch v-model="isOpen" loading></mw-switch>
+          <mw-switch v-model="isClose" loading></mw-switch>
         </div>
       </mw-cell>
       <mw-cell title="自定义开关大小" >
@@ -28,7 +28,7 @@
       </mw-cell>
       <mw-cell title="自定义开关颜色" >
         <div slot="right" class="right">
-          <mw-switch v-model="isOpen" size="24" background="#3483ff" loading></mw-switch>
+          <mw-switch v-model="isClose" size="24" background="#3483ff" loading></mw-switch>
         </div>
       </mw-cell>
     </div>
@@ -39,8 +39,7 @@
 export default {
   data() {
     return {
-      isClose: false,
-      isOpen: true
+      isClose: false
     };
   }
 };

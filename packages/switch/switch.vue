@@ -1,13 +1,13 @@
 <template>
   <div
     class="mw-switch"
-    :class="[open && 'open', disabled && 'disabled']"
+    :class="[value && 'open', disabled && 'disabled']"
     :style="[sizeStyle, backgrundStyle]"
     @click="_change($event)"
   >
     <div class="mw-switch-node">
       <div class="mw-switch-loading" v-if="loading">
-        <mw-loading :fill="background" :size="loadingSize"></mw-loading>
+        <mw-loading :fill="value ? background: ''" :size="loadingSize"></mw-loading>
       </div>
     </div>
   </div>
@@ -39,9 +39,7 @@ export default {
     }
   },
   data() {
-    return {
-      open: this.value
-    };
+    return {};
   },
   computed: {
     sizeStyle() {
@@ -50,21 +48,16 @@ export default {
       };
     },
     backgrundStyle() {
-      return this.open && { background: this.background };
+      return this.value && { background: this.background };
     },
     loadingSize() {
       return this.size * 1 - 12;
     }
   },
-  watch: {
-    open(val) {
-      this.$emit("input", val);
-    }
-  },
   methods: {
     _change(e) {
       if (this.disabled || this.loading) return;
-      this.open = !this.open;
+      this.$emit("input", !this.value);
       this.$emit("change", e);
     }
   }
