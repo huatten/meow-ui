@@ -17,7 +17,7 @@
           <mw-carousel :size="size" :fill="fill"></mw-carousel>
         </template>
         <template v-if="type === 'spinner'">
-          <mw-spinner :size="size"></mw-spinner>
+          <mw-spinner :size="size" :fill="fill"></mw-spinner>
         </template>
       </div>
       <div class="mw-loading__text" v-if="text" :style="`color:${color}`">{{text}}</div>

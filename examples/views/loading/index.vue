@@ -10,6 +10,7 @@
       <h5>自定义颜色</h5>
       <mw-loading fill="#3483ff"></mw-loading>
       <mw-loading type="carousel" fill="#ed6a0c"></mw-loading>
+      <mw-loading type="spinner" fill="#f00"></mw-loading>
     </section>
     <section>
       <h5>自定义大小</h5>
@@ -19,9 +20,9 @@
     </section>
     <section>
       <h5>加载文案以及自定义文案颜色</h5>
-      <mw-loading  color="#f90" text="加载中"></mw-loading>
-      <mw-loading type="carousel" fill="#3483ff" size="10" text="加载中"></mw-loading>
-      <mw-loading type="spinner" size="50" text="加载中"></mw-loading>
+      <mw-loading  fill="#f90" color="#f90" text="加载中"></mw-loading>
+      <mw-loading type="carousel" fill="#f00" color="#f00" size="10" text="加载中"></mw-loading>
+      <mw-loading type="spinner" fill="#3483ff" color="#3483ff" text="加载中"></mw-loading>
     </section>
     <section>
       <h5>文案垂直排列</h5>
