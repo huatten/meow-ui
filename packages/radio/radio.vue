@@ -2,7 +2,7 @@
   <label
     class="mw-radio"
     :class="[
-      iconPosition && `is-${iconPosition}-radio`,
+      (iconPosition && !horizontal) && `is-${iconPosition}-radio`,
       isChecked && 'is-checked', 
       disabled && 'is-disabled', 
       horizontal && 'is-horizontal'

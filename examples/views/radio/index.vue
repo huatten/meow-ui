@@ -11,7 +11,7 @@
     <div class="mw-field">
       <h5>更改布局方式</h5>
       <p>2.考试的时候大家都用什么铅笔？</p>
-      <mw-radio v-model="radio2" value="1" horizontal>SB</mw-radio>
+      <mw-radio v-model="radio2" value="1" horizontal icon-position="right">SB</mw-radio>
       <mw-radio v-model="radio2" value="2" horizontal>2B</mw-radio>
       <mw-radio v-model="radio2" value="3" horizontal>NB</mw-radio>
     </div>
