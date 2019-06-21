@@ -10,7 +10,12 @@
     }
   }
   &.is-disabled{
-    color: $radio-disabled-color;
+    .mw-radio__icon{
+      color: $radio-icon-disabled-color;
+    }
+    .mw-radio__label{
+      color: $radio-label-disabled-color;
+    }
   }
   &.is-horizontal{
     display: inline-flex;

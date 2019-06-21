@@ -74,12 +74,13 @@ export default {
   },
   computed: {
     isChecked() {
-      return this.value == this.referenceValue;
+      return this.value === this.referenceValue;
+      
     },
     curIcon() {
       return this.disabled
         ? this.iconDisabled
-        : this.value == this.referenceValue
+        : this.value === this.referenceValue
         ? this.icon
         : this.iconInverse;
     }

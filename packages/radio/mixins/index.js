@@ -10,7 +10,7 @@ export default {
     },
     iconDisabled: {
       type: String,
-      default: 'check-disabled',
+      default: 'cancel',
     },
     iconSvg: {
       type: Boolean,

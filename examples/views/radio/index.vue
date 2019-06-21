@@ -24,19 +24,27 @@
       <mw-radio v-model="radio3" value="4" color="#f00">闪电匕首</mw-radio>
     </div>
     <div class="mw-field">
+      <h5>禁止选择</h5>
+      <p>4.程序猿最渴望拥有？</p>
+      <mw-radio v-model="radio4" value="1">苹果笔记本</mw-radio>
+      <mw-radio v-model="radio4" value="2">超大显示器</mw-radio>
+      <mw-radio v-model="radio4" value="3">Apple Watch</mw-radio>
+      <mw-radio v-model="radio4" value="4" disabled>女朋友</mw-radio>
+    </div>
+    <div class="mw-field">
       <h5>更改Radio尺寸</h5>
-      <p>4.自带消音和4倍镜的狙击枪是？</p>
-      <mw-radio v-model="radio4" value="1" icon-size="26">SKS</mw-radio>
-      <mw-radio v-model="radio4" value="2" icon-size="25">MK14</mw-radio>
-      <mw-radio v-model="radio4" value="3" icon-size="24">VSS</mw-radio>
-      <mw-radio v-model="radio4" value="4" icon-size="23">Kar98K</mw-radio>
+      <p>5.自带消音和4倍镜的狙击枪是？</p>
+      <mw-radio v-model="radio5" value="1" icon-size="26">SKS</mw-radio>
+      <mw-radio v-model="radio5" value="2" icon-size="25">MK14</mw-radio>
+      <mw-radio v-model="radio5" value="3" icon-size="24">VSS</mw-radio>
+      <mw-radio v-model="radio5" value="4" icon-size="23">Kar98K</mw-radio>
     </div>
     <div class="mw-field">
       <h5>更改Radio位置</h5>
-      <p>5.盖伦的武器是什么呀？</p>
-      <mw-radio v-model="radio5" value="1" icon-size="24" icon-position="right">暴风大保健</mw-radio>
-      <mw-radio v-model="radio5" value="2" icon-size="24" icon-position="right">霜之哀伤</mw-radio>
-      <mw-radio v-model="radio5" value="3" icon-size="24" icon-position="right">方天画戟</mw-radio>
+      <p>6.盖伦的武器是什么呀？</p>
+      <mw-radio v-model="radio6" value="1" icon-size="24" icon-position="right">暴风大保健</mw-radio>
+      <mw-radio v-model="radio6" value="2" icon-size="24" icon-position="right">霜之哀伤</mw-radio>
+      <mw-radio v-model="radio6" value="3" icon-size="24" icon-position="right">方天画戟</mw-radio>
     </div>
   </div>
 </template>
@@ -49,7 +57,8 @@ export default {
       radio2: 0,
       radio3: 0,
       radio4: 0,
-      radio5: 0
+      radio5: 0,
+      radio6: 0
     };
   },
   methods: {
