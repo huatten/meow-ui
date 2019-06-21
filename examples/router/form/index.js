@@ -17,5 +17,21 @@ export default [
     meta: {
       docTitle: "switch开关"
     }
+  },
+  {
+    path: "/radio",
+    name: "radio",
+    component: resolve => {
+      require.ensure(
+        ["@/views/radio/index.vue"],
+        () => {
+          resolve(require("@/views/radio/index.vue"));
+        },
+        "radio"
+      );
+    },
+    meta: {
+      docTitle: "radio单选"
+    }
   }
 ];

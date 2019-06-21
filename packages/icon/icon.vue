@@ -15,7 +15,7 @@
   <i
     v-else
     class="mw-icon mw-icon-font"
-    :class="[`mw-icon-${name}`, name]"
+    :class="`mw-icon-${name}`"
     :style="`font-size:${size}px`"
     @click="$emit('click', $event)"
   ></i>
