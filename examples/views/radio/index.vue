@@ -46,6 +46,21 @@
       <mw-radio v-model="radio6" value="2" icon-size="24" icon-position="right">霜之哀伤</mw-radio>
       <mw-radio v-model="radio6" value="3" icon-size="24" icon-position="right">方天画戟</mw-radio>
     </div>
+    <div class="mw-field">
+      <h5>更改Radio样式类型</h5>
+      <p>7.马可波罗的激情绿茵皮肤上的号码是多少？</p>
+      <mw-radio v-model="radio7" value="1" icon="collection" icon-inverse="settings">1号</mw-radio>
+      <mw-radio v-model="radio7" value="2" icon="collection" icon-inverse="settings">45号</mw-radio>
+      <mw-radio v-model="radio7" value="3" icon="collection" icon-inverse="settings">30号</mw-radio>
+      <mw-radio
+        v-model="radio7"
+        value="4"
+        icon="collection"
+        icon-inverse="settings"
+        disabled
+        icon-disabled="close"
+      >23号</mw-radio>
+    </div>
   </div>
 </template>
 
@@ -58,7 +73,22 @@ export default {
       radio3: 0,
       radio4: 0,
       radio5: 0,
-      radio6: 0
+      radio6: 0,
+      radio7: 0,
+      options: [
+        {
+          value: 1,
+          text: "1号"
+        },
+        {
+          value: 45,
+          text: "45号"
+        },
+        {
+          value: 30,
+          text: "30号"
+        }
+      ]
     };
   },
   methods: {

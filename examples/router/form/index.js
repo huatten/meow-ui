@@ -33,5 +33,21 @@ export default [
     meta: {
       docTitle: "radio单选"
     }
+  },
+  {
+    path: "/checkbox",
+    name: "checkbox",
+    component: resolve => {
+      require.ensure(
+        ["@/views/checkbox/index.vue"],
+        () => {
+          resolve(require("@/views/checkbox/index.vue"));
+        },
+        "checkbox"
+      );
+    },
+    meta: {
+      docTitle: "checkbox 复选"
+    }
   }
 ];
