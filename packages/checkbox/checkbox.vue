@@ -10,10 +10,10 @@
   >
     <input
       class="mw-checkbox__input"
-      :value="label"
+      :value="name"
       @change="_onChange"
       v-model="curValue"
-      :disabled="disabled"
+      :disabled="isDisabled"
       @click.stop="()=>{}"
       type="checkbox"
     >
@@ -35,10 +35,6 @@ import MIcon from "../icon";
 export default {
   name: "mw-checkbox",
   mixins: [CheckboxMixin],
-  model: {
-    prop: "value",
-    event: "select"
-  },
   props: {
     value: {
       type: [String, Number, Boolean],
@@ -92,13 +88,10 @@ export default {
         : this.disabled || false;
     },
     isChecked() {
-      const { isGroup, curValue } = this;
-      if (!isGroup) return curValue;
-      const {
-        value,
-        $parent: { value: selectItems }
-      } = this;
-      return selectItems.some(item => item === value);
+      return (
+        this.value === this.name ||
+        (this.parent && this.parent.value.indexOf(this.name) !== -1)
+      );
     },
     curIcon() {
       return this.disabled
@@ -113,11 +106,9 @@ export default {
       },
       set(val) {
         if (this.isGroup) {
-          this.isChecked
-            ? this.parent.deleteItem(val)
-            : this.parent.selectItem(val);
+          this.parent.$emit("input", val);
         } else {
-          this.$emit("select", val);
+          this.$emit("input", val);
         }
       }
     }
@@ -127,12 +118,20 @@ export default {
   },
   methods: {
     _onChange() {
-      // if (!this.isDisabled) {
-      //   this.$emit("input", this.curValue);
-      // }
-      const { isDisabled, isGroup, curValue, value } = this;
-      if (!isDisabled) {
-        this.curValue = isGroup ? value : !curValue;
+      if (!this.isDisabled) {
+        if (typeof this.name === "boolean") {
+          this.$emit("input", !this.value);
+        } else if (this.isChecked) {
+          this.$emit("input", "");
+          if (this.isGroup) {
+            this.parent.uncheck(this.name);
+          }
+        } else {
+          this.$emit("input", this.name);
+          if (this.isGroup) {
+            this.parent.check(this.name);
+          }
+        }
       }
     }
   }
