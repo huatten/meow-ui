@@ -48,8 +48,19 @@
       </mw-checkbox-group>
     </div>
     <div class="mw-field">
+      <h5>限制选择数量(最多两项)</h5>
+      <p>5.什么天气适合吃火锅？</p>
+      <mw-checkbox-group v-model="huoguo" :max="2">
+        <mw-checkbox name="春天">春天</mw-checkbox>
+        <mw-checkbox name="雨天" disabled>雨天</mw-checkbox>
+        <mw-checkbox name="夏天">夏天</mw-checkbox>
+        <mw-checkbox name="秋天">秋天</mw-checkbox>
+        <mw-checkbox name="冬天">冬天</mw-checkbox>
+      </mw-checkbox-group>
+    </div>
+    <div class="mw-field">
       <h5>更改checkbox尺寸</h5>
-      <p>5.自身不带消音和4倍镜的狙击枪是？</p>
+      <p>6.自身不带消音和4倍镜的狙击枪是？</p>
       <mw-checkbox-group v-model="qiang">
         <mw-checkbox name="SKS" icon-size="26">SKS</mw-checkbox>
         <mw-checkbox name="MK14" icon-size="25">MK14</mw-checkbox>
@@ -60,7 +71,7 @@
     </div>
     <div class="mw-field">
       <h5>更改checkbox位置</h5>
-      <p>6.盖伦的武器不是什么呀？</p>
+      <p>7.盖伦的武器不是什么呀？</p>
       <mw-checkbox-group v-model="gailun">
         <mw-checkbox name="暴风大保健" icon-position="right">暴风大保健</mw-checkbox>
         <mw-checkbox name="霜之哀伤" icon-position="right">霜之哀伤</mw-checkbox>
@@ -69,7 +80,7 @@
     </div>
     <div class="mw-field">
       <h5>更改checkbox样式类型</h5>
-      <p>7.马可波罗的激情绿茵皮肤上的号码是多少？</p>
+      <p>8.马可波罗的激情绿茵皮肤上的号码是多少？</p>
       <mw-checkbox-group v-model="make">
         <mw-checkbox name="1号" icon="collection" icon-inverse="settings">1号</mw-checkbox>
         <mw-checkbox name="45号" icon="collection" icon-inverse="settings">45号</mw-checkbox>
@@ -94,7 +105,8 @@ export default {
       noteat: ["傻瓜"],
       qianbi: [],
       chuzhuang: [],
-      girl: [],
+      girl: ['雨天'],
+      huoguo: [],
       qiang: [],
       gailun: [],
       make: []

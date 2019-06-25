@@ -38,11 +38,11 @@ export default {
   props: {
     value: {
       type: [String, Number, Boolean],
-      default: ""
+      default: null,
     },
     name: {
       required: true,
-      default: ""
+      default: null,
     },
     color: {
       type: String,
@@ -82,9 +82,13 @@ export default {
       }
       return false;
     },
+    isLimitDisabled() {
+      const { max } = this.isGroup && this.parent;
+      return !!max && (this.curValue.length + 1 > max && !this.isChecked);
+    },
     isDisabled() {
       return this.isGroup
-        ? this.parent.disabled || this.disabled
+        ? this.parent.disabled || this.disabled || this.isLimitDisabled
         : this.disabled || false;
     },
     isChecked() {
@@ -94,7 +98,7 @@ export default {
       );
     },
     curIcon() {
-      return this.disabled
+      return this.isDisabled
         ? this.iconDisabled
         : this.isChecked
         ? this.icon
@@ -102,6 +106,12 @@ export default {
     },
     curValue: {
       get() {
+        if (this.isGroup) {
+          console.log('parent',this.parent.value);
+        }else{
+          console.log('value', this.value);
+        }
+
         return this.isGroup ? this.parent.value : this.value;
       },
       set(val) {
@@ -119,8 +129,9 @@ export default {
   methods: {
     _onChange() {
       if (!this.isDisabled) {
+        console.log(this.isLimitDisabled);
         if (typeof this.name === "boolean") {
-          this.$emit("input", !this.value);
+          this.$emit("input", !this.curValue);
         } else if (this.isChecked) {
           this.$emit("input", "");
           if (this.isGroup) {
