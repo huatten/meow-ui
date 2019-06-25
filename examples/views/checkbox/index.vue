@@ -94,6 +94,24 @@
         >23号</mw-checkbox>
       </mw-checkbox-group>
     </div>
+    <div class="mw-field">
+      <h5>搭配cell组件</h5>
+      <p>9.下面哪个英雄可以隐身？</p>
+      <mw-checkbox-group v-model="yinsheng">
+        <mw-cell>
+          <mw-checkbox name="鬼谷子" icon-position="right">鬼谷子</mw-checkbox>
+        </mw-cell>
+        <mw-cell>
+          <mw-checkbox name="花木兰" icon-position="right">花木兰</mw-checkbox>
+        </mw-cell>
+        <mw-cell>
+          <mw-checkbox name="兰陵王" icon-position="right">兰陵王</mw-checkbox>
+        </mw-cell>
+        <mw-cell>
+          <mw-checkbox name="沈梦溪" icon-position="right">沈梦溪</mw-checkbox>
+        </mw-cell>
+      </mw-checkbox-group>
+    </div>
   </div>
 </template>
 
@@ -105,11 +123,12 @@ export default {
       noteat: ["傻瓜"],
       qianbi: [],
       chuzhuang: [],
-      girl: ['雨天'],
+      girl: ["雨天"],
       huoguo: [],
       qiang: [],
       gailun: [],
-      make: []
+      make: [],
+      yinsheng:[]
     };
   }
 };

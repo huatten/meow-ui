@@ -38,11 +38,11 @@ export default {
   props: {
     value: {
       type: [String, Number, Boolean],
-      default: null,
+      default: null
     },
     name: {
       required: true,
-      default: null,
+      default: null
     },
     color: {
       type: String,
@@ -106,12 +106,6 @@ export default {
     },
     curValue: {
       get() {
-        if (this.isGroup) {
-          console.log('parent',this.parent.value);
-        }else{
-          console.log('value', this.value);
-        }
-
         return this.isGroup ? this.parent.value : this.value;
       },
       set(val) {
@@ -129,7 +123,6 @@ export default {
   methods: {
     _onChange() {
       if (!this.isDisabled) {
-        console.log(this.isLimitDisabled);
         if (typeof this.name === "boolean") {
           this.$emit("input", !this.curValue);
         } else if (this.isChecked) {

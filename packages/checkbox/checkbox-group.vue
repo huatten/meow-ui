@@ -30,7 +30,6 @@ export default {
         this.$emit("input", this.value.concat(name));
       } else {
         this.$emit("input", this.value);
-        this.$toast('2')
       }
     },
     uncheck(name) {
