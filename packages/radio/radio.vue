@@ -10,7 +10,7 @@
   >
     <input
       class="mw-radio__input"
-      :value="name"
+      :value="value"
       @change="_onChange"
       :checked="isChecked"
       :disabled="disabled"

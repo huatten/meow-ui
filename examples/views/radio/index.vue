@@ -75,26 +75,7 @@ export default {
       radio5: 0,
       radio6: 0,
       radio7: 0,
-      options: [
-        {
-          value: 1,
-          text: "1号"
-        },
-        {
-          value: 45,
-          text: "45号"
-        },
-        {
-          value: 30,
-          text: "30号"
-        }
-      ]
     };
-  },
-  methods: {
-    cellClick() {
-      console.log("点击了单元格");
-    }
   }
 };
 </script>

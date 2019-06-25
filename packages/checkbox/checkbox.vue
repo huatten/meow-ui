@@ -10,9 +10,8 @@
   >
     <input
       class="mw-checkbox__input"
-      :value="name"
+      :value="curValue"
       @change="_onChange"
-      v-model="curValue"
       :disabled="isDisabled"
       @click.stop="()=>{}"
       type="checkbox"

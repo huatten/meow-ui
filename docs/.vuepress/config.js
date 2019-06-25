@@ -41,8 +41,11 @@ module.exports = {
           '/components/loading',
           '/components/noticebar',
           '/components/switch',
+          '/components/radio',
+          '/components/checkbox',
           '/components/transition',
           '/components/marquee',
+          '/components/popup',
         ]
       }
     ]
