@@ -49,5 +49,21 @@ export default [
     meta: {
       docTitle: "checkbox 复选"
     }
+  },
+  {
+    path: "/slider",
+    name: "slider",
+    component: resolve => {
+      require.ensure(
+        ["@/views/slider/index.vue"],
+        () => {
+          resolve(require("@/views/slider/index.vue"));
+        },
+        "slider"
+      );
+    },
+    meta: {
+      docTitle: "slider 滑块"
+    }
   }
 ];

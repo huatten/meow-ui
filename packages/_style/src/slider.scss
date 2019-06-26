@@ -1,0 +1,51 @@
+@import "./common/var.scss";
+.mw-slider {
+  position: relative;
+  width: 100%;
+  height: $slider-height;
+  &::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: $slider-zIndex;
+    background: $slider-background;
+    height: $slider-bar-height;
+  }
+  &-bar{
+    width: 0;
+    height: $slider-bar-height;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    z-index: $slider-zIndex + 2;
+    background: $slider-bar-background;
+  }
+  &-handle{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -($slider-handle-width/2);
+    margin-left: -($slider-handle-height/2);
+    z-index: $slider-zIndex + 4;
+    &.is-dragging{
+      span{
+        transform: scale(1.2);
+      }
+    }
+    span{
+      display: block;
+      touch-action: none; //解决控制台警告
+      cursor: pointer;
+      width: $slider-handle-width;
+      height: $slider-handle-height;
+      background: $slider-handle-background;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);
+      border-radius: 50%;
+      transition: transform .2s;
+    }
+  }
+}
+  
