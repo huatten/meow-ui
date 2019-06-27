@@ -45,7 +45,6 @@ $checkbox-label-disabled-color: #ccc;
 
 /************   slider component  **************/
 $slider-height: 30px;
-$slider-bar-height: 1px;
 $slider-zIndex: 5;
 $slider-background: #f9f9f9;
 $slider-bar-background: #ff8200;
@@ -53,6 +52,14 @@ $slider-handle-width: 24px;
 $slider-handle-height: 24px;
 $slider-handle-background: #fff;
 $slider-icon-color: #c0c4cc;
+$slider-disabled-opacity: 0.55;
+$slider-tooltip-minwidth: 16px;
+$slider-tooltip-padding: 4px 6px;
+$slider-tooltip-radius: 4px;
+$slider-tooltip-fontsize: 14px;
+$slider-tooltip-background: rgba(0,0,0,0.7);
+$slider-tooltip-color: #fff;
+$slider-tooltip-arrow-width: 4px;
 
 /************   button component  **************/
 //button defalut

@@ -3,39 +3,77 @@
   position: relative;
   width: 100%;
   height: $slider-height;
-  &::before{
-    content: '';
+  &.is-disabled{
+    .mw-slider-track, .mw-slider-bar{
+      opacity: $slider-disabled-opacity;
+    }
+  }
+  &-tooltip{
     position: absolute;
-    top: 50%;
+    top: -30px;
+    z-index: $slider-zIndex + 10;
+    transform: translate3d(-50% ,0 , 0);
+    span{
+      display: flex;
+      min-width: $slider-tooltip-minwidth;
+      padding: $slider-tooltip-padding;
+      border-radius: $slider-tooltip-radius;
+      align-items: center;
+      justify-content: center;
+      background: $slider-tooltip-background;
+      font-size: $slider-tooltip-fontsize;
+      color: $slider-tooltip-color;
+      &::after{
+        display: block;
+        content: "";
+        width: 0;
+        height: 0;
+        position: absolute;
+        bottom: -$slider-tooltip-arrow-width;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: $slider-tooltip-arrow-width $slider-tooltip-arrow-width 0;
+        border-style: solid;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+        border-top-color: $slider-tooltip-background;
+        border-right-color: transparent;
+      }
+    }
+  }
+  &-track{
+    width: 100%;
+    position: absolute;
     left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: $slider-zIndex;
+    top: 50%;
+    transform: translate3d(0 ,-50%, 0);
+    z-index: $slider-zIndex + 2;
     background: $slider-background;
-    height: $slider-bar-height;
   }
   &-bar{
-    width: 0;
-    height: $slider-bar-height;
-    position: absolute;
-    left: 0;
-    top: 50%;
-    z-index: $slider-zIndex + 2;
+    width: 0%;
+    height: inherit;
+    position: relative;
+    z-index: $slider-zIndex + 4;
     background: $slider-bar-background;
   }
   &-handle{
     position: absolute;
     left: 0;
     top: 50%;
-    margin-top: -($slider-handle-width/2);
-    margin-left: -($slider-handle-height/2);
+    transform: translate3d(-50% ,-50%, 0);
     z-index: $slider-zIndex + 4;
     &.is-dragging{
-      span{
+      .handle,
+      .handle-slot{
         transform: scale(1.2);
       }
     }
-    span{
+    .handle-slot,
+    .handel{
+      transition: transform .2s;
+    }
+    .handle{
       display: block;
       touch-action: none; //解决控制台警告
       cursor: pointer;
@@ -44,7 +82,6 @@
       background: $slider-handle-background;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.22);
       border-radius: 50%;
-      transition: transform .2s;
     }
   }
 }
