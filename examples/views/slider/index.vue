@@ -21,12 +21,16 @@
       <mw-slider v-model="value5" :step="10"></mw-slider>
     </div>
     <div class="mw-field">
+      <p>指定范围边界</p>
+      <mw-slider v-model="value6" :min="-40" :max="60"></mw-slider>
+    </div>
+    <div class="mw-field">
       <p>隐藏tooltip</p>
-      <mw-slider v-model="value6" :showtip="false"></mw-slider>
+      <mw-slider v-model="value7" :showtip="false"></mw-slider>
     </div>
     <div class="mw-field">
       <p>自定义滑块</p>
-      <mw-slider v-model="value7"><span slot="handle" class="bar">{{value6}}</span></mw-slider>
+      <mw-slider v-model="value8" @change="onChange"><span slot="handle" class="bar">{{value8}}</span></mw-slider>
     </div>
   </div>
 </template>
@@ -40,9 +44,15 @@ export default {
       value3: 30,
       value4: 40,
       value5: 10,
-      value6: 50,
+      value6: 22,
       value7: 60,
+      value8: 40,
     };
+  },
+  methods:{
+    onChange(){
+      this.$toast('当前的值是：' + this.value7)
+    }
   }
 };
 </script>

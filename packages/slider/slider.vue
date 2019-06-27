@@ -100,7 +100,6 @@ export default {
   component: {
     [MTransition.name]: MTransition
   },
-  mounted() {},
   methods: {
     _updateValue(newVal) {
       let newValues = [];
@@ -181,6 +180,7 @@ export default {
     },
     _stopDrag(e) {
       this.isDragging = false;
+      this.$emit("change", this.range[0])
       window.removeEventListener("touchmove", this._onDrag);
       window.removeEventListener("touchend", this._onDragUp);
     }
