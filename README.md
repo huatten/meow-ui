@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/MrTenger/meow-ui" rel="noopener" target="_blank"><img width="200" src="./logo/icon.svg" alt="Meow-UI logo"></a></p>
+  <a href="https://github.com/MrTenger/meow-ui" rel="noopener" target="_blank"><img width="200" src="./logo/meow-ui-logo.svg" alt="Meow-UI logo"></a></p>
 </p>
 
 <h1 align="center">Meow-UI</h1>
