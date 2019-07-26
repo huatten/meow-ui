@@ -55,7 +55,7 @@ export default {
         item => item.$options.name === "mw-marquee-item"
       );
       this.total = this.items.length;
-      if(this.total<=1) return; //list小于1条时不滚动
+      if (this.total <= 1) return; //list小于1条时不滚动
       this.firstItem = this.items[0].$el.innerHTML;
       this.lastItem = this.items[this.total - 1].$el.innerHTML;
       this._setTranslate(0, -this.height);
@@ -88,8 +88,8 @@ export default {
       this.transition.transitionDuration = `${speed}ms`;
       this.transition.transform = `translate3d(0, ${translate}px, 0)`;
     },
-    itemClick(e){
-      this.$emit("click", e)
+    itemClick(e) {
+      this.$emit("click", e);
     },
     _destroy() {
       clearInterval(this.timer);

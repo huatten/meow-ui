@@ -6,7 +6,7 @@
       <mw-button type="info" loading loading-size="8" loading-type="carousel">信息加载中...</mw-button>
       <mw-button type="info" loading loading-size="20">信息加载中...</mw-button>
       <mw-button type="danger" round>危险按钮</mw-button>
-      <mw-button type="warning" icon-name="prompt"  disabled>警告按钮</mw-button>
+      <mw-button type="warning" icon-name="prompt" disabled>警告按钮</mw-button>
     </section>
     <section>
       <mw-button>默认按钮</mw-button>

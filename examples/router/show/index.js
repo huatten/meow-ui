@@ -81,5 +81,21 @@ export default [
     meta: {
       docTitle: "toast 轻提示"
     }
+  },
+  {
+    path: "/collapse",
+    name: "collapse",
+    component: resolve => {
+      require.ensure(
+        ["@/views/collapse/index.vue"],
+        () => {
+          resolve(require("@/views/collapse/index.vue"));
+        },
+        "collapse"
+      );
+    },
+    meta: {
+      docTitle: "collapse 折叠面板"
+    }
   }
 ];

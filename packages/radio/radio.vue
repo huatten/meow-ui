@@ -16,7 +16,7 @@
       :disabled="disabled"
       @click.stop="()=>{}"
       type="radio"
-    >
+    />
     <div class="mw-radio__icon" :style="isChecked && curIconStyle">
       <mw-icon :name="curIcon" :size="iconSize" :svg="iconSvg"></mw-icon>
     </div>
@@ -75,7 +75,6 @@ export default {
   computed: {
     isChecked() {
       return this.value === this.referenceValue;
-      
     },
     curIcon() {
       return this.disabled
