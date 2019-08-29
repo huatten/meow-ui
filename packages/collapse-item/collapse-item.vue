@@ -1,10 +1,14 @@
 <template>
-  <div class="mw-collapse-item">
+  <div class="mw-collapse-item" :class="{'is-disabled': disabled}">
     <div class="mw-collapse-item-title mw-hairline--bottom" @click="toggle">
       <h5>{{ title }}</h5>
-      <mw-icon name="next"></mw-icon>
+      <mw-icon name="next" class="collapse-arrow" :class="{'collapse-rotated' : show}"></mw-icon>
     </div>
-    <div class="mw-collapse-item-cont" :style="{ height: height }">
+    <div
+      class="mw-collapse-item-cont"
+      :class="{'mw-hairline--bottom' : height}"
+      :style="{height: height + 'px'}"
+    >
       <div ref="content">
         <slot></slot>
       </div>
@@ -23,11 +27,15 @@ export default {
     open: {
       type: Boolean,
       default: false
+    },
+    disabled: {
+      type: Boolean,
+      default: false
     }
   },
   data() {
     return {
-      show: this.open,
+      show: this.disabled ? false : this.open,
       height: 0
     };
   },
@@ -39,8 +47,10 @@ export default {
   component: {
     [MIcon.name]: MIcon
   },
-  mouted() {
-    this._setHeight();
+  mounted() {
+    this.$nextTick(() => {
+      this._setHeight();
+    });
   },
   methods: {
     toggle() {
@@ -48,7 +58,7 @@ export default {
       this._setHeight();
     },
     _setHeight() {
-      this.height = `${this.show ? this.$refs.content.offsetHeight : 0}px`;
+      this.height = this.show ? this.$refs.content.offsetHeight : 0;
     }
   }
 };

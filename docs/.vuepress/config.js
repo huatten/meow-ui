@@ -38,6 +38,7 @@ module.exports = {
           '/components/button',
           '/components/icon',
           '/components/cell',
+          '/components/collapse',
           '/components/loading',
           '/components/noticebar',
           '/components/switch',

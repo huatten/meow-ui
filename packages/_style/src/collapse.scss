@@ -2,14 +2,23 @@
 .mw-collapse{
   background: $collapse-background;
   &-item{
+    &.is-disabled{
+      color: #c8c9cc;
+    }
     &-title{
       display: flex;
       align-items: center;
       position: relative;
-      padding: 10px 20px;
-      //overflow: hidden;
+      padding: 10px 15px 10px 20px;
       h5{
         flex: 1;
+      }
+      .collapse-arrow{
+        transition: all 0.4s cubic-bezier(0.4, 0.6, 0.2, 1);
+        transform: rotate(90deg);
+        &.collapse-rotated{
+          transform: rotate(-90deg);
+        }
       }
     }
     &-cont{

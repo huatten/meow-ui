@@ -7,7 +7,7 @@
 export default {
   name: "mw-collapse",
   props: {
-    reject: {
+    accordion: {
       type: Boolean,
       default: false
     }
@@ -18,10 +18,13 @@ export default {
   methods: {
     open(uid) {
       this.$children.forEach(item => {
-        if (item._uid == uid) {
+        if (item.disabled) {
+          return false;
+        }
+        if (item._uid === uid) {
           item.show = !item.show;
         } else {
-          if (this.reject) {
+          if (this.accordion) {
             item.show = false;
             item.height = 0;
           }
