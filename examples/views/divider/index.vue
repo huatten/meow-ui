@@ -1,0 +1,47 @@
+<template>
+  <div class="divider">
+    <section>
+      <h5>默认居中</h5>
+      <mw-divider></mw-divider>
+    </section>
+    <section>
+      <h5>默认居中</h5>
+      <mw-divider>居中对齐</mw-divider>
+    </section>
+    <section>
+      <h5>展示位置-居左</h5>
+      <mw-divider position="left">居左对齐</mw-divider>
+    </section>
+    <section>
+      <h5>展示位置-居右</h5>
+      <mw-divider position="right">居右对齐</mw-divider>
+    </section>
+  </div>
+</template>
+
+<script type="text/ecmascript-6">
+export default {
+  data() {
+    return {
+
+    };
+  }
+};
+</script>
+
+<style scoped lang="scss" rel="stylesheet/scss">
+.divider{
+  background: #fff;
+  padding: 20px 0;
+  
+}
+section {
+  margin-bottom: 30px;
+  h5 {
+    margin-bottom: 15px;
+    margin-left: 15px;
+    color: rgba(69, 90, 100, 0.6);
+    font-size: 14px;
+  }
+}
+</style>

@@ -97,5 +97,21 @@ export default [
     meta: {
       docTitle: "collapse 折叠面板"
     }
+  },
+  {
+    path: "/divider",
+    name: "divider",
+    component: resolve => {
+      require.ensure(
+        ["@/views/divider/index.vue"],
+        () => {
+          resolve(require("@/views/divider/index.vue"));
+        },
+        "divider"
+      );
+    },
+    meta: {
+      docTitle: "divider 风格线"
+    }
   }
 ];
