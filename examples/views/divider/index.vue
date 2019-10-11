@@ -1,7 +1,7 @@
 <template>
   <div class="divider">
     <section>
-      <h5>默认居中</h5>
+      <h5>默认用法</h5>
       <mw-divider></mw-divider>
     </section>
     <section>
@@ -16,24 +16,33 @@
       <h5>展示位置-居右</h5>
       <mw-divider position="right">居右对齐</mw-divider>
     </section>
+    <section>
+      <h5>渲染虚线</h5>
+      <mw-divider dashed>渲染虚线</mw-divider>
+    </section>
+    <section>
+      <h5>渲染点线</h5>
+      <mw-divider dotted>渲染点线</mw-divider>
+    </section>
+    <section>
+      <h5>自定义样式</h5>
+      <mw-divider :style="{color: '#f00', borderColor: '#f90'}">自定义样式</mw-divider>
+    </section>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
 export default {
   data() {
-    return {
-
-    };
+    return {};
   }
 };
 </script>
 
 <style scoped lang="scss" rel="stylesheet/scss">
-.divider{
+.divider {
   background: #fff;
   padding: 20px 0;
-  
 }
 section {
   margin-bottom: 30px;

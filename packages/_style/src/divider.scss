@@ -13,7 +13,6 @@
     flex: 1;
     box-sizing: border-box;
     display: block;
-    content: '';
     height: 1px;
     border-color: inherit;
     border-style: inherit;
@@ -21,10 +20,24 @@
     transform: scaleY(0.5);
   }
   &::before{
-    margin-right: $divider-content-padding;
+    content: '';
   }
-  &::after{
-    margin-left: $divider-content-padding;
+  &--dashed{
+    border-style: dashed;
+  }
+  &--dotted{
+    border-style: dotted;
+  }
+  &--center,
+  &--left,
+  &--right{
+    &::before{
+      margin-right: $divider-content-padding;
+    }
+    &::after{
+      content: '';
+      margin-left: $divider-content-padding;
+    }
   }
   &--left{
     &::before{
