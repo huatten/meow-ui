@@ -48,6 +48,9 @@ export default {
   mounted() {
     this.$_init();
   },
+  beforeDestroy() {
+    this._destroy();
+  },
   methods: {
     $_init() {
       this._destroy();
@@ -93,9 +96,6 @@ export default {
     },
     _destroy() {
       clearInterval(this.timer);
-    },
-    beforeDestroy() {
-      this._destroy();
     }
   }
 };
