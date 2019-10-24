@@ -8,6 +8,7 @@
   </div>
 </template>
 <script type="text/ecmascript-6">
+import RAF from "../_util/raf";
 export default {
   name: "mw-marquee",
   props: {
@@ -65,13 +66,13 @@ export default {
       this._onScroll();
     },
     _onScroll() {
-      this.timer = setInterval(() => {
+      this.timer = RAF.setInterval(() => {
         if (this.direction === "up") {
           this.index++;
           this._setTranslate(this.speed, -(this.index * this.height));
           if (this.index >= this.total) {
             this.index = 0;
-            setTimeout(() => {
+            RAF.setTimeout(() => {
               this._setTranslate(0, 0);
             }, this.speed);
           }
@@ -80,7 +81,7 @@ export default {
           this._setTranslate(this.speed, -(this.index * this.height));
           if (this.index <= 0) {
             this.index = this.total;
-            setTimeout(() => {
+            RAF.setTimeout(() => {
               this._setTranslate(0, -this.total * this.height);
             }, this.speed);
           }
@@ -95,7 +96,7 @@ export default {
       this.$emit("click", e);
     },
     _destroy() {
-      clearInterval(this.timer);
+      RAF.clearInterval(this.timer);
     }
   }
 };
