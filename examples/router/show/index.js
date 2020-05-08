@@ -113,5 +113,21 @@ export default [
     meta: {
       docTitle: "divider 风格线"
     }
+  },
+  {
+    path: "/showhide",
+    name: "showhide",
+    component: resolve => {
+      require.ensure(
+        ["@/views/showhide/index.vue"],
+        () => {
+          resolve(require("@/views/showhide/index.vue"));
+        },
+        "showhide"
+      );
+    },
+    meta: {
+      docTitle: "showhide 显示隐藏"
+    }
   }
 ];
