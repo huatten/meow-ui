@@ -1,4 +1,4 @@
-## marquee 跑马灯轮播
+## Marquee 跑马灯轮播
 ### 使用指南
 ``` javascript
 import MMarquee from "vue-meow-ui";

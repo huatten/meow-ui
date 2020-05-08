@@ -1,5 +1,5 @@
 
-## Showhide 显示折叠文字
+## Showhide 折叠文字
 ### 功能说明
 显示折叠文字组件，文本超出规定显示的行数，折叠起来。
 ### 使用指南
@@ -49,3 +49,7 @@ export default{
 | hideText | 收起大小 | `String` | 收起 | - |
 | btnColor | 按钮颜色 | `String` | `#ff8200` | - |
 
+### Slots
+| 名称 | 说明  | 备注 |
+|------|------|------|
+| default | 内容 | - |

@@ -1,7 +1,7 @@
 <template>
   <div
     class="mw-divider"
-    :class="[hasSlot && `mw-divider--${position}`, dashed && 'mw-divider--dashed', dotted && 'mw-divider--dotted']"
+    :class="[hasSlot && `mw-divider--${position}`, direction && `mw-divider--${direction}`, dashed && 'mw-divider--dashed', dotted && 'mw-divider--dotted']"
   >
     <slot></slot>
   </div>
@@ -11,6 +11,10 @@
 export default {
   name: "mw-divider",
   props: {
+    direction:{
+      type: String,
+      default: "horizontal"
+    },
     position: {
       type: String,
       default: "center"

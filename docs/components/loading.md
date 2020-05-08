@@ -1,4 +1,4 @@
-## loading 指示器
+## Loading 指示器
 ### 使用指南
 ``` javascript
 import MLoading from "vue-meow-ui";

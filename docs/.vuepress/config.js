@@ -47,6 +47,9 @@ module.exports = {
           '/components/transition',
           '/components/marquee',
           '/components/popup',
+          '/components/slider',
+          '/components/divider',
+          '/components/showhide',
         ]
       }
     ]

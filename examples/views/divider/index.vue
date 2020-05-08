@@ -28,6 +28,16 @@
       <h5>自定义样式</h5>
       <mw-divider :style="{color: '#f00', borderColor: '#f90'}">自定义样式</mw-divider>
     </section>
+    <section>
+      <h5>垂直分割线</h5>
+      <div class="vertical">
+        <span>亚瑟</span>
+        <mw-divider direction="vertical"></mw-divider>
+        <span>老夫子</span>
+        <mw-divider direction="vertical"></mw-divider>
+        <span>安其拉</span>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -51,6 +61,13 @@ section {
     margin-left: 15px;
     color: rgba(69, 90, 100, 0.6);
     font-size: 14px;
+  }
+  .vertical {
+    margin-left: 15px;
+    span {
+      font-size: 14px;
+      color: #343a40;
+    }
   }
 }
 </style>
