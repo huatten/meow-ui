@@ -20,6 +20,8 @@ import MCollapse from "./collapse";
 import MCollapseItem from "./collapse-item";
 import MDivider from "./divider";
 import MShowHide from "./showhide";
+import MSkeletonItem from "./skeleton-item";
+import MSkeleton from "./skeleton";
 const components = [
   MButton,
   MCell,
@@ -42,7 +44,9 @@ const components = [
   MCollapse,
   MCollapseItem,
   MDivider,
-  MShowHide
+  MShowHide,
+  MSkeletonItem,
+  MSkeleton
 ];
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，则所有的组件都将被注册
@@ -80,6 +84,8 @@ const MEOW = {
   MCollapse,
   MCollapseItem,
   MDivider,
-  MShowHide
+  MShowHide,
+  MSkeletonItem,
+  MSkeleton
 };
 export default MEOW;

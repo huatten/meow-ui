@@ -8,9 +8,9 @@ module.exports = {
   //修改src目录为 examples
   pages: {
     index: {
-      entry: 'examples/main.js',
-      template: 'public/index.html',
-      filename: 'index.html'
+      entry: "examples/main.js",
+      template: "public/index.html",
+      filename: "index.html"
     }
   },
   chainWebpack: config => {
@@ -26,18 +26,18 @@ module.exports = {
 
     // lib目录是组件库最终打包好存放的地方，不需要eslint检查
     config.module
-      .rule('eslint')
-      .exclude.add(path.resolve('lib'))
+      .rule("eslint")
+      .exclude.add(path.resolve("lib"))
       .end();
     // packages和examples目录需要加入编译
     config.module
-      .rule('js')
+      .rule("js")
       .include.add(/packages/)
       .end()
       .include.add(/examples/)
       .end()
-      .use('babel')
-      .loader('babel-loader')
+      .use("babel")
+      .loader("babel-loader")
       .tap(options => {
         // 修改它的选项...
         return options;
@@ -58,7 +58,7 @@ module.exports = {
     const imagesRule = config.module.rule("images");
     imagesRule.exclude.add(resolve("examples/assets/svg-icon"));
     config.module.rule("images").test(/\.(png|jpe?g|gif|svg)(\?.*)?$/);
-  },
+  }
   // css: {
   //   // 是否使用css分离插件
   //   extract: true,

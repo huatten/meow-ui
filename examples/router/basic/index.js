@@ -65,5 +65,21 @@ export default [
     meta: {
       docTitle: "cell 单元格"
     }
+  },
+  {
+    path: "/skeleton",
+    name: "skeleton",
+    component: resolve => {
+      require.ensure(
+        ["@/views/skeleton/index.vue"],
+        () => {
+          resolve(require("@/views/skeleton/index.vue"));
+        },
+        "skeleton"
+      );
+    },
+    meta: {
+      docTitle: "skeleton 骨架屏"
+    }
   }
 ];
