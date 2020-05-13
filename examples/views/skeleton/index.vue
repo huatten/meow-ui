@@ -19,7 +19,13 @@
       </div>
     </section>
     <section>
-      <h5>基础</h5>
+      <h5>基础默认</h5>
+      <div class="block">
+        <mw-skeleton></mw-skeleton>
+      </div>
+    </section>
+    <section>
+      <h5>显示标题</h5>
       <div class="block">
         <mw-skeleton title></mw-skeleton>
       </div>
@@ -27,7 +33,7 @@
     <section>
       <h5>显示头像</h5>
       <div class="block">
-        <mw-skeleton avatar title></mw-skeleton>
+        <mw-skeleton avatar></mw-skeleton>
       </div>
     </section>
     <section>
@@ -38,7 +44,6 @@
             <div class="demo-avatar">
               <img
                 src="https://c-ssl.duitang.com/uploads/blog/201507/21/20150721124850_BANtz.thumb.1000_0.jpeg"
-                alt
               />
             </div>
             <div class="demo-content">
@@ -56,13 +61,13 @@
 export default {
   data() {
     return {
-      loading: true,
+      loading: true
     };
   },
-  mounted(){
-    setTimeout(()=>{
-      this.loading = false
-    },3000)
+  mounted() {
+    setTimeout(() => {
+      this.loading = false;
+    }, 3000);
   }
 };
 </script>

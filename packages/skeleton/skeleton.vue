@@ -4,13 +4,20 @@
       <mw-skeleton-item type="circle" :size="avatarSize"></mw-skeleton-item>
     </div>
     <div class="mw-skeleton-content">
-      <mw-skeleton-item v-if="title" class="mw-skeleton-title" type="bar" :width="titleWidth"></mw-skeleton-item>
+      <mw-skeleton-item
+        v-if="title"
+        class="mw-skeleton-title"
+        type="bar"
+        :width="titleWidth"
+        :height="rowsHeight"
+      ></mw-skeleton-item>
       <mw-skeleton-item
         class="mw-skeleton-row"
         type="bar"
         v-for="item in rows"
         :key="item"
         :width="rowsWidth"
+        :height="rowsHeight"
       ></mw-skeleton-item>
     </div>
   </div>
@@ -23,6 +30,7 @@
 const DEFUALT_TITLE_WIDTH = 40;
 const DEFUALT_AVATAR_SIZE = 50;
 const DEFUALT_WIDTH = 100;
+const DEFUALT_HEIGHT = 20;
 export default {
   name: "mw-skeleton",
   props: {
@@ -53,6 +61,10 @@ export default {
     rowsWidth: {
       type: Number,
       default: DEFUALT_WIDTH
+    },
+    rowsHeight: {
+      type: Number,
+      default: DEFUALT_HEIGHT
     }
   },
   data() {
@@ -68,7 +80,7 @@ export default {
   &-content {
     flex: 1;
   }
-  &-avatar{
+  &-avatar {
     margin-right: 20px;
   }
   &-row {
