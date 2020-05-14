@@ -22,6 +22,7 @@ import MDivider from "./divider";
 import MShowHide from "./showhide";
 import MSkeletonItem from "./skeleton-item";
 import MSkeleton from "./skeleton";
+import MImage from "./image";
 const components = [
   MButton,
   MCell,
@@ -46,7 +47,8 @@ const components = [
   MDivider,
   MShowHide,
   MSkeletonItem,
-  MSkeleton
+  MSkeleton,
+  MImage
 ];
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，则所有的组件都将被注册
@@ -86,6 +88,7 @@ const MEOW = {
   MDivider,
   MShowHide,
   MSkeletonItem,
-  MSkeleton
+  MSkeleton,
+  MImage
 };
 export default MEOW;

@@ -81,5 +81,21 @@ export default [
     meta: {
       docTitle: "skeleton 骨架屏"
     }
+  },
+  {
+    path: "/image",
+    name: "image",
+    component: resolve => {
+      require.ensure(
+        ["@/views/image/index.vue"],
+        () => {
+          resolve(require("@/views/image/index.vue"));
+        },
+        "image"
+      );
+    },
+    meta: {
+      docTitle: "image 图片"
+    }
   }
 ];

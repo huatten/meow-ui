@@ -50,6 +50,9 @@ module.exports = {
           '/components/slider',
           '/components/divider',
           '/components/showhide',
+          '/components/skeleton-item',
+          '/components/skeleton',
+          '/components/image',
         ]
       }
     ]
