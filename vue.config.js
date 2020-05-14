@@ -1,6 +1,4 @@
 const path = require("path");
-const IS_PROD = ["production", "prod"].includes(process.env.NODE_ENV); //是否生产环境
-const IS_DEV = ["development", "dev"].includes(process.env.NODE_ENV); //是否开发环境
 const resolve = dir => path.join(__dirname, dir);
 
 module.exports = {

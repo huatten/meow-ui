@@ -5,22 +5,24 @@
     aria-hidden="true"
     class="mw-icon mw-icon-svg"
     :class="[`mw-svg-${name}`]"
+    :style="{fill: color}"
     :width="currentSize.width"
     :height="currentSize.height"
     :viewBox="box"
     @click="$emit('click', $event)"
   >
-    <use :xlink:href="icon.id"></use>
+    <use :xlink:href="icon.id" />
   </svg>
   <i
     v-else
     class="mw-icon mw-icon-font"
     :class="`mw-icon-${name}`"
-    :style="`font-size:${size}px`"
+    :style="{'font-size': size + 'px', color}"
     @click="$emit('click', $event)"
   ></i>
 </template>
 <script type="text/ecmascript-6">
+const importSvg = name => import(`@/assets/svg-icon/${name}.svg`);
 export default {
   name: "mw-icon",
   props: {
@@ -33,17 +35,13 @@ export default {
       required: true,
       default: ""
     },
-    width: {
-      type: [Number, String],
-      default: null
-    },
-    height: {
-      type: [Number, String],
-      default: null
-    },
     size: {
       type: [Number, String],
       default: 20
+    },
+    color: {
+      type: String,
+      default: ""
     }
   },
   watch: {
@@ -51,7 +49,7 @@ export default {
       if (!val) {
         return;
       }
-      this.svg && (this.xml = await import("@/assets/svg-icon/" + this.name + ".svg"));
+      this.svg && (this.xml = await importSvg(this.name));
     }
   },
   computed: {
@@ -88,8 +86,8 @@ export default {
       return 1;
     },
     currentSize() {
-      let width = this.width;
-      let height = this.height;
+      let width = this.size;
+      let height = this.size;
       // 不传递 width 与 height，就当做正方形处理，size 字段生效
       if (width === null && height === null) {
         return {
@@ -128,7 +126,7 @@ export default {
     if (!this.name) {
       return;
     }
-    this.svg && (this.xml = await import("@/assets/svg-icon/" + this.name + ".svg"));
+    this.svg && (this.xml = await importSvg(this.name));
   }
 };
 </script>
