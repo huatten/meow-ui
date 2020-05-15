@@ -72,8 +72,11 @@ export default {
     };
   },
   watch: {
-    src() {
-      this.loadImage();
+    src: {
+      handler(val) {
+        val && this.loadImage();
+      },
+      immediate: true
     }
   },
   components: { MTransition, MIcon },
@@ -99,9 +102,6 @@ export default {
         return { "object-fit": fit };
       }
     }
-  },
-  mouted() {
-    this.loadImage();
   },
   methods: {
     loadImage() {

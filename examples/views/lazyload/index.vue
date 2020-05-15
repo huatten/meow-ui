@@ -1,6 +1,14 @@
 <template>
   <div class="lazyload">
-   
+    <div class="scroller">
+      <mw-lazy-load
+        v-for="(item,i) in urls"
+        :key="`${item.src}__${i}`"
+        :src-placeholder="item.placeholder"
+        :src="item.src"
+      ></mw-lazy-load>
+      <mw-lazy-load :src="img"></mw-lazy-load>
+    </div>
   </div>
 </template>
 
@@ -8,20 +16,135 @@
 export default {
   data() {
     return {
-      urls: [
-        "https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg",
-        "https://fuss10.elemecdn.com/1/34/19aa98b1fcb2781c4fba33d850549jpeg.jpeg",
-        "https://fuss10.elemecdn.com/0/6f/e35ff375812e6b0020b6b4e8f9583jpeg.jpeg",
-        "https://fuss10.elemecdn.com/9/bb/e27858e973f5d7d3904835f46abbdjpeg.jpeg",
-        "https://fuss10.elemecdn.com/d/e6/c4d93a3805b3ce3f323f7974e6f78jpeg.jpeg",
-        "https://fuss10.elemecdn.com/3/28/bbf893f792f03a54408b3b7a7ebf0jpeg.jpeg",
-        "https://fuss10.elemecdn.com/2/11/6535bcfb26e4c79b48ddde44f4b6fjpeg.jpeg"
-      ]
+      urls: [],
+      img: "http://www.abc.png"
     };
   },
-  components: {}
+  mounted() {
+    let urls = [
+      {
+        placeholder:
+          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
+        src:
+          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
+      },
+      {
+        placeholder:
+          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
+        src:
+          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
+      },
+      {
+        placeholder:
+          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
+        src:
+          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
+      },
+      {
+        placeholder:
+          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
+        src:
+          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
+      },
+      {
+        placeholder:
+          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
+        src:
+          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
+      },
+      {
+        placeholder:
+          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
+        src:
+          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
+      },
+      {
+        placeholder:
+          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
+        src:
+          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
+      },
+      {
+        placeholder:
+          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
+        src:
+          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
+      },
+      {
+        placeholder:
+          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
+        src:
+          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
+      },
+      {
+        placeholder:
+          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
+        src:
+          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
+      },
+      {
+        placeholder:
+          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
+        src:
+          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
+      },
+      {
+        placeholder:
+          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
+        src:
+          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
+      },
+      {
+        placeholder:
+          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
+        src:
+          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
+      },
+      {
+        placeholder:
+          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
+        src:
+          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
+      },
+      {
+        placeholder:
+          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
+        src:
+          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
+      },
+      {
+        placeholder:
+          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
+        src:
+          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
+      },
+      {
+        placeholder:
+          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
+        src:
+          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
+      },
+      {
+        placeholder:
+          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
+        src:
+          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
+      }
+    ];
+    this.urls = urls;
+  }
 };
 </script>
 
 <style scoped lang="scss" rel="stylesheet/scss">
+.lazyload {
+  .scroller {
+  }
+  img {
+    display: block;
+    margin: 10px auto;
+    width: 200px;
+    height: 200px;
+  }
+}
 </style>
