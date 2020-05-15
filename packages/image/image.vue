@@ -77,9 +77,6 @@ export default {
     }
   },
   components: { MTransition, MIcon },
-  mouted() {
-    this.loadImage();
-  },
   computed: {
     wrapStyle() {
       const style = {};
@@ -103,6 +100,9 @@ export default {
       }
     }
   },
+  mouted() {
+    this.loadImage();
+  },
   methods: {
     loadImage() {
       this.loading = true;
@@ -119,6 +119,7 @@ export default {
     },
     handleLoad(event, img) {
       this.loading = false;
+      this.$emit("load", event, img);
     },
     handleError(event) {
       this.loading = false;
@@ -131,6 +132,3 @@ export default {
   }
 };
 </script>
-
-<style scoped lang="scss" rel="stylesheet/scss">
-</style>

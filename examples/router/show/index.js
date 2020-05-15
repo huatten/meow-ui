@@ -129,5 +129,21 @@ export default [
     meta: {
       docTitle: "showhide 显示隐藏"
     }
+  },
+  {
+    path: "/lazyload",
+    name: "lazyload",
+    component: resolve => {
+      require.ensure(
+        ["@/views/lazyload/index.vue"],
+        () => {
+          resolve(require("@/views/lazyload/index.vue"));
+        },
+        "lazyload"
+      );
+    },
+    meta: {
+      docTitle: "lazyload 懒加载"
+    }
   }
 ];

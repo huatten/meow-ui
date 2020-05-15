@@ -39,7 +39,7 @@
     <section>
       <h5>圆角</h5>
       <div class="block">
-        <mw-image circle width="100" height="100" :src="img"></mw-image>
+        <mw-image  circle width="100" height="100" :src="img"></mw-image>
       </div>
     </section>
     <section>
@@ -94,7 +94,7 @@ export default {
         this.img =
           "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4";
           this.imgErr = "x"
-      }, 1000);
+      }, 3000);
     }
   }
 };
