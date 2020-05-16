@@ -33,6 +33,7 @@ const MLazyload = {
         const image = entries[0];
         if (image.isIntersecting) {
           this.intersected = true;
+          this.$emit("intersect", image);
           this.__observer__.disconnect();
         }
       }, this.intersectionOptions);

@@ -4,8 +4,9 @@
       <mw-lazy-load
         v-for="(item,i) in urls"
         :key="`${item.src}__${i}`"
-        :src-placeholder="item.placeholder"
-        :src="item.src"
+        :src-placeholder="placeholder"
+        :src="item"
+        @load="lazyloads($event)"
       ></mw-lazy-load>
       <mw-lazy-load :src="img"></mw-lazy-load>
     </div>
@@ -17,121 +18,50 @@ export default {
   data() {
     return {
       urls: [],
-      img: "http://www.abc.png"
+      placeholder:
+        "https://i0.hdslb.com/bfs/face/dd2042aed9a863af5dfb4430b1994aac31d6d03b.jpg@.webp",
+      img: "www.abc.png"
     };
   },
   mounted() {
     let urls = [
-      {
-        placeholder:
-          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
-        src:
-          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
-      },
-      {
-        placeholder:
-          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
-        src:
-          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
-      },
-      {
-        placeholder:
-          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
-        src:
-          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
-      },
-      {
-        placeholder:
-          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
-        src:
-          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
-      },
-      {
-        placeholder:
-          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
-        src:
-          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
-      },
-      {
-        placeholder:
-          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
-        src:
-          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
-      },
-      {
-        placeholder:
-          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
-        src:
-          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
-      },
-      {
-        placeholder:
-          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
-        src:
-          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
-      },
-      {
-        placeholder:
-          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
-        src:
-          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
-      },
-      {
-        placeholder:
-          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
-        src:
-          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
-      },
-      {
-        placeholder:
-          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
-        src:
-          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
-      },
-      {
-        placeholder:
-          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
-        src:
-          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
-      },
-      {
-        placeholder:
-          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
-        src:
-          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
-      },
-      {
-        placeholder:
-          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
-        src:
-          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
-      },
-      {
-        placeholder:
-          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
-        src:
-          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
-      },
-      {
-        placeholder:
-          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
-        src:
-          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
-      },
-      {
-        placeholder:
-          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
-        src:
-          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
-      },
-      {
-        placeholder:
-          "https://avatars0.githubusercontent.com/u/15885749?s=460&u=8608625a6cbfd7681797a44c938b416be8f0388a&v=4",
-        src:
-          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4"
-      }
+      "https://user-gold-cdn.xitu.io/2018/12/20/167cacb92549ac63?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1",
+      "https://user-gold-cdn.xitu.io/2018/12/20/167cacb92549ac63?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1",
+      "https://user-gold-cdn.xitu.io/2018/12/20/167cacb92549ac63?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1",
+      "https://user-gold-cdn.xitu.io/2018/12/20/167cacb92549ac63?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1",
+      "https://user-gold-cdn.xitu.io/2018/12/20/167cacb92549ac63?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1",
+      "https://user-gold-cdn.xitu.io/2018/12/20/167cacb92549ac63?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1",
+      "https://user-gold-cdn.xitu.io/2018/12/20/167cacb92549ac63?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1",
+      "https://user-gold-cdn.xitu.io/2018/12/20/167cacb92549ac63?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1",
+      "https://user-gold-cdn.xitu.io/2018/12/20/167cacb92549ac63?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1",
+      "https://user-gold-cdn.xitu.io/2018/12/20/167cacb92549ac63?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1",
+      "https://user-gold-cdn.xitu.io/2018/12/20/167cacb92549ac63?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1",
+      "https://user-gold-cdn.xitu.io/2018/12/20/167cacb92549ac63?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1",
+      "https://user-gold-cdn.xitu.io/2018/12/20/167cacb92549ac63?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1",
+      "https://user-gold-cdn.xitu.io/2018/12/20/167cacb92549ac63?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1",
+      "https://user-gold-cdn.xitu.io/2018/12/20/167cacb92549ac63?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1",
+      "https://user-gold-cdn.xitu.io/2018/12/20/167cacb92549ac63?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1",
+      "https://user-gold-cdn.xitu.io/2018/12/20/167cacb92549ac63?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1",
+      "https://user-gold-cdn.xitu.io/2018/12/20/167cacb92549ac63?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1",
+      "https://user-gold-cdn.xitu.io/2018/12/20/167cacb92549ac63?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1",
+      "https://user-gold-cdn.xitu.io/2018/12/20/167cacb92549ac63?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1",
+      "https://user-gold-cdn.xitu.io/2018/12/20/167cacb92549ac63?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1",
+      "https://user-gold-cdn.xitu.io/2018/12/20/167cacb92549ac63?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1",
+      "https://user-gold-cdn.xitu.io/2018/12/20/167cacb92549ac63?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1",
+      "https://user-gold-cdn.xitu.io/2018/12/20/167cacb92549ac63?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1",
+      "https://user-gold-cdn.xitu.io/2018/12/20/167cacb92549ac63?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1",
+      "https://user-gold-cdn.xitu.io/2018/12/20/167cacb92549ac63?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1",
+      "https://user-gold-cdn.xitu.io/2018/12/20/167cacb92549ac63?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1",
+      "https://user-gold-cdn.xitu.io/2018/12/20/167cacb92549ac63?imageView2/1/w/100/h/100/q/85/format/webp/interlace/1"
     ];
-    this.urls = urls;
+    setTimeout(() => {
+      this.urls = urls;
+    }, 0);
+  },
+  methods: {
+    lazyloads(e) {
+      console.log(e);
+    }
   }
 };
 </script>
