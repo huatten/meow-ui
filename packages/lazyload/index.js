@@ -1,4 +1,4 @@
-import MLazyLoad from "./lazyload";
+import MLazyLoad from "./lazyload.vue";
 MLazyLoad.install = function (Vue) {
   Vue.component(MLazyLoad.name, MLazyLoad);
 };

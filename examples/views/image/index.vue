@@ -91,9 +91,9 @@ export default {
   methods: {
     $_init() {
       setTimeout(() => {
-        this.img =
-          "https://avatars3.githubusercontent.com/u/10781715?s=400&u=3243dcedfd0b4e419a4894554e3e905edb0ad4ae&v=4";
-        this.imgErr = "x";
+        this.img = "http://img.qqzhi.com/uploads/2019-03-16/080146283.jpg";
+        this.imgErr =
+          "https://i0.hdslb.com/bfs/face/dd2042aed9a863af5dfb4430b1994aac31d6d03b.jpg@.webp";
       }, 3000);
     }
   }
@@ -138,8 +138,7 @@ section {
     opacity: 1;
   }
 }
-.mw-image-img[status=loaded] {
-  
+.mw-image-img[status="loaded"] {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
   -webkit-animation-fill-mode: both;
@@ -147,5 +146,4 @@ section {
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
 }
-
 </style>
