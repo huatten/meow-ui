@@ -3,13 +3,13 @@
     <div class="scroller">
       <mw-lazy-load
         v-for="(item,i) in urls"
-        :key="`${item.src}__${i}`"
+        :key="`${item}__${i}`"
         :placeholder="placeholder"
         :src="item"
         :error-img="errorImg"
-        @load="lazyloads"
-        @error="lazyError"
-        @fail="lazyFailed"
+        @loaded="lazyloads"
+        @attempt="lazyError"
+        @failed="lazyFailed"
       ></mw-lazy-load>
     </div>
   </div>
@@ -62,11 +62,11 @@ export default {
       console.log(e);
     },
     lazyError(e) {
-      console.log(e);
+      console.log('attempt',e);
     },
     lazyFailed(e) {
-      console.log(e);
-    }
+      console.log('failed',e);
+    },
   }
 };
 </script>

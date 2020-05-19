@@ -1,7 +1,7 @@
 <script type="text/ecmascript-6">
 /**
  * 借鉴了vue-lazyload, v-lazy-image，这就是个base简化版本
- * https://github.com/hilongjw/vue-lazyload 这个用的比较多 功能也全乎
+ * https://github.com/hilongjw/vue-lazyload 这个用的比较多 功能也全乎 支持组件懒加载
  * https://github.com/alexjoverm/v-lazy-image 这个主要是基于IntersectionObserver做的 兼容性貌似不太好
  */
 import { getScrollParent, checkInView } from "../_util/dom";
@@ -24,18 +24,15 @@ export default {
     },
     placeholder: {
       type: String,
-      default: ""
+      required: true
     },
-    srcset: {
-      type: String
+    errorImg: {
+      type: String,
+      required: true
     },
     attempt: {
       type: Number,
       default: 3
-    },
-    errorImg: {
-      type: String,
-      default: ""
     },
     observer: {
       type: Boolean,
@@ -141,18 +138,21 @@ export default {
       }, this.throttleTime)();
     },
     loadImage() {
+      if (this.attemptCount > this.attempt - 1 && this.status === "attempt") {
+        const msg = `lazyload log: ${this.src} tried too more than ${this.attempt} times`;
+        console.error(msg);
+      }
       const startTime = Date.now();
       let img = new Image();
       let src = this.src;
       img.src = src;
       if (this.attempt > this.attemptCount) {
-        this.attemptCount++;
         this.status = "loading";
         img.onload = e => {
           this.status = "loaded";
           this.url = this.src;
           this.loadTime = Date.now() - startTime;
-          this.$emit("load", {
+          this.$emit("loaded", {
             width: img.naturalWidth,
             height: img.naturalHeight,
             url: this.src,
@@ -161,8 +161,9 @@ export default {
           img = null;
         };
         img.onerror = e => {
+          this.attemptCount++;
           this.status = "attempt";
-          this.$emit("error", {
+          this.$emit("attempt", {
             url: this.src,
             loadTime: this.loadTime,
             error: e
@@ -174,9 +175,7 @@ export default {
         if (this.errorImg) {
           this.url = this.errorImg;
         }
-        const msg = `lazyload log: ${this.src} tried too more than ${this.attempt} times`;
-        console.error(msg);
-        this.$emit("fail", {
+        this.$emit("failed", {
           url: this.url,
           loadTime: this.loadTime
         });
@@ -194,14 +193,11 @@ export default {
       domProps: this.$attrs,
       class: ["mw-lazy-image", `mw-lazy-${this.status}`]
     });
-    if (this.usePicture) {
-      return h(
-        "picture",
-        this.intersected ? [this.$slots.default, img] : [img]
-      );
-    } else {
-      return img;
-    }
+    let picture = h(
+      "picture",
+      this.intersected ? [this.$slots.default, img] : [img]
+    );
+    return this.usePicture ? picture : img;
   }
 };
 </script>

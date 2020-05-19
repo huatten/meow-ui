@@ -110,7 +110,13 @@ export function getScrollParent(el) {
  * @param {*} viewRate 
  */
 export function checkInView(el, viewRate = 1) {
-  const { top, right, bottom, left } = el.getBoundingClientRect();
+  let top, right, bottom, left;
+  const defaultBoundingClientRect = { top: 0, right: 0, bottom: 0, left: 0 };
+  try {
+    ({ top, right, bottom, left } = el.getBoundingClientRect());
+  } catch (error) {
+    ({ top, right, bottom, left } = defaultBoundingClientRect);
+  }
   const winWidth = getWidth(window);
   const winHeight = getHeight(window);
   return (
