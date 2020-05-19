@@ -84,8 +84,29 @@ Vue.component(MLazyLoad.name, MLazyLoad);
 </div>
 ```
 
+####  图片加载 status
 
+图片加载的时候会对外暴露四个状态 `loading` 、 `loaded` 、 `attempt` 、 `failed`  。
 
+```vue
+<img src="imgUrl" status="loading">
+<img src="imgUrl" status="loaded">
+<img src="imgUrl" status="attempt">
+<img src="imgUrl" status="failed">
+```
+```css
+<style>
+  img[status=loading] {
+    /*your style here*/
+  }
+  img[status=loaded] {
+    /*your style here*/
+  }
+  img[status=error] {
+    /*your style here*/
+  }
+</style>
+```
 ### Props
 
 | 属性 | 说明 | 类型 | 默认值 | 备注 |
