@@ -145,5 +145,21 @@ export default [
     meta: {
       docTitle: "lazyload 懒加载"
     }
+  },
+  {
+    path: "/dialog",
+    name: "dialog",
+    component: resolve => {
+      require.ensure(
+        ["@/views/dialog/index.vue"],
+        () => {
+          resolve(require("@/views/dialog/index.vue"));
+        },
+        "dialog"
+      );
+    },
+    meta: {
+      docTitle: "dialog 弹出框"
+    }
   }
 ];

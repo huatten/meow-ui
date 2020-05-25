@@ -15,7 +15,7 @@
       flex: 1;
       box-sizing: border-box;
       display: block;
-      height: 1px;
+      height: $divider-after-before-height;
       border-color: inherit;
       border-style: inherit;
       border-width: 0 0 $divider-border-width 0;

@@ -51,9 +51,10 @@ export default {
       type: String,
       default: "center"
     },
-    appendTo: {
-      //弹出层挂载位置
-      default: () => window.document.body
+    appendToBody: {
+      //弹出层是否挂载到body
+      type: Boolean,
+      default: false
     }
   },
   data() {
@@ -88,13 +89,16 @@ export default {
   },
   components: { MOverlay, MTransition },
   mounted() {
-     this.value && this._showPopupBox();
+    this.value && this._showPopupBox();
   },
   beforeDestroy() {
     this._hidePopupBox();
   },
   methods: {
     _showPopupBox() {
+      if (this.appendToBody) {
+        document.body.appendChild(this.$el);
+      }
       this.isPopupShow = true;
       this.isAnimation = true;
       // box after popup show
@@ -103,6 +107,11 @@ export default {
     _hidePopupBox() {
       this.isAnimation = true;
       this.isPopupBoxShow = false;
+      setTimeout(() => {
+        if (this.appendToBody && this.$el && this.$el.parentNode) {
+          this.$el.parentNode.removeChild(this.$el);
+        }
+      }, 300);
       this.$emit("input", false);
     },
     _onPopupTransitionStart() {
