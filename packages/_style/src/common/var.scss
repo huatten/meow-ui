@@ -63,11 +63,11 @@ $slider-tooltip-arrow-width: 4px;
 
 /************   button component  **************/
 //button defalut
-$button-default-height:44px;
-$button-default-line-height:42px;
-$button-default-font-size:14px;
+$button-default-height:98px;
+$button-default-line-height:96px;
+$button-default-font-size:34px;
 $button-default-border-radius:2px;
-
+$button-default-padding: 24px;
 //button && type
 $button-default-color:#323233;
 $button-default-background-color:#fff;
@@ -99,26 +99,35 @@ $button-round-border-radius: 10em;
 $button-disabled-opacity: 0.3;
 
 //button && size
-$button-normal-font-size: 14px;
+$button-normal-font-size: 34px;
 
 $button-small-min-width: 90px;
 $button-small-height: 60px;
 $button-small-line-height: 58px;
 $button-small-font-size: 26px;
+$button-small-padding: 8px;
 
 $button-large-height: 100px;
 $button-large-line-height: 98px;
-$button-large-font-size: 34px;
+$button-large-font-size: 36px;
+$button-large-padding: 28px;
 
 /************   cell component  **************/
-$cell-title-font-size: 16px;
+$cell-body-min-height: 100px;
+$cell-simple-body-padding: 32px;
+$cell-multirow-body-padding: 36px;
+$cell-title-font-size: 32px;
 $cell-title-font-color: #333;
 
-$cell-abstract-font-size: 14px;
+$cell-abstract-font-size: 26px;
 $cell-abstract-font-color: #bdbdbd;
+$cell-abstract-margin-top: 10px;
 
-$cell-right-font-size: 16px;
+$cell-left-margin-right: 12px;
+
+$cell-right-font-size: 28px;
 $cell-right-font-color: #bdbdbd;
+$cell-right-margin-left: 10px;
 
 $cell-disabled-color: #c5cad5;
 

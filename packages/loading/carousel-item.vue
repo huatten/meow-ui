@@ -27,7 +27,7 @@ export default {
   props: {
     size: {
       type: [Number, String],
-      default: 30
+      default: 10
     },
     index: {
       type: Number,

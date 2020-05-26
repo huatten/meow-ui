@@ -41,6 +41,7 @@ import { getStyle, getStyleNumber } from "../_util/dom";
 import MIcon from "../icon";
 import MLoading from "../loading";
 const DEFAULT_COLOR = "#000";
+const RIPPLE_OPACITY = 0.3;
 export default {
   name: "mw-button",
   props: {
@@ -54,65 +55,75 @@ export default {
       type: Boolean,
       default: true
     },
+    //是否为线性按钮
     plain: {
       type: Boolean,
       default: false
     },
+    //按钮尺寸 small normal large
     size: {
       type: String,
       default: "normal"
     },
+    //是否为圆角按钮
     round: {
       type: Boolean,
       default: false
     },
+    //原生button标签的type属性
     nativeType: {
       type: String,
       default: "button"
     },
+    //未激活 设为true按钮无法点击， invalid一般用于表单校验无效等主观因素 搭配nativType使用
     invalid: {
       type: Boolean,
       default: false
     },
+    //按钮是否禁用 设为true按钮无法点击 用于无权限或无库存等客观因素
     disabled: {
       type: Boolean,
       default: false
     },
+    //按钮icon图标名称
     iconName: {
       type: String,
       default: ""
     },
+    //按钮图标是否为svg图标
     iconSvg: {
       type: Boolean,
       default: false //svg、font
     },
-    iconSize:{
+    //按钮icon图标大小
+    iconSize: {
       type: [Number, String],
       default: 24
     },
+    //是否启用加载状态
     loading: {
       type: Boolean,
       default: false
     },
+    //加载动画类型 roller carousel spinner
     loadingType: {
       type: String,
       default: "roller"
     },
+    //加载动画大小
     loadingSize: {
       type: [Number, String],
       default: 20
     },
+    //是否开启点击波纹动效
     ripple: {
       type: Boolean,
       default: false
     },
+    //波纹扩散速度
     speed: {
       type: [Number, String],
-      default: 11
-    },
-    opacity: {
-      type: [Number, String],
-      default: 0.3
+      default: 4
     }
   },
   data() {
@@ -136,14 +147,14 @@ export default {
       const oBtn = el.parentElement;
       // 透明度的速度
       const w = getStyleNumber(oBtn, "width");
-      this.speedOpacity = ((this.speed * 1) / w) * this.opacity;
+      this.speedOpacity = ((this.speed * 1) / w) * RIPPLE_OPACITY;
       // 若为朴素按钮则取值当前color为默认色值
       this.color = this.plain
         ? DEFAULT_COLOR
         : getStyle(el.parentElement, "color");
 
       // 透明度的速度
-      this.speedOpacity = ((this.speed * 1) / w) * this.opacity;
+      this.speedOpacity = ((this.speed * 1) / w) * RIPPLE_OPACITY;
       // canvas 宽和高
       el.width = w;
       el.height = getStyleNumber(oBtn, "height");
@@ -165,7 +176,7 @@ export default {
       this.origin.x = event.offsetX;
       this.origin.y = event.offsetY;
       this.context.clearRect(0, 0, this.el.width, this.el.height);
-      this.el.style.opacity = this.opacity;
+      this.el.style.opacity = RIPPLE_OPACITY;
       this._draw();
     },
     _draw() {
