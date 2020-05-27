@@ -55,8 +55,9 @@
   }
   &--vertical {
     display: inline-block;
-    width: $divider-vertical-width;
+    width: 1Px;
     height: 1em;
+    line-height: 1;
     margin: 0 $divider-vertical-margin;
     vertical-align: middle;
     background-color: $divider-vertical-color;

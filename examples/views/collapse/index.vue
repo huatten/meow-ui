@@ -91,11 +91,13 @@ export default {
 section {
   margin-bottom: 20px;
   .title {
+    color: rgba(69, 90, 100, 0.6);
     padding: 14px 20px;
-    font-weight: 500;
+    font-size: 30px;
   }
 }
 .cont {
   padding: 20px;
+  font-size: 30px;
 }
 </style>

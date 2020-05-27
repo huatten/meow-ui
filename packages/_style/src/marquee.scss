@@ -9,7 +9,7 @@
   &-align--left{
     justify-content: flex-start;
     .mw-marquee-item{
-      padding: 0 10px;
+      padding: 0 $marquee-padding-left-right;
     }
   }
   &-align--center{
@@ -18,7 +18,7 @@
   &-align--right{
     justify-content: flex-end;
     .mw-marquee-item{
-      padding: 0 10px;
+      padding: 0 $marquee-padding-left-right;
     }
   }
   &-item{

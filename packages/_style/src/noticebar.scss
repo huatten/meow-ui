@@ -56,7 +56,7 @@
       display: inline-block;
       min-width: $noticebar-right-icon-width;
       min-height: $noticebar-right-icon-height;
-      padding-left: 5px;
+      padding-left: $noticebar-left-padding;
     }
   }
 }

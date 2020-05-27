@@ -82,8 +82,8 @@ export default {
   img {
     display: inline-block;
     vertical-align: top;
-    width: 187px;
-    height: 200px;
+    width: 375px;
+    height: 420px;
   }
 }
 @-webkit-keyframes fadeIn {

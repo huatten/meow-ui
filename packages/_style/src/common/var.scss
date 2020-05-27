@@ -132,54 +132,71 @@ $cell-right-margin-left: 10px;
 $cell-disabled-color: #c5cad5;
 
 /************   marquee component  **************/
-$marquee-font-size: 14px;
+$marquee-font-size: 30px;
+$marquee-padding-left-right: 14px;
 $marquee-text-color: #333;
 $marquee-background-color: #fff;
 /************   noticebar component  *************/
-$noticebar-min-height: 46px;
-$noticebar-line-height: 46px;
-$noticebar-font-size: 14px;
-$noticebar-padding: 12px;
-$noticebar-border-radius: 16px;
+$noticebar-min-height: 76px;
+$noticebar-line-height: 76px;
+$noticebar-font-size: 28px;
+$noticebar-padding: 22px;
+$noticebar-border-radius: 36px;
 $noticebar-left-padding: 5px;
-$noticebar-wrapable-padding: 14px;
-$noticebar-left-icon-width: 24px;
-$noticebar-left-icon-height: 24px;
-$noticebar-right-icon-width: 24px;
-$noticebar-right-icon-height: 24px;
+$noticebar-wrapable-padding: 20px;
+$noticebar-left-icon-width: 28px;
+$noticebar-left-icon-height: 28px;
+$noticebar-right-icon-width: 28px;
+$noticebar-right-icon-height: 28px;
+
 /************   notify component  **************/
-$notify-font-size: 14px;
+$notify-font-size: 30px;
+$notify-padding-horizontal: 24px;
+$notify-padding-vertical: 30px;
 $notify-default-color: rgba(0, 0, 0, 0.7);
 $notify-success-color: #07c160;
 $notify-failed-color: #fd4c4f;
 $notify-warning-color: #ff976a;
+
 /************   toast component  **************/
-$toast-font-size: 14px;
+$toast-font-size: 30px;
+$toast-padding-vertical: 22px;
+$toast-padding-horizontal: 20px;
+$toast-border-radius: 5px;
+$toast-background-color: rgba(0, 0, 0, 0.7);
+
+/************   loading component  **************/
+$loading-text-font-size: 28px;
+$toast-padding-vertical: 22px;
+$toast-padding-horizontal: 20px;
 $toast-border-radius: 5px;
 $toast-background-color: rgba(0, 0, 0, 0.7);
 
 /************   collapse component  **************/
 $collapse-background: #fff;
+$collapse-title-padding-top: 24px;
+$collapse-title-padding-right: 30px;
+$collapse-title-padding-bottom: 24px;
+$collapse-title-padding-left: 30px;
+$collapse-title-font-size: 32px;
 
 /************   divider component  **************/
-$divider-margin: 18px;
-$divider-text-color: #343a40;
+$divider-margin: 32px;
+$divider-text-color: #969799;
 $divider-border-color: #ebedf0;
-$divider-font-size: 14px;
-$divider-line-height: 24px;
+$divider-font-size: 30px;
+$divider-line-height: 40px;
 $divider-after-before-height: 1px;
 $divider-border-width: 1px;
-$divider-content-padding: 20px;
+$divider-content-padding: 24px;
 $divider-content-left-width: 10%;
 $divider-content-right-width: 10%;
-$divider-vertical-width: 1px;
-$divider-vertical-margin: 10px;
+$divider-vertical-margin: 20px;
 $divider-vertical-color: #ebedf0;
-
 
 /************   showhide component  **************/
 $showhide-margin: 10px;
-$showhide-font-size: 14px;
+$showhide-font-size: 28px;
 $showhide-text-color: #434343;
 
 /************   skeleton-item component  **************/

@@ -28,7 +28,7 @@
     justify-content: center;
     background: $toast-background-color;
     color: $color-white;
-    padding: 10px;
+    padding: $toast-padding-vertical $toast-padding-horizontal;
     border-radius: $toast-border-radius;
     white-space: pre-wrap;
   }

@@ -52,20 +52,24 @@ export default {
 <style scoped lang="scss" rel="stylesheet/scss">
 .divider {
   background: #fff;
-  padding: 20px 0;
+  padding: 30px 0;
 }
 section {
-  margin-bottom: 30px;
+  margin-bottom: 80px;
   h5 {
-    margin-bottom: 15px;
-    margin-left: 15px;
+    margin-bottom: 50px;
+    margin-left: 30px;
     color: rgba(69, 90, 100, 0.6);
-    font-size: 14px;
+    font-size: 30px;
   }
   .vertical {
-    margin-left: 15px;
+    margin-left: 30px;
+    font-size: 30px;
+    .mw-divider--vertical {
+      font-size: inherit;
+    }
     span {
-      font-size: 14px;
+      font-size: inherit;
       color: #343a40;
     }
   }

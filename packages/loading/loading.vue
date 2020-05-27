@@ -52,7 +52,7 @@ export default {
     },
     size: {
       type: [Number, String],
-      default: 30
+      default: 20
     },
     color: {
       type: String,

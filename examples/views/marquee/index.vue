@@ -1,23 +1,73 @@
 <template>
-  <div>
-    <div class="mw-filed">
-      <mw-marquee align="center">
-        <mw-marquee-item @click="newsClick">我只有一个消息鸭居中呢</mw-marquee-item>
-      </mw-marquee>
-    </div>
-    <div class="mw-filed">
-      <mw-marquee>
-        <mw-marquee-item v-for="(item,index) in scrollList" :key="index" @click="newsClick">{{item}}</mw-marquee-item>
-      </mw-marquee>
-    </div>
-    <div class="mw-filed">
-      <mw-marquee align="right" height="40" direction="down" duration="2500">
-        <mw-marquee-item @click="newsClick">我是向下滚动的小鸭1</mw-marquee-item>
-        <mw-marquee-item @click="newsClick">我是向下滚动的小鸭2</mw-marquee-item>
-        <mw-marquee-item @click="newsClick">我是向下滚动的小鸭3</mw-marquee-item>
-        <mw-marquee-item @click="newsClick">我是向下滚动的小鸭4</mw-marquee-item>
-      </mw-marquee>
-    </div>
+  <div class="marquee">
+    <section>
+      <h5>默认用法</h5>
+      <div class="block">
+        <mw-marquee>
+          <mw-marquee-item @click="newsClick">我只有一个消息鸭</mw-marquee-item>
+        </mw-marquee>
+      </div>
+    </section>
+    <section>
+      <h5>居中显示</h5>
+      <div class="block">
+        <mw-marquee align="center">
+          <mw-marquee-item @click="newsClick">我只有一个消息鸭居中呢</mw-marquee-item>
+        </mw-marquee>
+      </div>
+    </section>
+    <section>
+      <h5>居右显示</h5>
+      <div class="block">
+        <mw-marquee align="right">
+          <mw-marquee-item @click="newsClick">我只有一个消息鸭居右呢</mw-marquee-item>
+        </mw-marquee>
+      </div>
+    </section>
+    <section>
+      <h5>设置高度</h5>
+      <div class="block">
+        <mw-marquee align="center" height="50">
+          <mw-marquee-item @click="newsClick">我只有一个消息设置了高度</mw-marquee-item>
+        </mw-marquee>
+      </div>
+    </section>
+    <section>
+      <h5>默认向上滚动</h5>
+      <div class="block">
+        <mw-marquee >
+          <mw-marquee-item
+            v-for="(item,index) in scrollList"
+            :key="index"
+            @click="newsClick"
+          >{{index+1}}、{{item}}</mw-marquee-item>
+        </mw-marquee>
+      </div>
+    </section>
+    <section>
+      <h5>向下滚动</h5>
+      <div class="block">
+        <mw-marquee direction="down">
+          <mw-marquee-item
+            v-for="(item,index) in scrollList"
+            :key="index"
+            @click="newsClick"
+          >{{index+1}}、{{item}}</mw-marquee-item>
+        </mw-marquee>
+      </div>
+    </section>
+    <section>
+      <h5>设置滚动间隔时间</h5>
+      <div class="block">
+        <mw-marquee duration="4000">
+          <mw-marquee-item
+            v-for="(item,index) in scrollList"
+            :key="index"
+            @click="newsClick"
+          >{{index+1}}、{{item}}</mw-marquee-item>
+        </mw-marquee>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -27,22 +77,31 @@ export default {
     return {
       scrollList: [
         "勇士最高价续约重伤员？",
-        "波士顿先驱报：凯尔特人正与霍弗德商讨一份新合",
+        "波士顿先驱报：凯尔特人正与霍弗德商讨一份",
         "伦纳德将在夺冠庆典时传达重要信息",
         "讲不出再见！库里告别勇士甲骨文球馆"
       ]
     };
   },
-  methods:{
-    newsClick(e){
-      this.$toast(e.target.innerHTML)
+  methods: {
+    newsClick(e) {
+      this.$toast(e.target.innerHTML);
     }
   }
 };
 </script>
 
 <style scoped lang="scss" rel="stylesheet/scss">
-.mw-filed{
-  margin: 10px;
+.marquee {
+  padding: 30px 0;
+}
+section {
+  margin-bottom: 80px;
+  h5 {
+    margin-bottom: 50px;
+    margin-left: 30px;
+    color: rgba(69, 90, 100, 0.6);
+    font-size: 30px;
+  }
 }
 </style>

@@ -65,7 +65,7 @@
   }
   &__text {
     display: inline-block;
-    font-size: 14px;
+    font-size: $loading-text-font-size;
     margin-left: 12px;
   }
   &--vertical{
@@ -76,7 +76,7 @@
       justify-content: center;
     }
     .mw-loading__text{
-      margin: 8px 0 0;
+      margin: 10px 0 0;
     }
   }
   &--fullScreen{
@@ -86,8 +86,8 @@
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 2019;
-      padding: 22px 30px;
-      border-radius: 4px;
+      padding: 46px 50px;
+      border-radius: 10px;
       background: rgba(0, 0, 0, 0.7);
     }
   }
