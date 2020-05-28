@@ -3,11 +3,11 @@
     class="mw-switch"
     :class="[value && 'open', disabled && 'disabled']"
     :style="[sizeStyle, backgrundStyle]"
-    @click="_change($event)"
+    @click="_change(value)"
   >
     <div class="mw-switch-node">
       <div class="mw-switch-loading" v-if="loading">
-        <mw-loading :fill="value ? background: ''" :size="loadingSize"></mw-loading>
+        <mw-loading :fill="value ? background: '#c8c9cc'" :size="loadingSize"></mw-loading>
       </div>
     </div>
   </div>
@@ -55,10 +55,10 @@ export default {
     }
   },
   methods: {
-    _change(e) {
+    _change() {
       if (this.disabled || this.loading) return;
       this.$emit("input", !this.value);
-      this.$emit("change", e);
+      this.$emit("change", this.value);
     }
   }
 };

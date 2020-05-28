@@ -37,7 +37,7 @@ export default {
     },
     size: {
       type: [Number, String],
-      default: 20
+      default: 24
     },
     color: {
       type: String,

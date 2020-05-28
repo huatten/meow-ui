@@ -26,6 +26,9 @@
   &__icon{
     flex-shrink: 0;
     color: $checkbox-icon-color;
+    .mw-icon{
+      display: flex;
+    }
   }
   &__label{
     font-size: $checkbox-label-font-size;

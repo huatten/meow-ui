@@ -16,7 +16,7 @@
         <mw-overlay opacity="0" v-if="hasMask"></mw-overlay>
         <div class="mw-toast__cont">
           <div class="mw-toast__icon" v-if="icon">
-            <mw-icon :name="icon" size="22"></mw-icon>
+            <mw-icon :name="icon" size="24"></mw-icon>
           </div>
           <div class="mw-toast__text" v-text="message"></div>
         </div>
@@ -58,14 +58,17 @@ export default {
       type: String,
       default: ""
     },
+    //是否展示遮罩层
     hasMask: {
       type: Boolean,
       default: false
     },
+    //加载图标类型
     loadingType: {
       type: String,
       default: "roller"
     },
+    //回掉函数
     callback: {
       type: Function
     }
@@ -81,8 +84,12 @@ export default {
     }
   },
   computed: {
-    size(){
-      return this.loadingType === "roller" ? "36" : this.loadingType === "carousel" ? "12" : "40";
+    size() {
+      return this.loadingType === "roller"
+        ? "30"
+        : this.loadingType === "carousel"
+        ? "12"
+        : "28";
     },
     icon() {
       const icon = this.type;

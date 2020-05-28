@@ -34,6 +34,9 @@
   }
   &__icon{
     flex-shrink: 0;
+    .mw-icon{
+      display: flex;
+    }
   }
   &__text{
     font-size: $toast-font-size;

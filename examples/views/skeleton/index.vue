@@ -42,9 +42,12 @@
         <mw-skeleton avatar title :loading="loading">
           <div class="demo">
             <div class="demo-avatar">
-              <img
-                src="https://c-ssl.duitang.com/uploads/blog/201507/21/20150721124850_BANtz.thumb.1000_0.jpeg"
-              />
+              <mw-image
+                circle
+                width="50"
+                height="50"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS3b7yCNNOiGJYqTsHHHZBVnYw4H_JaAkp3BePtbv_gPn8n8SCT&usqp=CAU"
+              ></mw-image>
             </div>
             <div class="demo-content">
               <div class="demo-title">送什么礼物好</div>
@@ -74,23 +77,23 @@ export default {
 
 <style scoped lang="scss" rel="stylesheet/scss">
 .skeleton {
-  padding: 15px;
+  padding: 30px;
 }
 section {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
   h5 {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     color: rgba(69, 90, 100, 0.6);
-    font-size: 14px;
+    font-size: 30px;
   }
   .block {
     background: #fff;
-    padding: 20px 24px;
+    padding: 30px 36px;
     border-radius: 3px;
     span {
       text-align: center;
       display: block;
-      font-size: 13px;
+      font-size: 26px;
       margin: 10px 0;
       color: #ccc;
     }
@@ -102,9 +105,9 @@ section {
       flex: 1;
     }
     &-avatar {
-      margin-right: 20px;
-      width: 50px;
-      height: 50px;
+      margin-right: 30px;
+      width: 96px;
+      height: 96px;
       img {
         display: block;
         width: 100%;
@@ -112,15 +115,15 @@ section {
       }
     }
     &-row {
-      margin-bottom: 16px;
-      font-size: 14px;
+      margin-bottom: 20px;
+      font-size: 28px;
       &:last-child {
         margin-bottom: 0;
       }
     }
     &-title {
       margin-bottom: 20px;
-      font-size: 16px;
+      font-size: 30px;
     }
   }
 }
