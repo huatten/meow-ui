@@ -2,7 +2,7 @@
   <div :class="['mw-popup', `mw-popup--${position}`]" v-show="isPopupShow">
     <mw-overlay :showMask="hasMask && isPopupBoxShow" @tapMask="_onPopupMaskClick"></mw-overlay>
     <mw-transition
-      :name="transitionName"
+      :name="transition"
       @before-enter="_onPopupTransitionStart"
       @before-leave="_onPopupTransitionStart"
       @after-enter="_onPopupTransitionEnd"
@@ -29,7 +29,20 @@ export default {
     transition: {
       //弹出层动画类型
       type: String,
-      default: ""
+      default() {
+        switch (this.position) {
+          case "bottom":
+            return "mw-slide-bottom";
+          case "top":
+            return "mw-slide-top";
+          case "left":
+            return "mw-slide-left";
+          case "right":
+            return "mw-slide-right";
+          default:
+            return "mw-fade"; // mw-zoom
+        }
+      }
     },
     value: {
       //v-model

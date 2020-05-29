@@ -1,35 +1,52 @@
 <template>
-  <div>
-    <div class="mw-field">
-      <mw-button type="info" :inline="false" @click="clickPop('center')">中间弹出</mw-button>
-      <mw-dialog v-model="bShow.center">
-        <div class="center common">center</div>
+  <div class="dialog">
+    <section>
+      <mw-button type="info" :inline="false" @click="basic.show=true">基本</mw-button>
+      <mw-dialog v-model="basic.show" :title="basic.title" @close="basic.confirm">正道的光，照在了大地上</mw-dialog>
+    </section>
+    <section>
+      <mw-button type="info" :inline="false" @click="confirm.show=true">确认操作</mw-button>
+      <mw-dialog
+        v-model="confirm.show"
+        :title="confirm.title"
+        :show-cancel="false"
+        :confirm-text="confirm.confirmText"
+      >种豆得瓜，种在了大腚上，来人，吊黄渤！</mw-dialog>
+    </section>
+    <section>
+      <mw-button type="info" :inline="false" @click="cancel.show=true">取消操作</mw-button>
+      <mw-dialog
+        v-model="cancel.show"
+        :title="cancel.title"
+        :show-confirm="false"
+      >种豆得瓜，种在了大腚上，来人，吊黄渤！</mw-dialog>
+    </section>
+    <section>
+      <mw-button type="info" :inline="false" @click="transition.show=true">切换弹窗动画</mw-button>
+      <mw-dialog
+        v-model="transition.show"
+        :title="transition.title"
+        :transition="transition.transition"
+      >种豆得瓜，种在了大腚上，来人，吊黄渤！</mw-dialog>
+    </section>
+    <section>
+      <mw-button type="info" :inline="false" @click="slot.show=true">插槽模式</mw-button>
+      <mw-dialog v-model="slot.show" :content="slot.content">
+        <div class="image" slot="header">
+          <mw-image :src="slot.src" width="300" height="220"></mw-image>
+        </div>
       </mw-dialog>
-    </div>
-    <div class="mw-field">
-      <mw-button type="info" :inline="false" @click="clickPop('left')">左侧弹出</mw-button>
-      <mw-popup v-model="bShow.left" position="left">
-        <div class="left common">left</div>
-      </mw-popup>
-    </div>
-    <div class="mw-field">
-      <mw-button type="info" :inline="false" @click="clickPop('right')">右侧弹出</mw-button>
-      <mw-popup v-model="bShow.right" position="right">
-        <div class="right common">right</div>
-      </mw-popup>
-    </div>
-    <div class="mw-field">
-      <mw-button type="info" :inline="false" @click="clickPop('top')">顶部弹出</mw-button>
-      <mw-popup v-model="bShow.top" position="top">
-        <div class="top common">top</div>
-      </mw-popup>
-    </div>
-    <div class="mw-field">
-      <mw-button type="info" :inline="false" @click="clickPop('bottom')">底部弹出</mw-button>
-      <mw-popup v-model="bShow.bottom" position="bottom">
-        <div class="bottom common">bottom</div>
-      </mw-popup>
-    </div>
+    </section>
+    <section>
+      <mw-button type="info" :inline="false" @click="color.show=true">更改按钮颜色</mw-button>
+      <mw-dialog
+        v-model="color.show"
+        :title="color.title"
+        :transition="color.transition"
+        :cancel-color="color.cancelColor"
+        :confirm-color="color.confirmColor"
+      >种豆得瓜，种在了大腚上，来人，吊黄渤！</mw-dialog>
+    </section>
   </div>
 </template>
 
@@ -37,45 +54,49 @@
 export default {
   data() {
     return {
-      bShow: {}
+      basic: {
+        show: false,
+        title: "标题",
+        confirm() {
+          console.log("关闭了");
+        }
+      },
+      confirm: {
+        show: false,
+        title: "标题",
+        confirmText: "确认操作",
+        cancelText: ""
+      },
+      cancel: {
+        show: false,
+        title: "标题"
+      },
+      transition: {
+        show: false,
+        title: "标题",
+        transition: "mw-zoom"
+      },
+      slot: {
+        show: false,
+        content: "我是一直短脚猫猫",
+        src:
+          "https://images.pexels.com/photos/2286016/pexels-photo-2286016.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+      },
+      color: {
+        show: false,
+        title: "更改按钮颜色",
+        transition: "mw-zoom",
+        cancelColor: "#ccc",
+        confirmColor: "#ff5257"
+      }
     };
   },
-  methods: {
-    clickPop(type) {
-      this.$set(this.bShow, type, true);
-    }
-  }
+  methods: {}
 };
 </script>
 
 <style scoped lang="scss" rel="stylesheet/scss">
-.mw-field {
-  margin: 10px;
-}
-.common {
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.center {
-  width: 180px;
-  height: 80px;
-}
-.left {
-  width: 180px;
-  height: 100%;
-}
-.right {
-  width: 180px;
-  height: 100%;
-}
-.top {
-  width: 100%;
-  height: 80px;
-}
-.bottom {
-  width: 100%;
-  height: 100px;
+section {
+  margin: 20px;
 }
 </style>
