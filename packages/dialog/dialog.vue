@@ -5,6 +5,7 @@
       :value="value"
       :hasMask="hasMask"
       :maskClosable="maskClosable"
+      :appendToBody="appendToBody"
       position="center"
       @input="onInput"
       @open="onShow"
@@ -128,6 +129,11 @@ export default {
       //异步操作加载
       type: Boolean,
       default: false
+    },
+    appendToBody: {
+      //是否插入到body元素上
+      type: Boolean,
+      default: false
     }
   },
   components: { MPopup, MIcon },
@@ -160,60 +166,3 @@ export default {
   }
 };
 </script>
-
-<style scoped lang="scss" rel="stylesheet/scss">
-.mw-dialog {
-  &-content {
-    width: 600px;
-    border-radius: 12px;
-    background-color: #fff;
-    overflow: hidden;
-  }
-  &-body {
-    color: #646566;
-    padding: 50px;
-    font-size: 30px;
-  }
-  &-close {
-    position: absolute;
-    color: #858b9c;
-    top: 30px;
-    right: 30px;
-    z-index: 15;
-  }
-  &-title {
-    font-size: 40px;
-    color: #111a34;
-    text-align: center;
-    margin: 0 0 30px;
-  }
-  &-context {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  &-actions {
-    display: flex;
-  }
-  &-btn {
-    display: flex;
-    flex: 1 1 0%;
-    align-items: center;
-    justify-content: center;
-    height: 100px;
-    font-size: 36px;
-    font-weight: 500;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-    &.cancel {
-      color: #666f83;
-    }
-    &.confirm {
-      color: #ff8200;
-    }
-  }
-  &-loading {
-    margin-right: 10px;
-  }
-}
-</style>

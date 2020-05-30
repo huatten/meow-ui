@@ -83,21 +83,13 @@ export default {
         if (this.isAnimation) {
           setTimeout(() => {
             this._showPopupBox();
-          }, 40);
+          }, 50);
         } else {
           this._showPopupBox();
         }
       } else {
         this._hidePopupBox();
       }
-    }
-  },
-  computed: {
-    transitionName() {
-      return (
-        this.transition ||
-        (this.position ? `mw-slide-${this.position}` : "mw-fade")
-      );
     }
   },
   components: { MOverlay, MTransition },

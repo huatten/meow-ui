@@ -6,7 +6,12 @@
     </section>
     <section>
       <mw-button type="info" :inline="false" @click="close.show=true">显示关闭按钮</mw-button>
-      <mw-dialog v-model="close.show" :title="close.title" :closable="close.closable" @close="close.confirm">正道的光，照在了大地上</mw-dialog>
+      <mw-dialog
+        v-model="close.show"
+        :title="close.title"
+        :closable="close.closable"
+        @close="close.confirm"
+      >正道的光，照在了大地上</mw-dialog>
     </section>
     <section>
       <mw-button type="info" :inline="false" @click="confirm.show=true">确认操作</mw-button>
@@ -73,9 +78,9 @@ export default {
     return {
       basic: {
         show: false,
-        title: "标题",
+        title: "标题"
       },
-       close: {
+      close: {
         show: false,
         title: "显示关闭",
         closable: true,
@@ -118,7 +123,7 @@ export default {
         content: "删除后将从记录里消失，无法找回",
         confirmText: "确定",
         cancelText: "手滑了",
-        transition: "mw-zoom",
+        transition: "mw-fade-top",
         asyncDel: () => {
           this.asyncDialog.loading = true;
           this.asyncDialog.confirmText = "删除中";

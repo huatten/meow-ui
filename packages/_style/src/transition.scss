@@ -73,10 +73,10 @@
     transform: translate3d(0, -100%, 0);
   }
   &-enter-active {
-    transition: transform 0.3s ease-out;
+    transition: transform 0.45s ease-out;
   }
   &-leave-active {
-    transition: transform 0.25s ease-out;
+    transition: transform 0.3s ease-out;
   }
 }
 /*slide-left*/
