@@ -8,12 +8,16 @@
       position="center"
       @input="onInput"
       @open="onShow"
+      @opened="onShowed"
       @close="onHide"
+      @closed="onHided"
     >
       <div class="mw-dialog-content">
         <slot name="header"></slot>
         <div class="mw-dialog-body">
-          <span class="mw-dialog-close"></span>
+          <span class="mw-dialog-close" v-if="closable" @click="close">
+            <mw-icon name="close" size="22"></mw-icon>
+          </span>
           <h3 class="mw-dialog-title">{{title}}</h3>
           <slot>
             <div class="mw-dialog-context" v-html="content"></div>
@@ -33,7 +37,10 @@
             :style="{color: confirmColor}"
             @click="onClick('confirm')"
             @touchmove.prevent
-          >{{confirmText}}</span>
+          >
+            <mw-loading v-if="loading" class="mw-dialog-loading" fill="#ff8200" size="19"></mw-loading>
+            {{confirmText}}
+          </span>
         </div>
       </div>
     </mw-popup>
@@ -42,6 +49,8 @@
 
 <script type="text/ecmascript-6">
 import MPopup from "../popup";
+import MIcon from "../icon";
+import MLoading from "../loading";
 export default {
   name: "mw-dialog",
   props: {
@@ -114,9 +123,14 @@ export default {
       //确定按钮颜色
       type: String,
       default: ""
+    },
+    loading: {
+      //异步操作加载
+      type: Boolean,
+      default: false
     }
   },
-  components: { MPopup },
+  components: { MPopup, MIcon },
   methods: {
     onInput(value) {
       this.$emit("input", value);
@@ -124,12 +138,21 @@ export default {
     onShow() {
       this.$emit("open");
     },
+    onShowed() {
+      this.$emit("opened");
+    },
     onHide() {
       this.$emit("close");
     },
+    onHided() {
+      this.$emit("closed");
+    },
     onClick(type) {
+      if (this.loading) return;
       this.$emit(type);
-      this.close();
+      if (type === "cancel") {
+        this.close();
+      }
     },
     close() {
       this.$emit("input", false);
@@ -150,6 +173,13 @@ export default {
     color: #646566;
     padding: 50px;
     font-size: 30px;
+  }
+  &-close {
+    position: absolute;
+    color: #858b9c;
+    top: 30px;
+    right: 30px;
+    z-index: 15;
   }
   &-title {
     font-size: 40px;
@@ -181,6 +211,9 @@ export default {
     &.confirm {
       color: #ff8200;
     }
+  }
+  &-loading {
+    margin-right: 10px;
   }
 }
 </style>

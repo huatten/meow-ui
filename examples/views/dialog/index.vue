@@ -2,7 +2,11 @@
   <div class="dialog">
     <section>
       <mw-button type="info" :inline="false" @click="basic.show=true">基本</mw-button>
-      <mw-dialog v-model="basic.show" :title="basic.title" @close="basic.confirm">正道的光，照在了大地上</mw-dialog>
+      <mw-dialog v-model="basic.show" :title="basic.title">正道的光，照在了大地上</mw-dialog>
+    </section>
+    <section>
+      <mw-button type="info" :inline="false" @click="close.show=true">显示关闭按钮</mw-button>
+      <mw-dialog v-model="close.show" :title="close.title" :closable="close.closable" @close="close.confirm">正道的光，照在了大地上</mw-dialog>
     </section>
     <section>
       <mw-button type="info" :inline="false" @click="confirm.show=true">确认操作</mw-button>
@@ -47,6 +51,19 @@
         :confirm-color="color.confirmColor"
       >种豆得瓜，种在了大腚上，来人，吊黄渤！</mw-dialog>
     </section>
+    <section>
+      <mw-button type="info" :inline="false" @click="asyncDialog.show=true">异步关闭</mw-button>
+      <mw-dialog
+        v-model="asyncDialog.show"
+        :loading="asyncDialog.loading"
+        :title="asyncDialog.title"
+        :content="asyncDialog.content"
+        :transition="asyncDialog.transition"
+        :confirm-text="asyncDialog.confirmText"
+        :cancel-text="asyncDialog.cancelText"
+        @confirm="asyncDialog.asyncDel"
+      ></mw-dialog>
+    </section>
   </div>
 </template>
 
@@ -57,8 +74,13 @@ export default {
       basic: {
         show: false,
         title: "标题",
-        confirm() {
-          console.log("关闭了");
+      },
+       close: {
+        show: false,
+        title: "显示关闭",
+        closable: true,
+        confirm: () => {
+          this.$toast("关闭了");
         }
       },
       confirm: {
@@ -88,6 +110,25 @@ export default {
         transition: "mw-zoom",
         cancelColor: "#ccc",
         confirmColor: "#ff5257"
+      },
+      asyncDialog: {
+        show: false,
+        title: "异步关闭",
+        loading: false,
+        content: "删除后将从记录里消失，无法找回",
+        confirmText: "确定",
+        cancelText: "手滑了",
+        transition: "mw-zoom",
+        asyncDel: () => {
+          this.asyncDialog.loading = true;
+          this.asyncDialog.confirmText = "删除中";
+          setTimeout(() => {
+            this.asyncDialog.loading = false;
+            this.asyncDialog.confirmText = "确定";
+            this.asyncDialog.show = false;
+            this.$toast("删除成功！");
+          }, 3000);
+        }
       }
     };
   },
