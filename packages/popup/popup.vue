@@ -18,6 +18,7 @@
 <script type="text/ecmascript-6">
 import MOverlay from "../overlay";
 import MTransition from "../transition";
+const BODYCLASS = "mw-popup-parent--hidden";
 export default {
   name: "mw-popup",
   props: {
@@ -68,6 +69,11 @@ export default {
       //弹出层是否挂载到body
       type: Boolean,
       default: false
+    },
+    lockMaskScroll: {
+      //是否锁定背景滚动
+      type: Boolean,
+      default: true
     }
   },
   data() {
@@ -80,6 +86,7 @@ export default {
   watch: {
     value(val) {
       if (val) {
+        this.lockMaskScroll && document.body.classList.add(BODYCLASS);
         if (this.isAnimation) {
           setTimeout(() => {
             this._showPopupBox();
@@ -88,6 +95,7 @@ export default {
           this._showPopupBox();
         }
       } else {
+        document.body.classList.contains(BODYCLASS) && document.body.classList.remove(BODYCLASS);
         this._hidePopupBox();
       }
     }

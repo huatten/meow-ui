@@ -38,6 +38,7 @@ export default {
 | transition | 弹出层动画 | `String` | `mw-fade` | 基于`transition`组件开发，具体看[这里](./transition.md)|
 | hasMask | 弹出层是否含蒙层 | `Boolean` | `true` | - |
 | maskClosable | 点击蒙层是否可关闭弹出层 | `Boolean` | `true` | - |
+| lockScroll | 是否锁定背景滚动 | `Boolean` | `true` | - |
 
 ### Event
 | 事件调用 | 说明 | 参数 | 备注 |

@@ -134,6 +134,11 @@ export default {
       //是否插入到body元素上
       type: Boolean,
       default: false
+    },
+    lockScroll: {
+      //是否锁定背景滚动
+      type: Boolean,
+      default: true
     }
   },
   components: { MPopup, MIcon },

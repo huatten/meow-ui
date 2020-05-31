@@ -7,37 +7,40 @@
   bottom: 0;
   z-index: $popup-index;
   display: flex;
-  &--center{
+  &-parent--hidden {
+    overflow: hidden;
+  }
+  &--center {
     align-items: center;
     justify-content: center;
   }
-  &--top{
+  &--top {
     flex-direction: column;
     justify-content: flex-start;
-    .mw-popup__box{
+    .mw-popup__box {
       width: 100%;
     }
   }
-  &--bottom{
+  &--bottom {
     flex-direction: column;
     justify-content: flex-end;
-    .mw-popup__box{
+    .mw-popup__box {
       width: 100%;
     }
   }
-  &--left{
+  &--left {
     justify-content: flex-start;
-    .mw-popup__box{
+    .mw-popup__box {
       height: 100%;
     }
   }
-  &--right{
+  &--right {
     justify-content: flex-end;
-    .mw-popup__box{
+    .mw-popup__box {
       height: 100%;
     }
   }
-  &__box{
+  &__box {
     position: relative;
     z-index: $popup-index + 1;
     max-width: 100%;
