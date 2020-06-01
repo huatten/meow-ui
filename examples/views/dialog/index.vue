@@ -1,5 +1,6 @@
 <template>
   <div class="dialog">
+    <h5>组件调用模式</h5>
     <section>
       <mw-button type="info" :inline="false" @click="basic.show=true">基本</mw-button>
       <mw-dialog v-model="basic.show" :title="basic.title">正道的光，照在了大地上</mw-dialog>
@@ -69,6 +70,19 @@
         @confirm="asyncDialog.asyncDel"
       ></mw-dialog>
     </section>
+    <h5>单例调用模式</h5>
+    <section>
+      <mw-button type="info" :inline="false" @click="$confirm">确认取消操作</mw-button>
+    </section>
+    <section>
+      <mw-button type="info" :inline="false" @click="$alert">确定操作</mw-button>
+    </section>
+    <section>
+      <mw-button type="info" :inline="false" @click="$showclose">显示关闭按钮</mw-button>
+    </section>
+    <section>
+      <mw-button type="info" :inline="false" @click="$hidetitle">不显示标题</mw-button>
+    </section>
   </div>
 </template>
 
@@ -137,12 +151,63 @@ export default {
       }
     };
   },
-  methods: {}
+  methods: {
+    $confirm() {
+      this.$dialog({
+        title: "警告",
+        content: "你真的要删除此记录吗？",
+        confirmText: "删除",
+        confirmColor: "#ff5257",
+        onCancel() {
+          this.$toast('取消操作')
+        },
+        onConfirm() {
+          this.$toast('删除操作')
+          this.close();
+        }
+      });
+    },
+    $alert() {
+      this.$dialog({
+        title: "标题",
+        content: "正道的光，照在了大地上",
+        showCancel: false,
+        onConfirm() {
+          this.close();
+        }
+      });
+    },
+    $showclose() {
+      this.$dialog({
+        title: "温馨提示",
+        content: "点击右上角可以关闭",
+        showCancel: false,
+        closable: true,
+        onConfirm() {
+          this.close();
+        }
+      });
+    },
+    $hidetitle() {
+      this.$dialog({
+        content: "普通弹窗展示反馈信息",
+        showCancel: false,
+        onConfirm() {
+          this.close();
+        }
+      });
+    }
+  }
 };
 </script>
 
 <style scoped lang="scss" rel="stylesheet/scss">
 section {
   margin: 20px;
+}
+h5 {
+  font-size: 30px;
+  color: rgba(69, 90, 100, 0.6);
+  margin: 30px 0 30px 20px;
 }
 </style>

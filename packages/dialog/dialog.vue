@@ -110,6 +110,11 @@ export default {
       type: String,
       default: ""
     },
+    onCancel: {
+      //取消按钮事件
+      type: Function,
+      default:()=>{}
+    },
     showConfirm: {
       //是否展示确定按钮
       type: Boolean,
@@ -124,6 +129,11 @@ export default {
       //确定按钮颜色
       type: String,
       default: ""
+    },
+    onConfirm: {
+      //确定按钮事件
+      type: Function,
+      default:()=>{}
     },
     loading: {
       //异步操作加载
@@ -161,8 +171,12 @@ export default {
     onClick(type) {
       if (this.loading) return;
       this.$emit(type);
+      if (type === "confirm") {
+        this.onConfirm();
+      }
       if (type === "cancel") {
         this.close();
+        this.onCancel();
       }
     },
     close() {
