@@ -25,6 +25,7 @@ import MSkeleton from "./skeleton";
 import MImage from "./image";
 import MLazyLoad from "./lazyload";
 import MDialog from "./dialog";
+import MActionSheet from "./action-sheet";
 const components = [
   MButton,
   MCell,
@@ -53,6 +54,7 @@ const components = [
   MImage,
   MLazyLoad,
   MDialog,
+  MActionSheet,
 ];
 
 // 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，则所有的组件都将被注册
@@ -95,6 +97,7 @@ const MEOW = {
   MSkeleton,
   MImage,
   MLazyLoad,
-  MDialog
+  MDialog,
+  MActionSheet
 };
 export default MEOW;

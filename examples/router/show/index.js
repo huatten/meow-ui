@@ -35,54 +35,6 @@ export default [
     }
   },
   {
-    path: "/popup",
-    name: "popup",
-    component: resolve => {
-      require.ensure(
-        ["@/views/popup/index.vue"],
-        () => {
-          resolve(require("@/views/popup/index.vue"));
-        },
-        "popup"
-      );
-    },
-    meta: {
-      docTitle: "popup 弹出层"
-    }
-  },
-  {
-    path: "/notify",
-    name: "notify",
-    component: resolve => {
-      require.ensure(
-        ["@/views/notify/index.vue"],
-        () => {
-          resolve(require("@/views/notify/index.vue"));
-        },
-        "notify"
-      );
-    },
-    meta: {
-      docTitle: "notify 通知栏"
-    }
-  },
-  {
-    path: "/toast",
-    name: "toast",
-    component: resolve => {
-      require.ensure(
-        ["@/views/toast/index.vue"],
-        () => {
-          resolve(require("@/views/toast/index.vue"));
-        },
-        "toast"
-      );
-    },
-    meta: {
-      docTitle: "toast 轻提示"
-    }
-  },
-  {
     path: "/collapse",
     name: "collapse",
     component: resolve => {
@@ -144,22 +96,6 @@ export default [
     },
     meta: {
       docTitle: "lazyload 懒加载"
-    }
-  },
-  {
-    path: "/dialog",
-    name: "dialog",
-    component: resolve => {
-      require.ensure(
-        ["@/views/dialog/index.vue"],
-        () => {
-          resolve(require("@/views/dialog/index.vue"));
-        },
-        "dialog"
-      );
-    },
-    meta: {
-      docTitle: "dialog 弹出框"
     }
   }
 ];

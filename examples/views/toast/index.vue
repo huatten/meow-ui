@@ -19,19 +19,19 @@
       <mw-button type="info" :inline="false" @click="toast('center', 'failed')">失败弹出</mw-button>
     </div>
     <div class="mw-field">
-      <mw-button type="info" :inline="false" @click="_loading('roller', false)">加载中弹出</mw-button>
+      <mw-button type="info" :inline="false" @click="_loading('roller', false)">加载中3s后隐藏</mw-button>
     </div>
     <div class="mw-field">
-      <mw-button type="info" :inline="false" @click="_loading('spinner', false)">加载中弹出</mw-button>
+      <mw-button type="info" :inline="false" @click="_loading('spinner', false)">加载中3s后隐藏</mw-button>
     </div>
     <div class="mw-field">
-      <mw-button type="info" :inline="false" @click="_loading('carousel', true)">加载中弹出显示遮罩层</mw-button>
+      <mw-button type="info" :inline="false" @click="_loading('carousel', true)">加载中显示遮罩层3s后隐藏</mw-button>
     </div>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-import { setTimeout } from 'timers';
+import { setTimeout } from "timers";
 export default {
   data() {
     return {};
@@ -39,19 +39,23 @@ export default {
   methods: {
     toast(pos, type) {
       const _this = this;
-      this.$toast("我是一条toast",{
-        position: pos, 
+      this.$toast("我是一条toast", {
+        position: pos,
         type: type,
-        callback(){
-          _this.$notify("toast支持回调")
+        callback() {
+          _this.$notify("toast支持回调");
         }
       });
     },
-    _loading(type, flag){
-      this.$toast("加载中...",{type: "loading", loadingType: type, hasMask: flag});
-      setTimeout(()=>{
-        //this.$toast.close();
-      }, 3000)
+    _loading(type, flag) {
+      this.$toast("加载中...", {
+        type: "loading",
+        loadingType: type,
+        hasMask: flag
+      });
+      setTimeout(() => {
+        this.$toast.close();
+      }, 3000);
     }
   }
 };

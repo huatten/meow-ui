@@ -97,5 +97,21 @@ export default [
     meta: {
       docTitle: "image 图片"
     }
-  }
+  },
+  {
+    path: "/popup",
+    name: "popup",
+    component: resolve => {
+      require.ensure(
+        ["@/views/popup/index.vue"],
+        () => {
+          resolve(require("@/views/popup/index.vue"));
+        },
+        "popup"
+      );
+    },
+    meta: {
+      docTitle: "popup 弹出层"
+    }
+  },
 ];
