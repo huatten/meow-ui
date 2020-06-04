@@ -97,5 +97,21 @@ export default [
     meta: {
       docTitle: "lazyload 懒加载"
     }
+  },
+  {
+    path: "/progress",
+    name: "progress",
+    component: resolve => {
+      require.ensure(
+        ["@/views/progress/index.vue"],
+        () => {
+          resolve(require("@/views/progress/index.vue"));
+        },
+        "progress"
+      );
+    },
+    meta: {
+      docTitle: "progress 进度条"
+    }
   }
 ];
