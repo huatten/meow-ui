@@ -66,31 +66,6 @@ export default {
       type: Number,
       default: DEFUALT_HEIGHT
     }
-  },
-  data() {
-    return {};
   }
 };
 </script>
-
-<style scoped lang="scss" rel="stylesheet/scss">
-.mw-skeleton {
-  display: flex;
-  box-sizing: border-box;
-  &-content {
-    flex: 1;
-  }
-  &-avatar {
-    margin-right: 20px;
-  }
-  &-row {
-    margin-bottom: 16px;
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-  &-title {
-    margin-bottom: 20px;
-  }
-}
-</style>

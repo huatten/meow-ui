@@ -1,3 +1,4 @@
+import { version } from '../package.json';
 import MButton from "./button";
 import MCell from "./cell";
 import MIcon from "./icon";
@@ -73,6 +74,7 @@ if (typeof window !== "undefined" && window.Vue) {
 //对外导出
 const MEOW = {
   install,
+  version,
   MButton,
   MCell,
   MIcon,

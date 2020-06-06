@@ -8,7 +8,7 @@ gulp.task('compile', function () {
   return gulp.src('./src/*.scss')
     .pipe(sass.sync())
     .pipe(autoprefixer({
-      browsers: ["> 0.01%", "Android >= 4.0", "Firefox ESR", "Ios >= 8.0"],
+      overrideBrowserslist: ["> 0.01%", "Android >= 4.0", "Firefox ESR", "iOS >= 8.0"],
       cascade: false
     }))
     .pipe(cssmin())
