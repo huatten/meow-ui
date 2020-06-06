@@ -31,12 +31,10 @@
     "docs:build": "vuepress build docs"
   },
   "dependencies": {
-    "autoprefixer": "^9.8.0",
-    "core-js": "^2.6.5",
-    "postcss-pxtorem": "^5.1.1",
-    "vue": "^2.6.10",
-    "vue-router": "^3.0.3",
-    "vuepress": "^0.14.11"
+    "svg-sprite-loader": "^4.1.6"
+  },
+  "peerDependencies": {
+    "vue": "^2.6.10"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.7.0",
@@ -52,7 +50,11 @@
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
-    "svg-sprite-loader": "^4.1.6",
+    "autoprefixer": "^9.8.0",
+    "core-js": "^2.6.5",
+    "postcss-pxtorem": "^5.1.1",
+    "vue-router": "^3.0.3",
+    "vuepress": "^0.14.11",
     "vue-template-compiler": "^2.5.21"
   },
   "browserslist": [

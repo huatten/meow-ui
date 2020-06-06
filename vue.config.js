@@ -1,6 +1,5 @@
 const path = require("path");
 const resolve = dir => path.join(__dirname, dir);
-
 module.exports = {
   publicPath: "./",
   //修改src目录为 examples
@@ -30,10 +29,7 @@ module.exports = {
     // packages和examples目录需要加入编译
     config.module
       .rule("js")
-      .include.add(/packages/)
-      .end()
-      .include.add(/examples/)
-      .end()
+      .include.add("/packages").end()
       .use("babel")
       .loader("babel-loader")
       .tap(options => {
