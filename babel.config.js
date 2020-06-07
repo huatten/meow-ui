@@ -1,3 +1,9 @@
 module.exports = {
-  presets: ["@vue/app"]
+  presets: ["@vue/app"],
+  plugins: [
+    ['component', {
+      'libraryName': 'vue-meow-ui',
+      'libDir': 'packages'
+    }]
+  ]
 };

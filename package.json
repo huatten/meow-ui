@@ -1,8 +1,8 @@
 {
   "name": "vue-meow-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
-  "description": "喵呜～个人练手组件库",
+  "description": "个人练手组件库",
   "author": "Justin <nbilly@163.com>",
   "homepage": "https://github.com/MrTenger/meow-ui.git",
   "repository": {
@@ -17,15 +17,21 @@
     "vue",
     "component"
   ],
+  "files": [
+    "lib"
+  ],
   "main": "lib/meow-ui.umd.min.js",
   "style": "lib/meow-css/index.css",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "bootstrap": "npm install && cd ./packages/_style && npm install",
+    "dev": "npm run build:entry && vue-cli-service serve",
+    "build:example": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "clean": "rimraf lib && rimraf packages/*/lib",
-    "lib": "npm run clean && vue-cli-service build --target lib --name meow-ui  --dest lib packages/index.js && npm run build:style",
+    "build:entry": "node build/build-entry.js ",
+    "lib": "npm run clean && vue-cli-service build --target lib --name meow-ui  --dest lib packages/index.js && webpack  --config ./build/webpack.component.js",
+    "build:lib": "node build/build-lib.js ",
     "build:style": "gulp build --gulpfile packages/_style/gulpfile.js && rimraf lib/meow-css && cp-cli packages/_style/lib lib/meow-css",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
@@ -43,19 +49,24 @@
     "@vue/cli-service": "^3.7.0",
     "@vue/eslint-config-prettier": "^4.0.1",
     "@vue/test-utils": "1.0.0-beta.29",
+    "autoprefixer": "^9.8.0",
     "babel-eslint": "^10.0.1",
     "chai": "^4.1.2",
+    "core-js": "^2.6.5",
     "cp-cli": "^2.0.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "fs-extra": "^8.0.1",
     "node-sass": "^4.9.0",
-    "sass-loader": "^7.1.0",
-    "autoprefixer": "^9.8.0",
-    "core-js": "^2.6.5",
     "postcss-pxtorem": "^5.1.1",
+    "progress-bar-webpack-plugin": "^2.1.0",
+    "sass-loader": "^7.1.0",
+    "shelljs": "^0.8.4",
+    "signale": "^1.4.0",
+    "uppercamelcase": "^3.0.0",
     "vue-router": "^3.0.3",
-    "vuepress": "^0.14.11",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.5.21",
+    "vuepress": "^0.14.11"
   },
   "browserslist": [
     "> 0.01%",
