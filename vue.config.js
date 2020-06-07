@@ -29,7 +29,8 @@ module.exports = {
     // packages和examples目录需要加入编译
     config.module
       .rule("js")
-      .include.add("/packages").end()
+      .include.add("/packages")
+      .end()
       .use("babel")
       .loader("babel-loader")
       .tap(options => {
