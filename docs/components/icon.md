@@ -35,7 +35,7 @@ Vue.component(MIcon.name, MIcon);
 | name | 图标名称 | `String` | - | - |
 | color | 图标颜色 | `String` | `currentColor` | - |
 | svg | 是否为svg图标 | `Boolean` | `false` | - |
-| size | 图标大小 | `Number`/`String` | `20` | icon-font类型单位为 `px` |
+| size | 图标大小 | `Number`/`String` | `24` | icon-font类型单位为 `px` |
 
 ### Event
 | 事件调用 | 说明 | 参数 | 备注 |
@@ -53,7 +53,7 @@ Vue.component(MIcon.name, MIcon);
   2.webpack配置 
 
   ```javascript
-// vue.config.js  
+// vue-cli3  vue.config.js  
 const path = require("path");
   const resolve = dir => path.join(__dirname, dir);
   module.exports = {
@@ -76,20 +76,40 @@ const path = require("path");
       config.module.rule("images").test(/\.(png|jpe?g|gif|svg)(\?.*)?$/);
     }
   };
+
+  //vue-cli2 webpack.config.js
+  const path = require('path')
+  module.exports = {
+    module: {
+      loaders: [
+        {
+          test: /\.svg$/i,
+          loader: 'svg-sprite-loader',
+          include: [
+            // 将某个路径下所有svg交给 svg-sprite-loader 插件处理
+            path.resolve(__dirname, 'src/assets/svg-icon')
+          ],
+        }
+      ]
+    }
+  }
   ```
   3.引入图标
 
- 注意第二步的配置svg-sprite-loader 插件处理的目录为 `examples/assets/svg-icon`， 因此将你下载好的svg图标放入此目录内。
+ 注意第二步的配置svg-sprite-loader 插件处理的目录为 `src/assets/svg-icon`， 因此将你下载好的svg图标放入此目录内，使用时直接 `import`。
 
   ```vue
 <template>
 	<div class="icon">
     <mw-icon name="setting" svg></mw-icon>
     <mw-icon name="info" svg></mw-icon>
-    <mw-icon name="info" svg></mw-icon>
+    <mw-icon name="star" svg></mw-icon>
   </div>
 </template>
 <script>
+import 'src/assets/svg-icon/setting.svg';
+import 'src/assets/svg-icon/info.svg';
+import 'src/assets/svg-icon/star.svg';
 import { MIcon } from 'vue-meow-ui'
 export default {
   name: 'icons',
