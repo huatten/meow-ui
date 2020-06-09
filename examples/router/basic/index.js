@@ -113,5 +113,5 @@ export default [
     meta: {
       docTitle: "popup 弹出层"
     }
-  },
+  }
 ];

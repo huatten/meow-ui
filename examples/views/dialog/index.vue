@@ -159,10 +159,10 @@ export default {
         confirmText: "删除",
         confirmColor: "#ff5257",
         onCancel() {
-          this.$toast('取消操作')
+          this.$toast('取消操作');
         },
         onConfirm() {
-          this.$toast('删除操作')
+          this.$toast('删除操作');
           this.close();
         }
       });

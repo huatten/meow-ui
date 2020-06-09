@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     notify(type, duration) {
-      this.$notify('通知栏',{type: type, duration: duration, callback(){console.log(type + "回掉函数")}})
+      this.$notify('通知栏', { type: type, duration: duration, callback() { console.log(type + "回掉函数"); } });
     }
   }
 };

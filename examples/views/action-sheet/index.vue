@@ -151,7 +151,7 @@ export default {
         content: `${JSON.stringify(item)}`
       });
     },
-    $_delete(item){
+    $_delete(item) {
       if (item.value === "del") {
         this.$toast("删除成功");
       }

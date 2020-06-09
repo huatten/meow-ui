@@ -62,11 +62,11 @@ export default {
       console.log(e);
     },
     lazyError(e) {
-      console.log('attempt',e);
+      console.log('attempt', e);
     },
     lazyFailed(e) {
-      console.log('failed',e);
-    },
+      console.log('failed', e);
+    }
   }
 };
 </script>

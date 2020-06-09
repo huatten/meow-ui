@@ -4,7 +4,7 @@ import router from "@/router";
 import "packages/_style/src/index.scss";
 import '@/assets/responsive';
 import MEOW from 'packages/index.js';
-Vue.use(MEOW)
+Vue.use(MEOW);
 
 Vue.config.productionTip = false;
 

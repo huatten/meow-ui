@@ -2,16 +2,16 @@
   function resize() {
     const DESIGNWIDTH = 750;
     const ROOTVALUE = 100;
-    let ww = window.innerWidth
+    let ww = window.innerWidth;
     if (ww > window.screen.width) {
-      window.requestAnimationFrame(resize)
+      window.requestAnimationFrame(resize);
     } else {
       if (ww > DESIGNWIDTH) {
-        ww = DESIGNWIDTH
+        ww = DESIGNWIDTH;
       }
-      document.documentElement.style.fontSize = ww * ROOTVALUE / DESIGNWIDTH + 'px'
+      document.documentElement.style.fontSize = ww * ROOTVALUE / DESIGNWIDTH + 'px';
     }
   }
-  resize()
-  window.addEventListener('resize', resize)
-})(window, document)
+  resize();
+  window.addEventListener('resize', resize);
+})(window, document);

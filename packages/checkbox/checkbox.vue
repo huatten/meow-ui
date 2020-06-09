@@ -75,6 +75,7 @@ export default {
         if (parent.$options.name !== "mw-checkbox-group") {
           parent = parent.$parent;
         } else {
+          /* eslint-disable */ 
           this.parent = parent;
           return true;
         }
