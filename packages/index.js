@@ -61,7 +61,7 @@ const components = [
   MTransition
 ];
 const install = function (Vue) {
-  if (!Vue && install.installed) return;
+  if (!Vue && install.installed) { return; };
   components.map(component => Vue.component(component.name, component));
 };
 if (typeof window !== "undefined" && window.Vue) {
@@ -99,8 +99,8 @@ export {
   MSwitch,
   MToast,
   MTransition
-}
+};
 export default {
   install,
   version
-}
+};

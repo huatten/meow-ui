@@ -1,8 +1,8 @@
-'use strict'
-const gulp = require('gulp')
-const sass = require('gulp-sass')
-const autoprefixer = require('gulp-autoprefixer')
-const cssmin = require('gulp-cssmin')
+'use strict';
+const gulp = require('gulp');
+const sass = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
+const cssmin = require('gulp-cssmin');
 
 gulp.task('compile', function () {
   return gulp.src('./src/*.scss')
@@ -12,13 +12,13 @@ gulp.task('compile', function () {
       cascade: false
     }))
     .pipe(cssmin())
-    .pipe(gulp.dest('./lib'))
-})
+    .pipe(gulp.dest('./lib'));
+});
 
 gulp.task('copyfont', function () {
   return gulp.src('./src/font/**')
     .pipe(cssmin())
-    .pipe(gulp.dest('./lib/font'))
-})
+    .pipe(gulp.dest('./lib/font'));
+});
 
-gulp.task('build', ['compile', 'copyfont'])
+gulp.task('build', ['compile', 'copyfont']);

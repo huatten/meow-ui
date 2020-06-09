@@ -60,57 +60,57 @@ import MTransition from "../transition";
 export default {
   name: "mw-noticebar",
   props: {
-    //右边提示类型
+    // 右边提示类型
     mode: {
       type: String,
-      default: "" //close, link
+      default: "" // close, link
     },
-    //背景色
+    // 背景色
     background: {
       type: String,
       default: "#fffbe8"
     },
-    //文字颜色
+    // 文字颜色
     color: {
       type: String,
       default: "#ff8200"
     },
-    //显示时长
+    // 显示时长
     time: {
       type: [String, Number],
       default: 0
     },
-    //圆角展示
+    // 圆角展示
     circular: {
       type: Boolean,
       default: false
     },
-    //是否开启文本换行，只在禁用滚动时生效
+    // 是否开启文本换行，只在禁用滚动时生效
     wrapable: {
       type: Boolean,
       default: false
     },
-    //内容超出滚动展示
+    // 内容超出滚动展示
     scrollable: {
       type: Boolean,
       default: true
     },
-    //动画延迟时间 (s)
+    // 动画延迟时间 (s)
     delay: {
       type: [String, Number],
       default: 1
     },
-    //动画滚动速度 (px/s)
+    // 动画滚动速度 (px/s)
     speed: {
       type: [String, Number],
       default: 80
     },
-    //左侧 icon
+    // 左侧 icon
     leftIcon: {
       type: String,
       default: ""
     },
-    //icon 类型 svg/font
+    // icon 类型 svg/font
     svg: {
       type: Boolean,
       default: false
@@ -184,14 +184,14 @@ export default {
       this.$emit("close");
     },
     _checkOverflow() {
-      if (!this.scrollable) return;
+      if (!this.scrollable) { return; }
       const { wrapper, content } = this.$refs;
-      if (!wrapper || !content) return;
+      if (!wrapper || !content) { return; }
       const wrapWidth = wrapper.clientWidth;
       const contentWidth = content.scrollWidth;
 
       if (this.scrollable && wrapWidth < contentWidth) {
-        //可滚动
+        // 可滚动
         this.overflow = true;
         this.wrapWidth = wrapWidth;
         this.contentWidth = contentWidth;

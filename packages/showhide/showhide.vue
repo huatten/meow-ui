@@ -44,9 +44,9 @@ export default {
       type: String,
       default: "收起"
     },
-    btnColor:{
-       type: String,
-       default: "#ff8200"
+    btnColor: {
+      type: String,
+      default: "#ff8200"
     }
   },
   data() {
@@ -86,7 +86,8 @@ export default {
     },
     setPseudoStyle() {
       this.compId = `__cont${this._uid}__`;
-      let paddingRight = Math.max(this.showText.length, this.hideText.length) + 1;
+      let paddingRight =
+        Math.max(this.showText.length, this.hideText.length) + 1;
       let textIndent = (this.maxLine - 1) * paddingRight;
       let maxHeight = (this.maxLine - 1) * this.lineHeight;
       let lineClamp = this.maxLine;

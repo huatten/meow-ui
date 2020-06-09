@@ -3,8 +3,8 @@
     class="mw-checkbox"
     :class="[
       (iconPosition && !horizontal) && `is-${iconPosition}-checkbox`,
-      isChecked && 'is-checked', 
-      isDisabled && 'is-disabled', 
+      isChecked && 'is-checked',
+      isDisabled && 'is-disabled',
       horizontal && 'is-horizontal'
     ]"
   >
@@ -100,8 +100,8 @@ export default {
       return this.isDisabled
         ? this.iconDisabled
         : this.isChecked
-        ? this.icon
-        : this.iconInverse;
+          ? this.icon
+          : this.iconInverse;
     },
     curValue: {
       get() {

@@ -5,4 +5,4 @@ export function addUnit(value) {
   }
   value = String(value);
   return isNumeric(value) ? `${value}px` : value;
-}
+};

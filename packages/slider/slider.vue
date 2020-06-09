@@ -58,7 +58,7 @@ export default {
       default: "#f9f9f9"
     },
     showtip: {
-      type: Boolean, 
+      type: Boolean,
       default: true
     },
     disabled: {
@@ -68,10 +68,10 @@ export default {
   },
   data() {
     return {
-      isDragging: false, //是否正在拖拽
-      startMousePos: 0, //开始拖拽鼠标位置
-      range: [this.min, this.max], //拖动范围
-      startValue: 0 //滑块初始值
+      isDragging: false, // 是否正在拖拽
+      startMousePos: 0, // 开始拖拽鼠标位置
+      range: [this.min, this.max], // 拖动范围
+      startValue: 0 // 滑块初始值
     };
   },
   watch: {
@@ -122,9 +122,9 @@ export default {
           Math.round((newValues[1] - this.min) / this.step) * this.step +
           this.min;
       }
-      //边界值判定
+      // 边界值判定
       if (newValues[0] < this.min) {
-        //< min
+        // < min
         newValues[0] = this.min;
       }
       if (newValues[1] > this.max) {
@@ -149,10 +149,10 @@ export default {
     _starMoveUp(e) {
       e.preventDefault();
       e.stopPropagation();
-      if (this.disabled) return;
+      if (this.disabled) { return; }
       e = e.changedTouches ? e.changedTouches[0] : e;
       this.startMousePos = e.pageX;
-      this.startValue = this.range[0]; //缓存起始位置
+      this.startValue = this.range[0]; // 缓存起始位置
       this.isDragging = true;
       window.addEventListener("touchmove", this._onDrag, { passive: false });
       window.addEventListener("touchend", this._onDragUp, { passive: false });
@@ -160,8 +160,8 @@ export default {
     _onDrag(e) {
       e.preventDefault();
       e.stopPropagation();
-      if (this.disabled) return;
-      if (!this.isDragging) return;
+      if (this.disabled) { return; }
+      if (!this.isDragging) { return; }
       e = e.changedTouches ? e.changedTouches[0] : e;
       window.requestAnimationFrame(() => {
         let diff =
@@ -180,7 +180,7 @@ export default {
     },
     _stopDrag(e) {
       this.isDragging = false;
-      this.$emit("change", this.range[0])
+      this.$emit("change", this.range[0]);
       window.removeEventListener("touchmove", this._onDrag);
       window.removeEventListener("touchend", this._onDragUp);
     }

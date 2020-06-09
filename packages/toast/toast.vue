@@ -34,41 +34,41 @@ export default {
   name: "mw-toast",
   props: {
     toastShow: {
-      //展示
+      // 展示
       type: Boolean,
       default: false
     },
     message: {
-      //展示文本
+      // 展示文本
       type: String,
       default: ""
     },
     position: {
-      //展示位置
+      // 展示位置
       type: String,
       default: "center"
     },
     duration: {
-      //展示时长（ms）
+      // 展示时长（ms）
       type: [Number, String],
       default: 2500
     },
     type: {
-      //展示类型（success failed warning loading）
+      // 展示类型（success failed warning loading）
       type: String,
       default: ""
     },
-    //是否展示遮罩层
+    // 是否展示遮罩层
     hasMask: {
       type: Boolean,
       default: false
     },
-    //加载图标类型
+    // 加载图标类型
     loadingType: {
       type: String,
       default: "roller"
     },
-    //回掉函数
+    // 回掉函数
     callback: {
       type: Function
     }
@@ -88,18 +88,18 @@ export default {
       return this.loadingType === "roller"
         ? "30"
         : this.loadingType === "carousel"
-        ? "12"
-        : "28";
+          ? "12"
+          : "28";
     },
     icon() {
       const icon = this.type;
       return icon === "success"
         ? "selection"
         : icon === "failed"
-        ? "cancel"
-        : icon === "warning"
-        ? "information"
-        : "";
+          ? "cancel"
+          : icon === "warning"
+            ? "information"
+            : "";
     },
     transitionName() {
       if (this.type === "loading") {

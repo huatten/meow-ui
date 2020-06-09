@@ -11,7 +11,7 @@
 export default {
   name: "mw-divider",
   props: {
-    direction:{
+    direction: {
       type: String,
       default: "horizontal"
     },

@@ -17,8 +17,8 @@ const Dialog = ({
   confirmText = "确定",
   confirmColor = "#ff8200",
   lockScroll = true,
-  onConfirm = ()=>{},
-  onCancel = ()=>{}
+  onConfirm = () => { },
+  onCancel = () => { }
 } = {}) => {
   let vm = createInstance(Vue, MDialog, {
     props: {
@@ -41,7 +41,7 @@ const Dialog = ({
     },
     on: {
       'input': val => {
-        vm.value = val
+        vm.value = val;
       },
       'open': () => {
         vm.lockScroll && document.body.classList.add(BODYCLASS);
@@ -56,7 +56,7 @@ const Dialog = ({
 
 MDialog.install = function (Vue) {
   Vue.component(MDialog.name, MDialog);
-}
+};
 
 Vue.prototype.$dialog = Dialog;
 

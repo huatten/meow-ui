@@ -1,9 +1,9 @@
 <template>
   <div
     :class="[
-      'mw-loading', 
-      `mw-loading--${type}`, 
-      vertical && 'mw-loading--vertical', 
+      'mw-loading',
+      `mw-loading--${type}`,
+      vertical && 'mw-loading--vertical',
       fullScreen && 'mw-loading--fullScreen'
     ]"
   >

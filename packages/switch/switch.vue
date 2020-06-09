@@ -56,7 +56,7 @@ export default {
   },
   methods: {
     _change() {
-      if (this.disabled || this.loading) return;
+      if (this.disabled || this.loading) { return; }
       this.$emit("input", !this.value);
       this.$emit("change", this.value);
     }

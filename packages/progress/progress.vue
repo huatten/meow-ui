@@ -31,12 +31,11 @@
 </template>
 
 <script type="text/ecmascript-6">
-import { getStyle } from "../_util/dom";
 export default {
   name: "mw-progress",
   props: {
     value: {
-      //双向绑定进度条的值
+      // 双向绑定进度条的值
       type: Number,
       default: 0
     },
@@ -45,42 +44,42 @@ export default {
       default: ""
     },
     height: {
-      //进度条高度
+      // 进度条高度
       type: [Number, String],
       default: 14
     },
     round: {
-      //是否显示圆角
+      // 是否显示圆角
       type: Boolean,
       default: false
     },
     animate: {
-      //是否开启进度条动画
+      // 是否开启进度条动画
       type: Boolean,
       default: false
     },
     activeColor: {
-      //进度条颜色
+      // 进度条颜色
       type: String,
       default: "#ff8200"
     },
     unactiveColor: {
-      //进度条底部轨道颜色
+      // 进度条底部轨道颜色
       type: String,
       default: "#ebebeb"
     },
     showPercent: {
-      //是否显示百分比
+      // 是否显示百分比
       type: Boolean,
       default: true
     },
     percentPosition: {
-      //百分比显示位置 top/inner/right
+      // 百分比显示位置 top/inner/right
       type: String,
       default: "right"
     },
     percentSize: {
-      //百分比文字大小
+      // 百分比文字大小
       type: [String, Number],
       default: 14
     }

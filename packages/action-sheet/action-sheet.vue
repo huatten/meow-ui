@@ -17,10 +17,10 @@
               :key="index"
               :class="[
                 'mw-action-sheet-item',
-                (index > 0 || actions.length < 2 ) && 'mw-hairline--top', 
+                (index > 0 || actions.length < 2 ) && 'mw-hairline--top',
                 item.className,
-                index === clickIndex && 'active', 
-                (index === invalidIndex || item.disabled) && 'disabled', 
+                index === clickIndex && 'active',
+                (index === invalidIndex || item.disabled) && 'disabled',
                 item.loading && 'loading'
               ]"
               :style="{color: item.color}"
@@ -46,64 +46,64 @@ export default {
   name: "mw-action-sheet",
   props: {
     value: {
-      //双向绑定是否显示窗口
+      // 双向绑定是否显示窗口
       type: Boolean,
       default: false
     },
     position: {
-      //默认底部弹出
+      // 默认底部弹出
       type: String,
       default: "bottom"
     },
     title: {
-      //窗口标题
+      // 窗口标题
       type: String,
       default: ""
     },
     actions: {
-      //操作选项
+      // 操作选项
       type: Array,
       default() {
         return [];
       }
     },
     defaultIndex: {
-      //默认选中项
+      // 默认选中项
       type: Number,
       default: -1
     },
     invalidIndex: {
-      //禁用选项
+      // 禁用选项
       type: Number,
       default: -1
     },
     closable: {
-      //是否显示关闭按钮
+      // 是否显示关闭按钮
       type: Boolean,
       default: false
     },
     maskClosable: {
-      //弹出层是否可关闭
+      // 弹出层是否可关闭
       type: Boolean,
       default: true
     },
     showCancel: {
-      //是否显示取消
+      // 是否显示取消
       type: Boolean,
       default: false
     },
     cancelText: {
-      //取消按钮文案
+      // 取消按钮文案
       type: String,
       default: "取消"
     },
     cancelColor: {
-      //取消按钮颜色
+      // 取消按钮颜色
       type: String,
       default: ""
     },
     lockScroll: {
-      //是否锁定背景滚动
+      // 是否锁定背景滚动
       type: Boolean,
       default: true
     }

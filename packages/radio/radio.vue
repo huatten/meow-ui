@@ -3,8 +3,8 @@
     class="mw-radio"
     :class="[
       (iconPosition && !horizontal) && `is-${iconPosition}-radio`,
-      isChecked && 'is-checked', 
-      disabled && 'is-disabled', 
+      isChecked && 'is-checked',
+      disabled && 'is-disabled',
       horizontal && 'is-horizontal'
     ]"
   >
@@ -40,8 +40,8 @@ export default {
     event: "change"
   },
   props: {
-    //外部参考值
-    //checked : referenceValue === value
+    // 外部参考值
+    // checked : referenceValue === value
     referenceValue: {
       required: true
     },
@@ -80,8 +80,8 @@ export default {
       return this.disabled
         ? this.iconDisabled
         : this.value === this.referenceValue
-        ? this.icon
-        : this.iconInverse;
+          ? this.icon
+          : this.iconInverse;
     }
   },
   component: {

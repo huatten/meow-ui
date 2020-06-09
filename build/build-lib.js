@@ -4,9 +4,9 @@ const signale = require('signale');
 const { Signale } = signale;
 const tasks = [
   'bootstrap',
-  'lint',
   'clean',
   'build:entry',
+  'lint',
   'lib',
   'build:style'
 ];

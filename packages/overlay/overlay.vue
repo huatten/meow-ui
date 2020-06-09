@@ -14,7 +14,7 @@
 import MTransition from "../transition";
 export default {
   name: "mw-overlay",
-  props:{
+  props: {
     showMask: {
       type: Boolean,
       default: true
@@ -32,9 +32,9 @@ export default {
   components: {
     MTransition
   },
-  methods:{
-    tapMask(){
-      this.$emit("tapMask")
+  methods: {
+    tapMask() {
+      this.$emit("tapMask");
     }
   }
 };

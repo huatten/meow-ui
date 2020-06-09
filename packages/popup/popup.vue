@@ -23,12 +23,12 @@ export default {
   name: "mw-popup",
   props: {
     position: {
-      //弹出层位置
+      // 弹出层位置
       type: String,
       default: "center"
     },
     transition: {
-      //弹出层动画类型
+      // 弹出层动画类型
       type: String,
       default() {
         switch (this.position) {
@@ -46,32 +46,27 @@ export default {
       }
     },
     value: {
-      //v-model
+      // v-model
       type: Boolean,
       default: false
     },
     hasMask: {
-      //弹出层是否含有蒙层
+      // 弹出层是否含有蒙层
       type: Boolean,
       default: true
     },
     maskClosable: {
-      //弹出层是否可关闭
+      // 弹出层是否可关闭
       type: Boolean,
       default: true
     },
-    position: {
-      //弹出层位置
-      type: String,
-      default: "center"
-    },
     appendToBody: {
-      //弹出层是否挂载到body
+      // 弹出层是否挂载到body
       type: Boolean,
       default: false
     },
     lockMaskScroll: {
-      //是否锁定背景滚动
+      // 是否锁定背景滚动
       type: Boolean,
       default: true
     }
@@ -79,8 +74,8 @@ export default {
   data() {
     return {
       isPopupShow: false, // 控制蒙层和弹出层盒子
-      isPopupBoxShow: false, //控制弹出层盒子
-      isAnimation: false //过渡锁定
+      isPopupBoxShow: false, // 控制弹出层盒子
+      isAnimation: false // 过渡锁定
     };
   },
   watch: {
@@ -135,7 +130,7 @@ export default {
       }
     },
     _onPopupTransitionEnd() {
-      if (!this.isAnimation) return;
+      if (!this.isAnimation) { return; }
       if (!this.isPopupBoxShow) {
         this.isPopupShow = false;
         this.$emit("closed");

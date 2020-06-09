@@ -65,7 +65,7 @@ export default {
         item => item.$options.name === "mw-marquee-item"
       );
       this.total = this.items.length;
-      if (this.total <= 1) return; //list小于1条时不滚动
+      if (this.total <= 1) { return; } // list小于1条时不滚动
       this.firstItem = this.items[0].$el.innerHTML;
       this.lastItem = this.items[this.total - 1].$el.innerHTML;
       this._setTranslate(0, -this.height);

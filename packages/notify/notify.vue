@@ -10,22 +10,22 @@ export default {
   name: "mw-notify",
   props: {
     notifyShow: {
-      //展示
+      // 展示
       type: Boolean,
       default: false
     },
     message: {
-      //展示文本
+      // 展示文本
       type: String,
       default: ""
     },
     duration: {
-      //展示时长（ms）
+      // 展示时长（ms）
       type: [Number, String],
       default: 2500
     },
     type: {
-      //展示类型（default success failed warning）
+      // 展示类型（default success failed warning）
       type: String,
       default: "default"
     }

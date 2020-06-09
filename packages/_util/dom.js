@@ -15,10 +15,10 @@ export function hasClass(el, className) {
  * 给元素添加class
  * @param  el 元素
  * @param className className
- * @returns {*} 
+ * @returns {*}
  */
 export function addClass(el, className) {
-  if (hasClass(el, className)) return;
+  if (hasClass(el, className)) { return; };
   let newClass = el.className.split(" ");
   newClass.push(className);
   el.className = newClass.join("");
@@ -28,7 +28,7 @@ export function addClass(el, className) {
  * 给元素删除class
  * @param  el 元素
  * @param className className
- * @returns {*} 
+ * @returns {*}
  */
 export function removeClass(el, className) {
   if (hasClass(el, className)) {
@@ -42,7 +42,7 @@ export function removeClass(el, className) {
 /**
  * 判断元素是否在body中
  * @param  el 元素
- * @returns {Boolean} 
+ * @returns {Boolean}
  */
 export function isInDocument(el) {
   return document.body.contains(el);
@@ -71,12 +71,12 @@ export function getStyleNumber(el, attr, pseudoClass = null) {
     const val = getStyle(el, attr, pseudoClass);
     return parseFloat(val);
   } catch (e) {
-    console.error(e);
+    throw Error(e);
   }
 }
 /**
  * 检查是否滚动
- * @param {*} el 
+ * @param {*} el
  */
 export function checkOverflow(el) {
   let info = getStyle(el, "overflow") + getStyle(el, "overflow-y") + getStyle(el, "overflow-x");
@@ -85,20 +85,19 @@ export function checkOverflow(el) {
 /**
  * 寻找距离最近的scroll父元素
  * @param {*} el 元素
- * @returns {*} 
+ * @returns {*}
  */
 export function getScrollParent(el) {
-  if (!inBrowser) return;
+  if (!inBrowser) { return; };
   if (!(el instanceof HTMLElement)) {
-    console.error(`${el} is not an HTMLElement`);
-    return null;
+    throw new Error(`${el} is not an HTMLElement`);
   }
   let parent = el;
   while (parent) {
-    if (parent === document.body || parent === document.documentElement) break;
-    if (!parent.parentNode) return null;
+    if (parent === document.body || parent === document.documentElement) { break; };
+    if (!parent.parentNode) { return null; };
 
-    if (checkOverflow(parent)) return parent;
+    if (checkOverflow(parent)) { return parent; };
     parent = parent.parentNode;
   }
   return window;
@@ -106,8 +105,8 @@ export function getScrollParent(el) {
 
 /**
  * 判断元素是否在可视区或者可视区的倍数范围内
- * @param {*} el 
- * @param {*} viewRate 
+ * @param {*} el
+ * @param {*} viewRate
  */
 export function checkInView(el, viewRate = 1) {
   let top, right, bottom, left;
@@ -128,8 +127,8 @@ export function checkInView(el, viewRate = 1) {
 }
 /**
  * 获取窗口的文档显示区的宽度
- * @param {*} obj 
- * @param {*} param1 
+ * @param {*} obj
+ * @param {*} param1
  */
 export function getWidth(obj = window, { isScroll = false, isComputed = false } = {}) {
   if (window === obj) {
@@ -148,8 +147,8 @@ export function getWidth(obj = window, { isScroll = false, isComputed = false } 
 
 /**
  * 获取窗口的文档显示区的高度
- * @param {*} obj 
- * @param {*} param1 
+ * @param {*} obj
+ * @param {*} param1
  */
 export function getHeight(obj = window, { isScroll = false } = {}) {
   if (window === obj) {

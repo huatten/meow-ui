@@ -64,7 +64,7 @@ export default {
   inheritAttrs: false,
   data() {
     return {
-      __observer__: null,
+      observerObj: null,
       url: this.placeholder,
       intersected: false,
       status: "loading",
@@ -81,15 +81,15 @@ export default {
   },
   mounted() {
     if (this.observer && "IntersectionObserver" in window) {
-      this.__observer__ = new IntersectionObserver(entries => {
+      this.observerObj = new IntersectionObserver(entries => {
         const image = entries[0];
         if (image.isIntersecting) {
           this.intersected = true;
           this.loadImgIfInView();
-          this.__observer__.disconnect();
+          this.observerObj.disconnect();
         }
       }, this.intersectionOptions);
-      this.__observer__.observe(this.$el);
+      this.observerObj.observe(this.$el);
     } else {
       if (this.$el.getAttribute("status") === "loading") {
         this.scrollParentNode = getScrollParent(this.$el);
@@ -107,7 +107,7 @@ export default {
   },
   destroyed() {
     if (this.observer && "IntersectionObserver" in window) {
-      this.__observer__.disconnect();
+      this.observerObj.disconnect();
     } else {
       this.events.forEach(eventName => {
         this.scrollParentNode.removeEventListener(
@@ -140,7 +140,7 @@ export default {
     loadImage() {
       if (this.attemptCount > this.attempt - 1 && this.status === "attempt") {
         const msg = `lazyload log: ${this.src} tried too more than ${this.attempt} times`;
-        console.error(msg);
+        throw Error(msg);
       }
       const startTime = Date.now();
       let img = new Image();

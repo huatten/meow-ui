@@ -15,19 +15,19 @@ const Toast = (message, {
   if (!vm) {
     vm = createInstance(Vue, MToast);
   }
-  //common params
+  // common params
   vm.message = message;
   vm.type = type;
   vm.hasMask = hasMask;
   vm.callback = callback;
-  //toast 
+  // toast
   vm.duration = duration;
   vm.position = position;
-  //loading
+  // loading
   vm.loadingType = loadingType;
   vm.$nextTick(() => {
-    vm.toastShow = true
-  })
+    vm.toastShow = true;
+  });
 
   if (TYPE.includes(vm.type)) {
     if (timer) {
@@ -38,14 +38,16 @@ const Toast = (message, {
       vm.toastShow = false;
       timer = null;
       vm.callback = callback();
-    }, vm.duration)
+    }, vm.duration);
   }
   return vm;
 };
+
 Toast.close = () => {
   Vue.nextTick(() => {
     vm.toastShow = false;
-  })
-}
+  });
+};
+
 Vue.prototype.$toast = Toast;
 export default MToast;

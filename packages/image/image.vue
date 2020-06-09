@@ -97,18 +97,16 @@ export default {
     },
     imgStyle() {
       const { fit } = this;
-      if (fit) {
-        return { "object-fit": fit };
-      }
+      return fit ? { "object-fit": fit } : {};
     },
     status() {
       return this.loaded
         ? "loaded"
         : this.loading
-        ? "loading"
-        : this.error
-        ? "error"
-        : "";
+          ? "loading"
+          : this.error
+            ? "error"
+            : "";
     }
   },
   methods: {
@@ -133,9 +131,8 @@ export default {
     handleError(event) {
       this.loading = false;
       this.error = true;
-      const err = new Error(`${this.src} load failed...`);
-      console.error(err);
       this.$emit("error", event);
+      throw new Error(`${this.src} load failed...`);
     },
     onClick(event) {
       this.$emit("click", event);

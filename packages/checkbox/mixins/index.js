@@ -2,27 +2,27 @@ export default {
   props: {
     icon: {
       type: String,
-      default: 'selection',
+      default: 'selection'
     },
     iconInverse: {
       type: String,
-      default: 'prevent',
+      default: 'prevent'
     },
     iconDisabled: {
       type: String,
-      default: 'cancel',
+      default: 'cancel'
     },
     iconSvg: {
       type: Boolean,
-      default: false,
+      default: false
     },
     iconSize: {
       type: [Number, String],
-      default: 25,
+      default: 25
     },
     iconPosition: {
       type: String,
-      default: '',
-    },
-  },
-}
+      default: ''
+    }
+  }
+};

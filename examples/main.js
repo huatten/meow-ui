@@ -1,8 +1,8 @@
 import Vue from "vue";
 import App from "./App.vue";
-import router from "router";
+import router from "@/router";
 import "packages/_style/src/index.scss";
-import './assets/responsive';
+import '@/assets/responsive';
 import MEOW from 'packages/index.js';
 Vue.use(MEOW)
 

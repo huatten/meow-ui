@@ -2,7 +2,7 @@
   <button
     class="mw-button"
     :class="[
-      `mw-button--${type}`, 
+      `mw-button--${type}`,
       (invalid || disabled) && 'mw-button--disabled',
       !inline && 'mw-button--block',
       plain && 'mw-button--plain',
@@ -45,82 +45,82 @@ const RIPPLE_OPACITY = 0.3;
 export default {
   name: "mw-button",
   props: {
-    //样式类型
+    // 样式类型
     type: {
       type: String,
       default: "default"
     },
-    //是否为行内按钮
+    // 是否为行内按钮
     inline: {
       type: Boolean,
       default: true
     },
-    //是否为线性按钮
+    // 是否为线性按钮
     plain: {
       type: Boolean,
       default: false
     },
-    //按钮尺寸 small normal large
+    // 按钮尺寸 small normal large
     size: {
       type: String,
       default: "normal"
     },
-    //是否为圆角按钮
+    // 是否为圆角按钮
     round: {
       type: Boolean,
       default: false
     },
-    //原生button标签的type属性
+    // 原生button标签的type属性
     nativeType: {
       type: String,
       default: "button"
     },
-    //未激活 设为true按钮无法点击， invalid一般用于表单校验无效等主观因素 搭配nativType使用
+    // 未激活 设为true按钮无法点击， invalid一般用于表单校验无效等主观因素 搭配nativType使用
     invalid: {
       type: Boolean,
       default: false
     },
-    //按钮是否禁用 设为true按钮无法点击 用于无权限或无库存等客观因素
+    // 按钮是否禁用 设为true按钮无法点击 用于无权限或无库存等客观因素
     disabled: {
       type: Boolean,
       default: false
     },
-    //按钮icon图标名称
+    // 按钮icon图标名称
     iconName: {
       type: String,
       default: ""
     },
-    //按钮图标是否为svg图标
+    // 按钮图标是否为svg图标
     iconSvg: {
       type: Boolean,
-      default: false //svg、font
+      default: false // svg、font
     },
-    //按钮icon图标大小
+    // 按钮icon图标大小
     iconSize: {
       type: [Number, String],
       default: 24
     },
-    //是否启用加载状态
+    // 是否启用加载状态
     loading: {
       type: Boolean,
       default: false
     },
-    //加载动画类型 roller carousel spinner
+    // 加载动画类型 roller carousel spinner
     loadingType: {
       type: String,
       default: "roller"
     },
-    //加载动画大小
+    // 加载动画大小
     loadingSize: {
       type: [Number, String],
       default: 20
     },
-    //是否开启点击波纹动效
+    // 是否开启点击波纹动效
     ripple: {
       type: Boolean,
       default: false
     },
-    //波纹扩散速度
+    // 波纹扩散速度
     speed: {
       type: [Number, String],
       default: 4

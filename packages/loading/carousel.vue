@@ -46,14 +46,14 @@ export default {
       ]
     };
   },
-  computed:{
-    svgWidth(){
+  computed: {
+    svgWidth() {
       const size = this.size;
       const length = this.circleAnimateValues.length;
-      return length * size  + (length - 1) * size / 2;
+      return length * size + (length - 1) * size / 2;
     },
     viewBox() {
-      return `0 0 ${this.svgWidth} ${this.size}`
+      return `0 0 ${this.svgWidth} ${this.size}`;
     }
   },
   components: {
