@@ -40,9 +40,8 @@
       <h5>设置6s消失</h5>
       <div class="block">
         <mw-noticebar
-          left-icon="done"
+          left-icon="information"
           left-size="20"
-          :svg="true"
           mode="close"
           time="6000"
         >我是带有图标的的通知栏，6s以后消失。</mw-noticebar>
@@ -52,9 +51,8 @@
       <h5>文字太长滚动播放</h5>
       <div class="block">
         <mw-noticebar
-          left-icon="done"
+          left-icon="information"
           left-size="20"
-          :svg="true"
           mode="link"
         >我是带有图标的的通知栏，文字太长了，我现在要滚动才行，同时可点击查看详情。</mw-noticebar>
       </div>
@@ -63,9 +61,8 @@
       <h5>设置滚动延迟时间</h5>
       <div class="block">
         <mw-noticebar
-          left-icon="done"
+          left-icon="information"
           left-size="20"
-          :svg="true"
           mode="link"
           delay="3"
         >我是带有图标的的通知栏，文字太长了，我现在要滚动才行，3s后开始滚动</mw-noticebar>
@@ -75,9 +72,8 @@
       <h5>设置滚动速度</h5>
       <div class="block">
         <mw-noticebar
-          left-icon="done"
+          left-icon="information"
           left-size="20"
-          :svg="true"
           mode="link"
           speed="120"
         >我是带有图标的的通知栏，文字太长了，我现在要滚动才行，提速了哦同时可点击查看详情。</mw-noticebar>
@@ -88,7 +84,6 @@
       <div class="block">
         <mw-noticebar
           left-icon="settings"
-          iconType="font"
           mode="close"
           background="rgba(89,158,248,.08)"
           color="#2f86f6"

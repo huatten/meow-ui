@@ -137,7 +137,7 @@ Vue.component(MNoticebar.name, MNoticebar);
 |------|------|------|------|------|
 | mode | 右侧提示类型 | `String` | - | `close`、`link` |
 | left-icon | 左侧svg图标 | `String` | `notice` | 可添加svg传name |
-| svg | 图标类型 | `Boolean` | `false` | 有svg类型 `svg` 和iconfont类型 `font` |
+| svg | 图标类型 | `Boolean` | `false` | 有svg类型和iconfont类型 |
 | left-size | 左侧图标大小 | `Number` | `24` | - |
 | right-size | 右侧图标大小 | `Number` | `24` | - |
 | background | 背景色 | `String` | `#fffbe8` | - |
