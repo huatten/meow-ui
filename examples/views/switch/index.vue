@@ -56,7 +56,6 @@ export default {
 <style scoped lang="scss" rel="stylesheet/scss">
 .switch {
   padding: 30px;
-  background: #fff;
 }
 section {
   margin-bottom: 55px;

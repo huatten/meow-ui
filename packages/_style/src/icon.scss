@@ -89,6 +89,11 @@
       content: "\e6aa";
     }
   }
+  &-next {
+    &:before {
+      content: "\e6aa";
+    }
+  }
 }
 @font-face {
   font-family: "MEOW-UI-ICON";

@@ -4,6 +4,7 @@
   position: fixed;
   top: 0;
   left: 0;
+  z-index: $notify-index;
   right: auto;
   bottom: auto;
   box-sizing: border-box;

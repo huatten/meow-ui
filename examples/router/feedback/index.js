@@ -1,18 +1,14 @@
 /**
  * feedback 反馈组件 相关路由
  */
-export default [
+const Nav = () => import('@/views/nav.vue');
+const feedback = [
   {
     path: "/notify",
     name: "notify",
-    component: resolve => {
-      require.ensure(
-        ["@/views/notify/index.vue"],
-        () => {
-          resolve(require("@/views/notify/index.vue"));
-        },
-        "notify"
-      );
+    components: {
+      main: () => import('@/views/notify/index.vue'),
+      nav: Nav
     },
     meta: {
       docTitle: "notify 通知栏"
@@ -21,14 +17,9 @@ export default [
   {
     path: "/toast",
     name: "toast",
-    component: resolve => {
-      require.ensure(
-        ["@/views/toast/index.vue"],
-        () => {
-          resolve(require("@/views/toast/index.vue"));
-        },
-        "toast"
-      );
+    components: {
+      main: () => import('@/views/toast/index.vue'),
+      nav: Nav
     },
     meta: {
       docTitle: "toast 轻提示"
@@ -37,14 +28,9 @@ export default [
   {
     path: "/dialog",
     name: "dialog",
-    component: resolve => {
-      require.ensure(
-        ["@/views/dialog/index.vue"],
-        () => {
-          resolve(require("@/views/dialog/index.vue"));
-        },
-        "dialog"
-      );
+    components: {
+      main: () => import('@/views/dialog/index.vue'),
+      nav: Nav
     },
     meta: {
       docTitle: "dialog 弹出框"
@@ -53,17 +39,14 @@ export default [
   {
     path: "/action-sheet",
     name: "action-sheet",
-    component: resolve => {
-      require.ensure(
-        ["@/views/action-sheet/index.vue"],
-        () => {
-          resolve(require("@/views/action-sheet/index.vue"));
-        },
-        "action-sheet"
-      );
+    components: {
+      main: () => import('@/views/action-sheet/index.vue'),
+      nav: Nav
     },
     meta: {
       docTitle: "action-sheet 动作面板"
     }
   }
 ];
+
+export default feedback;

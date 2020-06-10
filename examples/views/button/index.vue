@@ -221,7 +221,6 @@ export default {
 
 <style scoped lang="scss" rel="stylesheet/scss">
 .button {
-  background: #fff;
   padding: 0 30px 30px 30px;
   height: 100%;
   &-row {

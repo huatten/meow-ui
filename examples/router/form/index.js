@@ -1,50 +1,36 @@
 /**
  * form表单 相关路由
  */
-export default [
+const Nav = () => import('@/views/nav.vue');
+const form = [
   {
     path: "/switch",
     name: "switch",
-    component: resolve => {
-      require.ensure(
-        ["@/views/switch/index.vue"],
-        () => {
-          resolve(require("@/views/switch/index.vue"));
-        },
-        "switch"
-      );
+    components: {
+      main: () => import('@/views/switch/index.vue'),
+      nav: Nav
     },
     meta: {
-      docTitle: "switch开关"
+      docTitle: "switch 开关"
     }
   },
   {
     path: "/radio",
     name: "radio",
-    component: resolve => {
-      require.ensure(
-        ["@/views/radio/index.vue"],
-        () => {
-          resolve(require("@/views/radio/index.vue"));
-        },
-        "radio"
-      );
+    components: {
+      main: () => import('@/views/radio/index.vue'),
+      nav: Nav
     },
     meta: {
-      docTitle: "radio单选"
+      docTitle: "radio 单选"
     }
   },
   {
     path: "/checkbox",
     name: "checkbox",
-    component: resolve => {
-      require.ensure(
-        ["@/views/checkbox/index.vue"],
-        () => {
-          resolve(require("@/views/checkbox/index.vue"));
-        },
-        "checkbox"
-      );
+    components: {
+      main: () => import('@/views/checkbox/index.vue'),
+      nav: Nav
     },
     meta: {
       docTitle: "checkbox 复选"
@@ -53,17 +39,13 @@ export default [
   {
     path: "/slider",
     name: "slider",
-    component: resolve => {
-      require.ensure(
-        ["@/views/slider/index.vue"],
-        () => {
-          resolve(require("@/views/slider/index.vue"));
-        },
-        "slider"
-      );
+    components: {
+      main: () => import('@/views/slider/index.vue'),
+      nav: Nav
     },
     meta: {
       docTitle: "slider 滑块"
     }
   }
 ];
+export default form;

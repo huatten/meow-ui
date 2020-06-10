@@ -131,7 +131,6 @@ export default {
 
 <style scoped lang="scss" rel="stylesheet/scss">
 .progress {
-  background: #fff;
   padding: 24px;
 }
 section {

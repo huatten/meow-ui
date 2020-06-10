@@ -15,7 +15,7 @@ $color-gray-light: #e5e5e5;
 $color-gray-darker: #7d7e80;
 $color-gray-dark: #969799;
 $color-border: #e2e4ea;  //边框颜色
-$color-body:#f3f4f5; //body背景色
+$color-body:#f7f8fa; //body背景色
 // Font family
 $font-family-normal :"Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
 $font-family-number: DINPro-Medium, DIN Alternate, "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
@@ -23,6 +23,7 @@ $font-family-number: DINPro-Medium, DIN Alternate, "Helvetica Neue",Helvetica,"P
 // z-index
 $overlay-index: 1000;
 $popup-index: 2019;
+$notify-index: 2020;
 
 /************   switch component  **************/
 $switch-background-color: #fafafa;

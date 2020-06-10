@@ -33,9 +33,9 @@
     "lint": "vue-cli-service lint && eslint --fix --ext .js,.vue packages examples",
     "test:unit": "vue-cli-service test:unit",
     "lib": "vue-cli-service build --target lib --name meow-ui  --dest lib packages/index.js && webpack  --config ./build/webpack.component.js",
-    "build:entry": "node build/build-entry.js ",
-    "build:lib": "node build/build-lib.js ",
-    "build:style": "gulp build --gulpfile packages/_style/gulpfile.js && rimraf lib/meow-css && cp-cli packages/_style/lib lib/meow-css",
+    "build:entry": "node build/build-entry.js",
+    "build:lib": "node build/build-lib.js",
+    "build:style": "gulp build --gulpfile packages/_style/gulpfile.js && cp-cli packages/_style/lib lib",
     "build:docs": "vuepress build docs"
   },
   "dependencies": {
@@ -51,6 +51,7 @@
     "@vue/cli-service": "^3.7.0",
     "@vue/eslint-config-standard": "^4.0.0",
     "@vue/test-utils": "1.0.0-beta.29",
+    "vueg": "^1.3.4",
     "autoprefixer": "^9.8.0",
     "babel-eslint": "^10.0.1",
     "babel-plugin-component": "^1.1.1",

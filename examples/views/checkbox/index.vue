@@ -137,8 +137,10 @@ export default {
 <style scoped lang="scss" rel="stylesheet/scss">
 section {
   padding: 30px;
-  background: #fff;
   margin-bottom: 20px;
+  &:last-child{
+    margin-bottom: 0;
+  }
   h5 {
     font-size: 30px;
     color: rgba(69, 90, 100, 0.6);

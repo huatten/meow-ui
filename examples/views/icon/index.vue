@@ -51,30 +51,6 @@
         <mw-icon name="prompt" size="30" color="#ff8200"></mw-icon>
       </div>
     </section>
-    <section>
-      <h5>svg图标</h5>
-      <div class="block">
-        <mw-icon name="setting" svg></mw-icon>
-        <mw-icon name="info" svg></mw-icon>
-        <mw-icon name="info" svg></mw-icon>
-        <mw-icon name="close" svg></mw-icon>
-        <mw-icon name="time" svg></mw-icon>
-        <mw-icon name="star" svg></mw-icon>
-        <mw-icon name="notification" svg></mw-icon>
-      </div>
-    </section>
-    <section>
-      <h5>更改svg图标大小</h5>
-      <div class="block">
-        <mw-icon name="setting" svg size="30"></mw-icon>
-        <mw-icon name="info" svg width="24"></mw-icon>
-        <mw-icon name="info" svg width="24"></mw-icon>
-        <mw-icon name="close" svg width="24"></mw-icon>
-        <mw-icon name="time" svg width="24"></mw-icon>
-        <mw-icon name="star" svg width="24"></mw-icon>
-        <mw-icon name="notification" svg width="24"></mw-icon>
-      </div>
-    </section>
   </div>
 </template>
 
@@ -88,7 +64,6 @@ export default {
 
 <style scoped lang="scss" rel="stylesheet/scss">
 .icon {
-  background: #fff;
   padding: 30px 0;
 }
 section {

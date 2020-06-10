@@ -1,18 +1,14 @@
 /**
  * show 展示组件 相关路由
  */
-export default [
+const Nav = () => import('@/views/nav.vue');
+const show = [
   {
     path: "/marquee",
     name: "marquee",
-    component: resolve => {
-      require.ensure(
-        ["@/views/marquee/index.vue"],
-        () => {
-          resolve(require("@/views/marquee/index.vue"));
-        },
-        "marquee"
-      );
+    components: {
+      main: () => import('@/views/marquee/index.vue'),
+      nav: Nav
     },
     meta: {
       docTitle: "marquee 跑马灯"
@@ -21,14 +17,9 @@ export default [
   {
     path: "/noticebar",
     name: "noticebar",
-    component: resolve => {
-      require.ensure(
-        ["@/views/noticebar/index.vue"],
-        () => {
-          resolve(require("@/views/noticebar/index.vue"));
-        },
-        "noticebar"
-      );
+    components: {
+      main: () => import('@/views/noticebar/index.vue'),
+      nav: Nav
     },
     meta: {
       docTitle: "noticebar 通知栏"
@@ -37,14 +28,9 @@ export default [
   {
     path: "/collapse",
     name: "collapse",
-    component: resolve => {
-      require.ensure(
-        ["@/views/collapse/index.vue"],
-        () => {
-          resolve(require("@/views/collapse/index.vue"));
-        },
-        "collapse"
-      );
+    components: {
+      main: () => import('@/views/collapse/index.vue'),
+      nav: Nav
     },
     meta: {
       docTitle: "collapse 折叠面板"
@@ -53,14 +39,9 @@ export default [
   {
     path: "/divider",
     name: "divider",
-    component: resolve => {
-      require.ensure(
-        ["@/views/divider/index.vue"],
-        () => {
-          resolve(require("@/views/divider/index.vue"));
-        },
-        "divider"
-      );
+    components: {
+      main: () => import('@/views/divider/index.vue'),
+      nav: Nav
     },
     meta: {
       docTitle: "divider 风格线"
@@ -69,14 +50,9 @@ export default [
   {
     path: "/showhide",
     name: "showhide",
-    component: resolve => {
-      require.ensure(
-        ["@/views/showhide/index.vue"],
-        () => {
-          resolve(require("@/views/showhide/index.vue"));
-        },
-        "showhide"
-      );
+    components: {
+      main: () => import('@/views/showhide/index.vue'),
+      nav: Nav
     },
     meta: {
       docTitle: "showhide 显示隐藏"
@@ -85,14 +61,9 @@ export default [
   {
     path: "/lazyload",
     name: "lazyload",
-    component: resolve => {
-      require.ensure(
-        ["@/views/lazyload/index.vue"],
-        () => {
-          resolve(require("@/views/lazyload/index.vue"));
-        },
-        "lazyload"
-      );
+    components: {
+      main: () => import('@/views/lazyload/index.vue'),
+      nav: Nav
     },
     meta: {
       docTitle: "lazyload 懒加载"
@@ -101,17 +72,13 @@ export default [
   {
     path: "/progress",
     name: "progress",
-    component: resolve => {
-      require.ensure(
-        ["@/views/progress/index.vue"],
-        () => {
-          resolve(require("@/views/progress/index.vue"));
-        },
-        "progress"
-      );
+    components: {
+      main: () => import('@/views/progress/index.vue'),
+      nav: Nav
     },
     meta: {
       docTitle: "progress 进度条"
     }
   }
 ];
+export default show;

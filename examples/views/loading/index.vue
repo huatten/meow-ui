@@ -96,7 +96,6 @@ export default {
 <style scoped lang="scss" rel="stylesheet/scss">
 .loading {
   padding: 20px 20px;
-  background-color: #dee2e6;
 }
 section {
   margin-bottom: 50px;
