@@ -96,10 +96,9 @@ export default {
   padding: 30px 0;
 }
 section {
-  margin-bottom: 80px;
+  margin: 0 30px 80px 30px;
   h5 {
     margin-bottom: 50px;
-    margin-left: 30px;
     color: rgba(69, 90, 100, 0.6);
     font-size: 30px;
   }

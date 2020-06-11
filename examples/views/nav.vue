@@ -10,6 +10,7 @@
 
 <script type="text/ecmascript-6">
 export default {
+  name: "navHeader",
   data() {
     return {
       showPath: "",
@@ -44,7 +45,7 @@ export default {
 };
 </script>
 
-<style scoped lang="scss" rel="stylesheet/scss">
+<style lang="scss" rel="stylesheet/scss">
 .nav {
   position: fixed;
   top: 0;

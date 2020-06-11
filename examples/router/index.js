@@ -8,13 +8,13 @@ let routes = [
   { path: "*", redirect: "/home" },
   {
     path: "/home",
-    name: "home",
+    name: "homeMain",
     components: { // 命名视图
       main: Home,
       nav: Nav
     },
     meta: {
-      docTitle: "meow-ui"
+      docTitle: "MeowUI - 一个正在建设中的移动端vue组件库"
     }
   }
 ];
@@ -28,16 +28,16 @@ routerContext.keys().forEach(route => {
 
 const router = new Router({
   routes: routes,
-  scrollBehavior(to) {
+  scrollBehavior(to, from, savedPosition) { // history模式下可用
     if (to.path == '/home') {
-      return null;
+      window.scrollTo({top: savedPosition.y});
     } else {
       return { x: 0, y: 0 };
     }
   }
 });
 const options = {
-  duration: '0.2', // 转场动画时长，默认为0.3，单位秒
+  duration: '0.24', // 转场动画时长，默认为0.3，单位秒
   firstEntryDisable: true, // 值为true时禁用首次进入应用时的渐现动画，默认为false
   firstEntryDuration: '.3', // 首次进入应用时的渐现动画时长，默认为.6
   forwardAnim: 'fadeInRight', // 前进动画，默认为fadeInRight

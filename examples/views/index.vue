@@ -4,7 +4,7 @@
       <mw-image :src="logo"></mw-image>
     </h1>
     <div class="version">MeowUI {{version}}</div>
-    <p class="desc">一个正在生产中的的移动端Vue组件库</p>
+    <p class="desc">一个正在建设中的的移动端Vue组件库</p>
     <div class="components-list">
       <mw-collapse accordion>
         <mw-collapse-item title="基础组件">
@@ -67,7 +67,7 @@ import show from "@/router/show/index";
 import form from "@/router/form/index";
 import feedback from "@/router/feedback/index";
 export default {
-  name: "home",
+  name: "homeMain",
   data() {
     return {
       version,

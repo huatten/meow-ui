@@ -53,7 +53,7 @@ export default {
 <style scoped lang="scss" rel="stylesheet/scss">
 .showhide {
   background: #fff;
-  padding: 20px 0;
+  padding: 30px 0;
 }
 section {
   margin-bottom: 40px;

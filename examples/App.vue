@@ -1,8 +1,8 @@
 <template>
   <div id="app" :class="{'in-iframe':inIframe}">
     <router-view class="examples-nav" name="nav" v-if="!inIframe" v-transition></router-view>
-    <keep-alive include="home">
-      <router-view class="examples" name="main" v-transition> </router-view>
+    <keep-alive include="homeMain">
+      <router-view class="examples-main" name="main" v-transition></router-view>
     </keep-alive>
   </div>
 </template>
@@ -21,7 +21,7 @@ export default {
   }
 };
 </script>>
-<style lang="scss" scoped>
+<style lang="scss">
 * {
   -webkit-tap-highlight-color: transparent;
 }
@@ -39,11 +39,7 @@ export default {
     padding-top: 0;
   }
 }
-h4 {
-  padding: 0 8px;
-  box-sizing: border-box;
-}
-.demo {
-  padding: 0 8px 20px 8px;
+.examples-main {
+  min-height: 100%;
 }
 </style>
