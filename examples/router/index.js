@@ -30,7 +30,7 @@ const router = new Router({
   routes: routes,
   scrollBehavior(to, from, savedPosition) { // history模式下可用
     if (to.path == '/home') {
-      window.scrollTo({top: savedPosition.y});
+      window.scrollTo({ top: savedPosition.y });
     } else {
       return { x: 0, y: 0 };
     }

@@ -4,6 +4,7 @@ const resolve = dir => {
 };
 module.exports = {
   publicPath: "./",
+  outputDir: "demo",
   productionSourceMap: false,
   pages: {
     index: {
