@@ -97,6 +97,9 @@ export default {
     width: 380px;
     height: 380px;
     margin: -30px auto 0;
+    animation: animationFrames linear 1.2s;
+    animation-delay: 0.6s;
+    transform-origin: 50% 50%;
     .mw-image {
       width: inherit;
       height: inherit;
@@ -172,6 +175,41 @@ export default {
       background-size: 36px auto;
       font-size: 0;
       margin-right: 10px;
+    }
+  }
+  @keyframes animationFrames {
+    0% {
+      transform: rotate(0deg) scaleX(1) scaleY(1);
+    }
+    10% {
+      transform: rotate(-3deg) scaleX(0.8) scaleY(0.8);
+    }
+    20% {
+      transform: rotate(-3deg) scaleX(0.8) scaleY(0.8);
+    }
+    30% {
+      transform: rotate(3deg) scaleX(1.2) scaleY(1.2);
+    }
+    40% {
+      transform: rotate(-3deg) scaleX(1.2) scaleY(1.2);
+    }
+    50% {
+      transform: rotate(3deg) scaleX(1.2) scaleY(1.2);
+    }
+    60% {
+      transform: rotate(-3deg) scaleX(1.2) scaleY(1.2);
+    }
+    70% {
+      transform: rotate(3deg) scaleX(1.2) scaleY(1.2);
+    }
+    80% {
+      transform: rotate(-3deg) scaleX(1.2) scaleY(1.2);
+    }
+    90% {
+      transform: rotate(3deg) scaleX(1.2) scaleY(1.2);
+    }
+    100% {
+      transform: rotate(0deg) scaleX(1) scaleY(1);
     }
   }
 }

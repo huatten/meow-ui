@@ -26,7 +26,7 @@
       </template>
       <template v-if="loading">
         <div class="mw-button__icon">
-          <mw-loading :type="loadingType" :size="loadingSize"></mw-loading>
+          <mw-loading :type="loadingType" :size="loadingSize" fill="#fff"></mw-loading>
         </div>
       </template>
       <p class="mw-button__text">
