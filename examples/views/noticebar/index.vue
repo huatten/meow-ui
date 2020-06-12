@@ -41,7 +41,6 @@
       <div class="block">
         <mw-noticebar
           left-icon="information"
-          left-size="20"
           mode="close"
           time="6000"
         >我是带有图标的的通知栏，6s以后消失。</mw-noticebar>
@@ -52,7 +51,6 @@
       <div class="block">
         <mw-noticebar
           left-icon="information"
-          left-size="20"
           mode="link"
         >我是带有图标的的通知栏，文字太长了，我现在要滚动才行，同时可点击查看详情。</mw-noticebar>
       </div>
@@ -62,7 +60,6 @@
       <div class="block">
         <mw-noticebar
           left-icon="information"
-          left-size="20"
           mode="link"
           delay="3"
         >我是带有图标的的通知栏，文字太长了，我现在要滚动才行，3s后开始滚动</mw-noticebar>
@@ -73,7 +70,6 @@
       <div class="block">
         <mw-noticebar
           left-icon="information"
-          left-size="20"
           mode="link"
           speed="120"
         >我是带有图标的的通知栏，文字太长了，我现在要滚动才行，提速了哦同时可点击查看详情。</mw-noticebar>

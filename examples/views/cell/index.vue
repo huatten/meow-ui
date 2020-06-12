@@ -16,13 +16,13 @@
             <mw-icon name="settings" size="24"></mw-icon>
           </div>
         </mw-cell>
-        <mw-cell title="设为默认地址" @click="cellClick">
+        <mw-cell title="设为默认地址">
           <template slot="right">
             <mw-switch v-model="switchFlag"></mw-switch>
           </template>
         </mw-cell>
         <mw-cell title="帮助中心" arrow @click="cellClick"></mw-cell>
-        <mw-cell title="邀请好友" no-border right-text="已邀请3人" @click="cellClick"></mw-cell>
+        <mw-cell title="邀请好友" no-border right-text="已邀请3人"></mw-cell>
       </div>
     </section>
     <section>
@@ -32,7 +32,6 @@
           title="交通银行"
           right-text="已消费900元"
           abstract="每日限额10000元"
-          @click="cellClick"
         >
           <div slot="left" class="logo">
             <div></div>
@@ -42,7 +41,6 @@
           title="招商银行"
           right-text="余额4000元"
           abstract="每日限额30000元"
-          @click="cellClick"
         >
           <div slot="left" class="logo">
             <div></div>
@@ -53,7 +51,6 @@
           no-border
           right-text="可用30000元"
           abstract="每日限额8000元"
-          @click="cellClick"
         >
           <div slot="left" class="logo">
             <div></div>
@@ -73,7 +70,7 @@ export default {
   },
   methods: {
     cellClick() {
-      console.log("点击了单元格");
+      this.$toast("点击了单元格");
     }
   }
 };

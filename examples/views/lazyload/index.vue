@@ -83,7 +83,7 @@ export default {
     display: inline-block;
     vertical-align: top;
     width: 375px;
-    height: 420px;
+    height: 580px;
   }
 }
 @-webkit-keyframes fadeIn {

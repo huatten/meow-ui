@@ -12,9 +12,7 @@
           <slot name="left"></slot>
         </template>
         <template v-else-if="leftIcon">
-          <span :class="[svg ? 'noticebar-left-svgicon' : 'noticebar-left-iconfont']">
-            <mw-icon :name="leftIcon" :svg="svg" :size="leftSize"></mw-icon>
-          </span>
+          <mw-icon :name="leftIcon" :svg="svg" :size="leftSize"></mw-icon>
         </template>
       </div>
       <div
@@ -184,9 +182,13 @@ export default {
       this.$emit("close");
     },
     _checkOverflow() {
-      if (!this.scrollable) { return; }
+      if (!this.scrollable) {
+        return;
+      }
       const { wrapper, content } = this.$refs;
-      if (!wrapper || !content) { return; }
+      if (!wrapper || !content) {
+        return;
+      }
       const wrapWidth = wrapper.clientWidth;
       const contentWidth = content.scrollWidth;
 

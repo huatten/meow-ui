@@ -17,11 +17,6 @@
     &.noticebar-left-empty {
       padding-right: 0;
     }
-    .noticebar-left-svgicon {
-      display: inline-block;
-      min-width: $noticebar-left-icon-width;
-      min-height: $noticebar-left-icon-height;
-    }
   }
   .noticebar-cont {
     flex: 1;
@@ -52,12 +47,6 @@
     display: flex;
     align-items: center;
     -webkit-box-align: center;
-    .noticebar-right-svgicon {
-      display: inline-block;
-      min-width: $noticebar-right-icon-width;
-      min-height: $noticebar-right-icon-height;
-      padding-left: $noticebar-left-padding;
-    }
   }
 }
 

@@ -42,16 +42,16 @@
     <section>
       <h5>更改Radio位置</h5>
       <p>6.盖伦的武器是什么呀？</p>
-      <mw-radio v-model="radio6" value="1" icon-size="24" icon-position="right">暴风大保健</mw-radio>
-      <mw-radio v-model="radio6" value="2" icon-size="24" icon-position="right">霜之哀伤</mw-radio>
-      <mw-radio v-model="radio6" value="3" icon-size="24" icon-position="right">方天画戟</mw-radio>
+      <mw-radio v-model="radio6" value="1" icon-position="right">暴风大保健</mw-radio>
+      <mw-radio v-model="radio6" value="2" icon-position="right">霜之哀伤</mw-radio>
+      <mw-radio v-model="radio6" value="3" icon-position="right">方天画戟</mw-radio>
     </section>
     <section>
       <h5>更改Radio样式类型</h5>
       <p>7.马可波罗的激情绿茵皮肤上的号码是多少？</p>
-      <mw-radio v-model="radio7" value="1" icon="addto" icon-inverse="settings">1号</mw-radio>
-      <mw-radio v-model="radio7" value="2" icon="addto" icon-inverse="settings">45号</mw-radio>
-      <mw-radio v-model="radio7" value="3" icon="addto" icon-inverse="settings">30号</mw-radio>
+      <mw-radio v-model="radio7" value="1" icon="selection" icon-inverse="prompt">1号</mw-radio>
+      <mw-radio v-model="radio7" value="2" icon="selection" icon-inverse="prompt">45号</mw-radio>
+      <mw-radio v-model="radio7" value="3" icon="selection" icon-inverse="prompt">30号</mw-radio>
       <mw-radio
         v-model="radio7"
         value="4"
@@ -84,16 +84,22 @@ export default {
 section {
   padding: 30px;
   margin-bottom: 20px;
-  &:last-child{
-    margin-bottom: 0;;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  label.mw-radio {
+    margin-bottom: 30px;
+    &.is-horizontal {
+      padding-right: 60px;
+    }
   }
   h5 {
-    font-size: 30px;
+    font-size: 32px;
     color: rgba(69, 90, 100, 0.6);
     margin-bottom: 20px;
   }
   p {
-    font-size: 28px;
+    font-size: 30px;
     color: #000;
     margin-bottom: 20px;
   }

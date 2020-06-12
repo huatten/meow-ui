@@ -2,38 +2,38 @@
 .mw-checkbox {
   display: flex;
   align-items: center;
-  margin: 8px 0;
-  &.is-right-checkbox{
+  margin: 10px 0;
+  user-select: none;
+  line-height: 1.5;
+  &.is-right-checkbox {
     flex-direction: row-reverse;
-    .mw-checkbox__label{
+    .mw-checkbox__label {
       flex: 1;
     }
   }
-  &.is-disabled{
-    .mw-checkbox__icon{
+  &.is-disabled {
+    .mw-checkbox__icon {
       color: $checkbox-icon-disabled-color;
     }
-    .mw-checkbox__label{
+    .mw-checkbox__label {
       color: $checkbox-label-disabled-color;
     }
   }
-  &.is-horizontal{
+  &.is-horizontal {
     display: inline-flex;
-    &:not(:last-child){
+    &:not(:last-child) {
       margin-right: 14px;
     }
   }
-  &__icon{
+  &__icon {
     flex-shrink: 0;
     color: $checkbox-icon-color;
-    .mw-icon{
-      display: flex;
-    }
+    display: flex;
+    align-items: center;
   }
-  &__label{
+  &__label {
     font-size: $checkbox-label-font-size;
     color: $checkbox-label-color;
-    margin-left: 3px;
+    margin-left: 6px;
   }
 }
-  

@@ -44,7 +44,7 @@ export default {
     },
     fill: {
       type: String,
-      default: "#c8c9cc"
+      default: "#898989"
     },
     width: {
       type: [Number, String],

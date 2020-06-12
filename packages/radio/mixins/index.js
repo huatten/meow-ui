@@ -18,7 +18,7 @@ export default {
     },
     iconSize: {
       type: [Number, String],
-      default: 25
+      default: 24
     },
     iconPosition: {
       type: String,

@@ -1,8 +1,8 @@
 <template>
   <div id="app" :class="{'in-iframe':inIframe}">
-    <router-view class="examples-nav" name="nav" v-if="!inIframe" v-transition></router-view>
+    <router-view class="examples-nav" name="nav" v-if="!inIframe"></router-view>
     <keep-alive include="homeMain">
-      <router-view class="examples-main" name="main" v-transition></router-view>
+      <router-view class="examples-main" name="main"></router-view>
     </keep-alive>
   </div>
 </template>

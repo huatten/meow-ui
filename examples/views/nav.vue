@@ -1,11 +1,13 @@
 <template>
-  <div class="nav mw-hairline--bottom" v-if="showNav">
-    <div class="gohome" @click="gohome">
-      <mw-icon name="down" size="30"></mw-icon>
+  <mw-transition name="mw-slide-top">
+    <div class="nav mw-hairline--bottom" v-if="showNav">
+      <div class="gohome" @click="gohome">
+        <mw-icon name="down" size="30"></mw-icon>
+      </div>
+      <h3 class="title">{{title}}</h3>
+      <a class="github" target="_blank" :href="demoLink">{{title}}</a>
     </div>
-    <h3 class="title">{{title}}</h3>
-    <a class="github" target="_blank" :href="demoLink">{{title}}</a>
-  </div>
+  </mw-transition>
 </template>
 
 <script type="text/ecmascript-6">

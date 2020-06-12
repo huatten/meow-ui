@@ -1,63 +1,65 @@
 <template>
-  <div class="components">
-    <h1 class="logo">
-      <mw-image :src="logo"></mw-image>
-    </h1>
-    <div class="version">MeowUI {{version}}</div>
-    <p class="desc">一个正在建设中的的移动端Vue组件库</p>
-    <div class="components-list">
-      <mw-collapse accordion>
-        <mw-collapse-item title="基础组件">
-          <div class="cont mw-hairline--top">
-            <mw-cell
-              v-for="(item,index) in basic"
-              :key="index"
-              :title="item.meta.docTitle"
-              arrow
-              @click="views(item.path)"
-            ></mw-cell>
-          </div>
-        </mw-collapse-item>
-        <mw-collapse-item title="展示组件">
-          <div class="cont mw-hairline--top">
-            <mw-cell
-              v-for="(item,index) in show"
-              :key="index"
-              :title="item.meta.docTitle"
-              arrow
-              @click="views(item.path)"
-            ></mw-cell>
-          </div>
-        </mw-collapse-item>
-        <mw-collapse-item title="表单组件">
-          <div class="cont mw-hairline--top">
-            <mw-cell
-              v-for="(item,index) in form"
-              :key="index"
-              :title="item.meta.docTitle"
-              arrow
-              @click="views(item.path)"
-            ></mw-cell>
-          </div>
-        </mw-collapse-item>
-        <mw-collapse-item title="反馈组件">
-          <div class="cont mw-hairline--top">
-            <mw-cell
-              v-for="(item,index) in feedback"
-              :key="index"
-              :title="item.meta.docTitle"
-              arrow
-              @click="views(item.path)"
-            ></mw-cell>
-          </div>
-        </mw-collapse-item>
-      </mw-collapse>
+  <mw-transition name="mw-zoom">
+    <div class="components">
+      <h1 class="logo">
+        <mw-image :src="logo"></mw-image>
+      </h1>
+      <div class="version">MeowUI {{version}}</div>
+      <p class="desc">一个正在建设中的的移动端Vue组件库</p>
+      <div class="components-list">
+        <mw-collapse accordion>
+          <mw-collapse-item title="基础组件">
+            <div class="cont mw-hairline--top">
+              <mw-cell
+                v-for="(item,index) in basic"
+                :key="index"
+                :title="item.meta.docTitle"
+                arrow
+                @click="views(item.path)"
+              ></mw-cell>
+            </div>
+          </mw-collapse-item>
+          <mw-collapse-item title="展示组件">
+            <div class="cont mw-hairline--top">
+              <mw-cell
+                v-for="(item,index) in show"
+                :key="index"
+                :title="item.meta.docTitle"
+                arrow
+                @click="views(item.path)"
+              ></mw-cell>
+            </div>
+          </mw-collapse-item>
+          <mw-collapse-item title="表单组件">
+            <div class="cont mw-hairline--top">
+              <mw-cell
+                v-for="(item,index) in form"
+                :key="index"
+                :title="item.meta.docTitle"
+                arrow
+                @click="views(item.path)"
+              ></mw-cell>
+            </div>
+          </mw-collapse-item>
+          <mw-collapse-item title="反馈组件">
+            <div class="cont mw-hairline--top">
+              <mw-cell
+                v-for="(item,index) in feedback"
+                :key="index"
+                :title="item.meta.docTitle"
+                arrow
+                @click="views(item.path)"
+              ></mw-cell>
+            </div>
+          </mw-collapse-item>
+        </mw-collapse>
+      </div>
+      <footer class="tip">
+        <a href="https://github.com/MrTenger/meow-ui">moew-ui</a>
+        不断打磨 · 不断进步 · {{version}}
+      </footer>
     </div>
-    <footer class="tip">
-      <a href="https://github.com/MrTenger/meow-ui">moew-ui</a>
-      不断打磨 · 不断进步 · {{version}}
-    </footer>
-  </div>
+  </mw-transition>
 </template>
 
 <script type="text/ecmascript-6">

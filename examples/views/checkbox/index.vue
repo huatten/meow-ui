@@ -104,7 +104,7 @@
         <mw-cell>
           <mw-checkbox name="花木兰" icon-position="right">花木兰</mw-checkbox>
         </mw-cell>
-        <mw-cell >
+        <mw-cell>
           <mw-checkbox disabled name="兰陵王" icon-position="right">兰陵王</mw-checkbox>
         </mw-cell>
         <mw-cell>
@@ -138,8 +138,17 @@ export default {
 section {
   padding: 30px;
   margin-bottom: 20px;
-  &:last-child{
+  &:last-child {
     margin-bottom: 0;
+  }
+  label.mw-checkbox {
+    margin-bottom: 30px;
+    &.is-horizontal {
+      padding-right: 60px;
+    }
+    &.is-right-checkbox{
+      margin-bottom: 10px !important;
+    }
   }
   h5 {
     font-size: 30px;

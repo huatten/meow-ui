@@ -15,7 +15,7 @@ Vue.component(MLoading.name, MLoading);
 | type | 展示类型 | `String` | `roller` | 可选值有：`carousel`、`spinner` |
 | size | 图标大小 | `Number` | `70` | - |
 | width | 图标线条宽度 | `Number` | `3` | 只用于 `roller`类型 |
-| fill | 图标填充色 | `String` | `#c8c9cc` | `spinner`类型除外 |
+| fill | 图标填充色 | `String` | `#898989` | - |
 | text | 提示文字 | `String` | - | - |
 | color | 文字颜色 | `String` | `#666f83` | - |
 | vertical | 垂直排列 | `Boolean` | `#false` | - |

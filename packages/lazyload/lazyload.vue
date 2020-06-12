@@ -140,7 +140,7 @@ export default {
     loadImage() {
       if (this.attemptCount > this.attempt - 1 && this.status === "attempt") {
         const msg = `lazyload log: ${this.src} tried too more than ${this.attempt} times`;
-        throw Error(msg);
+        console.log(msg);
       }
       const startTime = Date.now();
       let img = new Image();
