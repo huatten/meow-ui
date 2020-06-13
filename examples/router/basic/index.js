@@ -79,6 +79,17 @@ const basic = [
     meta: {
       docTitle: "popup 弹出层"
     }
+  },
+  {
+    path: "/transition",
+    name: "transition",
+    components: {
+      main: () => import('@/views/transition/index.vue'),
+      nav: Nav
+    },
+    meta: {
+      docTitle: "transition 动画"
+    }
   }
 ];
 export default basic;

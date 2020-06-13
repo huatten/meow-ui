@@ -12,30 +12,58 @@
   }
 }
 /*mw-fade-bottom*/
-.mw-fade-bottom{
+.mw-fade-bottom {
   &-enter,
-  &-leave-to{
+  &-leave-to {
     opacity: 0.01;
-    transform: translate3d(0, 4%, 0)
+    transform: translate3d(0, 20px, 0);
   }
-  &-enter-active{
-    transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
+  &-enter-active {
+    transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
-  &-leave-active{
+  &-leave-active {
     transition: all 0.25s linear;
   }
 }
 /*mw-fade-top*/
-.mw-fade-top{
+.mw-fade-top {
   &-enter,
-  &-leave-to{
+  &-leave-to {
     opacity: 0.01;
-    transform: translate3d(0, -4%, 0)
+    transform: translate3d(0, -20px, 0);
   }
-  &-enter-active{
-    transition: all 0.3s cubic-bezier(0.215, 0.610, 0.355, 1);
+  &-enter-active {
+    transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
-  &-leave-active{
+  &-leave-active {
+    transition: all 0.25s linear;
+  }
+}
+/*mw-fade-left*/
+.mw-fade-left {
+  &-enter,
+  &-leave-to {
+    opacity: 0.01;
+    transform: translate3d(-24px, 0, 0);
+  }
+  &-enter-active {
+    transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  &-leave-active {
+    transition: all 0.25s linear;
+  }
+}
+/*mw-fade-right*/
+.mw-fade-right {
+  &-enter,
+  &-leave-to {
+    opacity: 0.01;
+    transform: translate3d(24px, 0, 0);
+  }
+  &-enter-active {
+    transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  &-leave-active {
     transition: all 0.25s linear;
   }
 }
@@ -53,7 +81,7 @@
     transition: all 0.25s linear;
   }
 }
-/*slide-bottom*/
+/*mw-slide-bottom*/
 .mw-slide-bottom {
   &-enter,
   &-leave-to {
@@ -66,7 +94,7 @@
     transition: transform 0.25s ease-out;
   }
 }
-/*slide-top*/
+/*mw-slide-top*/
 .mw-slide-top {
   &-enter,
   &-leave-to {
@@ -79,7 +107,7 @@
     transition: transform 0.3s ease-out;
   }
 }
-/*slide-left*/
+/*mw-slide-left*/
 .mw-slide-left {
   &-enter,
   &-leave-to {
@@ -92,7 +120,7 @@
     transition: transform 0.25s ease-out;
   }
 }
-/*slide-right*/
+/*mw-slide-right*/
 .mw-slide-right {
   &-enter,
   &-leave-to {
@@ -103,5 +131,35 @@
   }
   &-leave-active {
     transition: transform 0.25s ease-out;
+  }
+}
+/*mw-bounce*/
+.mw-bounce {
+  &-enter-active {
+    animation: bounce-in 0.25s linear;
+  }
+  &-leave-active {
+    animation: zoom-out 0.25s linear;
+  }
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0.5);
+  }
+  45% {
+    transform: scale(1.05);
+  }
+  80% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes zoom-out {
+  to {
+    opacity: 0.01;
+    transform: scale(0.75);
   }
 }

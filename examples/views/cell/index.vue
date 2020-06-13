@@ -12,9 +12,9 @@
       <h5>单行列表</h5>
       <div class="field">
         <mw-cell title="个人设置" arrow @click="cellClick">
-          <div slot="left" class="left">
+          <template slot="left">
             <mw-icon name="settings" size="24"></mw-icon>
-          </div>
+          </template>
         </mw-cell>
         <mw-cell title="设为默认地址">
           <template slot="right">
@@ -28,33 +28,14 @@
     <section>
       <h5>多行列表</h5>
       <div class="field">
-        <mw-cell
-          title="交通银行"
-          right-text="已消费900元"
-          abstract="每日限额10000元"
-        >
-          <div slot="left" class="logo">
-            <div></div>
-          </div>
+        <mw-cell title="交通银行" right-text="已消费900元" abstract="每日限额10000元">
+          <div slot="left" class="logo"></div>
         </mw-cell>
-        <mw-cell
-          title="招商银行"
-          right-text="余额4000元"
-          abstract="每日限额30000元"
-        >
-          <div slot="left" class="logo">
-            <div></div>
-          </div>
+        <mw-cell title="招商银行" right-text="余额4000元" abstract="每日限额30000元">
+          <div slot="left" class="logo"></div>
         </mw-cell>
-        <mw-cell
-          title="桂林银行"
-          no-border
-          right-text="可用30000元"
-          abstract="每日限额8000元"
-        >
-          <div slot="left" class="logo">
-            <div></div>
-          </div>
+        <mw-cell title="桂林银行" no-border right-text="可用30000元" abstract="每日限额8000元">
+          <div slot="left" class="logo"></div>
         </mw-cell>
       </div>
     </section>
@@ -89,13 +70,6 @@ export default {
       padding: 0 30px;
       background: #fff;
       margin: 30px 20px;
-    }
-    .left {
-      width: 40px;
-      height: 40px;
-      .mw-icon {
-        display: block;
-      }
     }
     .logo {
       width: 80px;
