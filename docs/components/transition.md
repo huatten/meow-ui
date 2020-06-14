@@ -21,4 +21,8 @@ Vue.component(MTransition.name, MTransition);
 * `mw-slide-bottom`（底部弹出）
 * `mw-zoom`（由远及近放大）
 * `mw-bounce`（弹跳进入）
+* `mw-bounce-top`（上方弹跳进入）
+* `mw-bounce-bottom`（下方弹跳进入）
+* `mw-bounce-left`（左边弹跳进入）
+* `mw-bounce-right`（右边弹跳进入）
 * 待开发...

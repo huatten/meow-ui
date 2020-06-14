@@ -66,6 +66,30 @@
         <div class="common">mw-bounce</div>
       </mw-popup>
     </section>
+    <section>
+      <mw-button type="info" :inline="false" @click="clickPop(11)">Bounce Top</mw-button>
+      <mw-popup v-model="bShow[11]" transition="mw-bounce-top">
+        <div class="common">mw-bounce-top</div>
+      </mw-popup>
+    </section>
+    <section>
+      <mw-button type="info" :inline="false" @click="clickPop(12)">Bounce Bottom</mw-button>
+      <mw-popup v-model="bShow[12]" transition="mw-bounce-bottom">
+        <div class="common">mw-bounce-bottom</div>
+      </mw-popup>
+    </section>
+    <section>
+      <mw-button type="info" :inline="false" @click="clickPop(13)">Bounce Left</mw-button>
+      <mw-popup v-model="bShow[13]" transition="mw-bounce-left">
+        <div class="common">mw-bounce-left</div>
+      </mw-popup>
+    </section>
+    <section>
+      <mw-button type="info" :inline="false" @click="clickPop(14)">Bounce Right</mw-button>
+      <mw-popup v-model="bShow[14]" transition="mw-bounce-right">
+        <div class="common">mw-bounce-right</div>
+      </mw-popup>
+    </section>
   </div>
 </template>
 <script type="text/ecmascript-6">
@@ -97,6 +121,7 @@ export default {
     font-size: 40px;
     width: 360px;
     height: 200px;
+    padding: 0 20px;
   }
 }
 </style>

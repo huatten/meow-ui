@@ -136,28 +136,138 @@
 /*mw-bounce*/
 .mw-bounce {
   &-enter-active {
-    animation: bounce-in 0.25s linear;
+    animation: bounceIn 0.55s ease both;
   }
   &-leave-active {
-    animation: zoom-out 0.25s linear;
+    animation: bounceOut 0.55s ease both;
   }
 }
-
-@keyframes bounce-in {
-  0% {
-    transform: scale(0.5);
+/*mw-bounce-top*/
+.mw-bounce-top {
+  &-enter-active {
+    animation: bounceInDown 0.55s ease both;
   }
-  45% {
+  &-leave-active {
+    animation: zoomOut 0.25s linear;
+  }
+}
+/*mw-bounce-bottom*/
+.mw-bounce-bottom {
+  &-enter-active {
+    animation: bounceInUp 0.55s ease both;
+  }
+  &-leave-active {
+    animation: zoomOut 0.25s linear;
+  }
+}
+/*mw-bounce-left*/
+.mw-bounce-left {
+  &-enter-active {
+    animation: bounceInLeft 0.55s ease both;
+  }
+  &-leave-active {
+    animation: zoomOut 0.25s linear;
+  }
+}
+/*mw-bounce-right*/
+.mw-bounce-right {
+  &-enter-active {
+    animation: bounceInRight 0.55s ease both;
+  }
+  &-leave-active {
+    animation: zoomOut 0.25s linear;
+  }
+}
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
     transform: scale(1.05);
   }
-  80% {
-    transform: scale(0.95);
+  70% {
+    transform: scale(0.9);
   }
   100% {
     transform: scale(1);
   }
 }
-@keyframes zoom-out {
+@keyframes bounceOut {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+}
+
+@keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-2000px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(30px);
+  }
+  80% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(2000px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-30px);
+  }
+  80% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-2000px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(30px);
+  }
+  80% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes bounceInRight{
+  0%{opacity:0;
+  transform:translateX(2000px)}
+  60%{opacity:1;
+  transform:translateX(-30px)}
+  80%{transform:translateX(10px)}
+  100%{transform:translateX(0)}
+  }
+@keyframes zoomOut {
   to {
     opacity: 0.01;
     transform: scale(0.75);
