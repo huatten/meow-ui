@@ -15,7 +15,7 @@ export default {
     };
   },
   mounted() {
-    if (window.self != window.top) {
+    if (window.self !== window.top) {
       this.inIframe = true;
     }
   }

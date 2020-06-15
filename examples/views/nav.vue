@@ -22,7 +22,7 @@ export default {
   },
   computed: {
     showNav() {
-      return this.showPath != "/home";
+      return this.showPath !== "/home";
     }
   },
   watch: {
@@ -37,7 +37,7 @@ export default {
   },
   methods: {
     gohome() {
-      if (self != top || history.length === 1) {
+      if (self !== top || history.length === 1) {
         this.$router.push("./home");
       } else {
         history.back();

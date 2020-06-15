@@ -26,6 +26,7 @@ import MSkeleton from './skeleton';
 import MSkeletonItem from './skeleton-item';
 import MSlider from './slider';
 import MSwitch from './switch';
+import MTag from './tag';
 import MToast from './toast';
 import MTransition from './transition';
 const version = '1.0.3';
@@ -57,6 +58,7 @@ const components = [
   MSkeletonItem,
   MSlider,
   MSwitch,
+  MTag,
   MToast,
   MTransition
 ];
@@ -97,6 +99,7 @@ export {
   MSkeletonItem,
   MSlider,
   MSwitch,
+  MTag,
   MToast,
   MTransition
 };

@@ -28,7 +28,7 @@ routerContext.keys().forEach(route => {
 const router = new Router({
   routes: routes,
   scrollBehavior(to, from, savedPosition) { // history模式下可用
-    if (to.path == '/home') {
+    if (to.path === '/home') {
       if (savedPosition) {
         window.scrollTo({ top: savedPosition.y });
       } else {

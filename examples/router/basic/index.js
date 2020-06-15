@@ -15,28 +15,6 @@ const basic = [
     }
   },
   {
-    path: "/icon",
-    name: "icon",
-    components: {
-      main: () => import('@/views/icon/index.vue'),
-      nav: Nav
-    },
-    meta: {
-      docTitle: "icon 图标"
-    }
-  },
-  {
-    path: "/loading",
-    name: "loading",
-    components: {
-      main: () => import('@/views/loading/index.vue'),
-      nav: Nav
-    },
-    meta: {
-      docTitle: "loading 加载状态"
-    }
-  },
-  {
     path: "/cell",
     name: "cell",
     components: {
@@ -48,14 +26,14 @@ const basic = [
     }
   },
   {
-    path: "/skeleton",
-    name: "skeleton",
+    path: "/icon",
+    name: "icon",
     components: {
-      main: () => import('@/views/skeleton/index.vue'),
+      main: () => import('@/views/icon/index.vue'),
       nav: Nav
     },
     meta: {
-      docTitle: "skeleton 骨架屏"
+      docTitle: "icon 图标"
     }
   },
   {
@@ -70,6 +48,17 @@ const basic = [
     }
   },
   {
+    path: "/loading",
+    name: "loading",
+    components: {
+      main: () => import('@/views/loading/index.vue'),
+      nav: Nav
+    },
+    meta: {
+      docTitle: "loading 加载状态"
+    }
+  },
+  {
     path: "/popup",
     name: "popup",
     components: {
@@ -78,6 +67,28 @@ const basic = [
     },
     meta: {
       docTitle: "popup 弹出层"
+    }
+  },
+  {
+    path: "/skeleton",
+    name: "skeleton",
+    components: {
+      main: () => import('@/views/skeleton/index.vue'),
+      nav: Nav
+    },
+    meta: {
+      docTitle: "skeleton 骨架屏"
+    }
+  },
+  {
+    path: "/tag",
+    name: "tag",
+    components: {
+      main: () => import('@/views/tag/index.vue'),
+      nav: Nav
+    },
+    meta: {
+      docTitle: "tag 标签"
     }
   },
   {
