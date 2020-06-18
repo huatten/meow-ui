@@ -39,6 +39,7 @@ export default {
       type: Number,
       default: 0
     },
+    // percentPosition 为 inner时 进度条文案
     title: {
       type: String,
       default: ""
