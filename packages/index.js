@@ -14,6 +14,7 @@ import MLazyload from './lazyload';
 import MLoading from './loading';
 import MMarquee from './marquee';
 import MMarqueeItem from './marquee-item';
+import MNavbar from './navbar';
 import MNoticebar from './noticebar';
 import MNotify from './notify';
 import MOverlay from './overlay';
@@ -46,6 +47,7 @@ const components = [
   MLoading,
   MMarquee,
   MMarqueeItem,
+  MNavbar,
   MNoticebar,
   MNotify,
   MOverlay,
@@ -87,6 +89,7 @@ export {
   MLoading,
   MMarquee,
   MMarqueeItem,
+  MNavbar,
   MNoticebar,
   MNotify,
   MOverlay,

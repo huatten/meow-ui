@@ -30,6 +30,17 @@
               ></mw-cell>
             </div>
           </mw-collapse-item>
+          <mw-collapse-item title="导航组件">
+            <div class="cont mw-hairline--top">
+              <mw-cell
+                v-for="(item,index) in nav"
+                :key="index"
+                :title="item.meta.docTitle"
+                arrow
+                @click="views(item.path)"
+              ></mw-cell>
+            </div>
+          </mw-collapse-item>
           <mw-collapse-item title="表单组件">
             <div class="cont mw-hairline--top">
               <mw-cell
@@ -68,6 +79,7 @@ import basic from "@/router/basic/index";
 import show from "@/router/show/index";
 import form from "@/router/form/index";
 import feedback from "@/router/feedback/index";
+import nav from "@/router/nav/index";
 export default {
   name: "homeMain",
   data() {
@@ -77,6 +89,7 @@ export default {
       show,
       form,
       feedback,
+      nav,
       logo: require("../../logo/meow-ui.png")
     };
   },
