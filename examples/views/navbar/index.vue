@@ -2,19 +2,40 @@
   <div class="navbar">
     <section>
       <h5>默认用法</h5>
-      <mw-navbar>标题</mw-navbar>
+      <mw-navbar @click="clickHeader">标题</mw-navbar>
     </section>
     <section>
       <h5>增加左侧返回图标</h5>
-      <mw-navbar left-icon-show>标题</mw-navbar>
+      <mw-navbar left-icon-show @click="clickHeader">标题</mw-navbar>
     </section>
     <section>
       <h5>增加左侧返回文字</h5>
-      <mw-navbar left-text="返回">标题</mw-navbar>
+      <mw-navbar left-text="返回" @click="clickHeader">标题</mw-navbar>
     </section>
     <section>
       <h5>增加左侧返回文字和图标</h5>
-      <mw-navbar left-icon-show left-text="返回">标题</mw-navbar>
+      <mw-navbar left-icon-show left-text="返回" @click="clickHeader">标题</mw-navbar>
+    </section>
+    <section>
+      <h5>增加右侧图标</h5>
+      <mw-navbar
+        left-icon-show
+        left-text="返回"
+        right-icon-show
+        @click="clickHeader"
+        @more="clickMore"
+      >标题</mw-navbar>
+    </section>
+    <section>
+      <h5>增加右侧图标和文字</h5>
+      <mw-navbar
+        left-icon-show
+        left-text="返回"
+        right-icon-show
+        right-text="更多"
+        @click="clickHeader"
+        @more="clickMore"
+      >标题</mw-navbar>
     </section>
   </div>
 </template>
@@ -27,8 +48,11 @@ export default {
     };
   },
   methods: {
-    showLoad() {
-      this.show = true;
+    clickHeader() {
+      this.$toast("你点击了标题");
+    },
+    clickMore() {
+      this.$toast("你点击了更多");
     }
   }
 };
@@ -44,15 +68,6 @@ section {
     color: rgba(69, 90, 100, 0.6);
     margin-bottom: 30px;
     font-size: 30px;
-  }
-  ul {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    list-style: none;
-  }
-  .mw-loading {
-    margin: 10px 0;
   }
 }
 </style>

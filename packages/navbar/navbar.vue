@@ -5,13 +5,17 @@
         <span class="mw-navbar-left-icon" v-if="leftIconShow">
           <mw-icon name="return"></mw-icon>
         </span>
-        <span class="mw-navbar-left-text" v-if="leftText">{{leftText}}</span>
+        <span
+          class="mw-navbar-left-text"
+          :class="{'mgl20': !leftIconShow}"
+          v-if="leftText"
+        >{{leftText}}</span>
       </template>
       <template v-else>
         <slot name="left"></slot>
       </template>
     </div>
-    <h2 class="mw-navbar-title">
+    <h2 class="mw-navbar-title" @click="onclickTitle">
       <slot></slot>
     </h2>
     <div class="mw-navbar-right" @click="onClickMore">
@@ -46,9 +50,6 @@
 import MIcon from "../icon";
 export default {
   name: "mw-navbar",
-  data() {
-    return {};
-  },
   props: {
     // 左侧icon是否显示
     leftIconShow: {
@@ -83,6 +84,9 @@ export default {
     }
   },
   methods: {
+    onclickTitle() {
+      this.$emit("click");
+    },
     onClickBack() {
       this.$router ? this.$router.back() : window.history.back();
       this.$emit("back");
@@ -115,7 +119,10 @@ export default {
       color: #333;
       &.mw-navbar-left-text {
         font-size: 30px;
-        margin-left: 5px;
+        margin-left: 6px;
+        &.mgl20 {
+          margin-left: 15px;
+        }
       }
       .mw-icon-return {
         display: block;
