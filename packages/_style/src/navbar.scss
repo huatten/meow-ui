@@ -1,0 +1,63 @@
+@import "./common/var.scss";
+.mw-navbar {
+  width: 100%;
+  height: $navbar-height;
+  line-height: $navbar-height;
+  background-color: $navbar-background-color;
+  position: relative;
+  &-left {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    height: $navbar-height;
+    line-height: $navbar-height;
+    margin-top: -($navbar-height/2);
+    font-size: 0;
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      color: $navbar-color;;
+      &.mw-navbar-left-text {
+        font-size: $navbar-back-font-size;
+        margin-left: 6px;
+        &.mgl20 {
+          margin-left: 15px;
+        }
+      }
+      .mw-icon-return {
+        display: block;
+      }
+    }
+  }
+  &-title {
+    width: auto;
+    margin: 0 160px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+    font-size: $navbar-title-font-size;
+    font-weight: 500;
+  }
+  &-right {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    height: $navbar-height;
+    line-height: $navbar-height;
+    margin-top: -($navbar-height/2);
+    font-size: 0;
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      color: $navbar-color;
+      &.mw-navbar-right-text {
+        font-size: $navbar-more-font-size;
+        margin-right: 6px;
+      }
+      .icon-more {
+        display: block;
+      }
+    }
+  }
+}
