@@ -79,6 +79,17 @@ const show = [
     meta: {
       docTitle: "progress 进度条"
     }
+  },
+  {
+    path: "/steps",
+    name: "steps",
+    components: {
+      main: () => import('@/views/steps/index.vue'),
+      nav: Nav
+    },
+    meta: {
+      docTitle: "steps 步骤条"
+    }
   }
 ];
 export default show;

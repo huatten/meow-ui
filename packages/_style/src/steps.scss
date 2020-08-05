@@ -1,0 +1,155 @@
+@import "./common/var.scss";
+.mw-steps {
+  display: flex;
+  justify-content: space-around;
+  font-size: 28px;
+  &.mw-steps-horizontal {
+    align-items: center;
+    padding: 30px 30px 90px;
+    .step-item {
+      margin: 0 6px;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .text-wrap {
+      top: 100%;
+      padding-top: 10px;
+      text-align: center;
+      .text {
+        white-space: nowrap;
+      }
+    }
+    .bar-item {
+      .bar-inner {
+        transition: all ease-in-out 0.4s;
+        width: 0;
+        height: 0;
+      }
+      &.reached {
+        .bar-inner {
+          display: block;
+          width: 100%;
+          height: 100%;
+          background-color: $steps-current-color;
+        }
+      }
+    }
+  }
+  &.mw-steps-vertical {
+    align-items: flex-start;
+    flex-direction: column;
+    padding: 30px;
+    &.vertical-adaptive {
+      justify-content: normal;
+    }
+    &.arrange-left {
+      padding-left: 200px;
+      .step-item {
+        width: auto;
+      }
+      .text-wrap {
+        width: 440px;
+        white-space: normal;
+      }
+    }
+    .step-item {
+      width: 100%;
+      align-items: stretch;
+    }
+    .text-wrap {
+      top: 4px;
+      left: 32px;
+      padding-left: 32px;
+    }
+    .desc-wrap {
+      position: absolute;
+      top: 6px;
+      right: 10px;
+      padding-right: 60px;
+      vertical-align: middle;
+    }
+    .bar-item {
+      flex: 1;
+      .bar-inner {
+        transition: all ease-in-out 0.4s;
+        height: 0;
+      }
+      &.reached {
+        .bar-inner {
+          display: block;
+          height: 100%;
+          background-color: $steps-current-color;
+        }
+      }
+      &.bar-item-vertical {
+        width: 1px;
+        height: 100%;
+        left: 22px;
+      }
+      &:last-of-type.bar-item-vertical {
+        display: none;
+      }
+    }
+  }
+  .step-item {
+    display: flex;
+    position: relative;
+    &.current .text,
+    &.current .desc {
+      color: $steps-current-color;
+    }
+    &.reached .icon-wrap .step-node-default-icon {
+      background-color: $steps-current-color;
+    }
+    &.reached .icon-wrap,
+    &.current .icon-wrap {
+      color: $steps-current-color;
+    }
+    &.reached .text,
+    &.reached .desc {
+      color: $steps-reached-color;
+    }
+    .icon-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: 48px;
+      min-height: 48px;
+      color: $steps-icon-color;
+      > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .step-node-default-icon {
+        background-color: $steps-icon-color;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+      }
+    }
+    .text-wrap {
+      position: absolute;
+    }
+    .text {
+      font-size: 28px;
+      color: $steps-text-color;
+    }
+    .desc {
+      font-size: 26px;
+      color: $steps-desc-color;
+    }
+  }
+  .bar-item {
+    position: relative;
+    background-color:$steps-bar-color;
+    &.bar-item-horizontal {
+      flex: 1;
+      height: 1px;
+    }
+    &:last-of-type.bar-item-horizontal {
+      display: none;
+    }
+  }
+}

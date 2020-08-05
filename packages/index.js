@@ -26,6 +26,7 @@ import MShowhide from './showhide';
 import MSkeleton from './skeleton';
 import MSkeletonItem from './skeleton-item';
 import MSlider from './slider';
+import MSteps from './steps';
 import MSwitch from './switch';
 import MTag from './tag';
 import MToast from './toast';
@@ -59,6 +60,7 @@ const components = [
   MSkeleton,
   MSkeletonItem,
   MSlider,
+  MSteps,
   MSwitch,
   MTag,
   MToast,
@@ -101,6 +103,7 @@ export {
   MSkeleton,
   MSkeletonItem,
   MSlider,
+  MSteps,
   MSwitch,
   MTag,
   MToast,
