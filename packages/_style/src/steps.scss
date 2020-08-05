@@ -83,8 +83,7 @@
         }
       }
       &.bar-item-vertical {
-        width: 1px;
-        height: 100%;
+        width: 1PX;
         left: 22px;
       }
       &:last-of-type.bar-item-vertical {
@@ -146,7 +145,7 @@
     background-color:$steps-bar-color;
     &.bar-item-horizontal {
       flex: 1;
-      height: 1px;
+      height: 1PX;
     }
     &:last-of-type.bar-item-horizontal {
       display: none;
