@@ -13,6 +13,17 @@ const nav = [
     meta: {
       docTitle: "navbar 导航栏"
     }
+  },
+  {
+    path: "/pagination",
+    name: "pagination",
+    components: {
+      main: () => import('@/views/pagination/index.vue'),
+      nav: Nav
+    },
+    meta: {
+      docTitle: "pagination 分页器"
+    }
   }
 ];
 export default nav;
