@@ -46,6 +46,17 @@ const form = [
     meta: {
       docTitle: "slider 滑块"
     }
+  },
+  {
+    path: "/stepper",
+    name: "stepper",
+    components: {
+      main: () => import('@/views/stepper/index.vue'),
+      nav: Nav
+    },
+    meta: {
+      docTitle: "stepper 步进器"
+    }
   }
 ];
 export default form;

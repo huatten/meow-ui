@@ -1,0 +1,89 @@
+@import "./common/var.scss";
+.mw-stepper {
+  display: flex;
+  height: $stepper-size;
+  &.disabled {
+    .plus,
+    .minus {
+      color: $stepper-disabled-color;
+      background-color: $stepper-disabled-bgcolor;
+      cursor: not-allowed;
+    }
+    .mw-stepper-number {
+      background-color: $stepper-input-bgcolor;
+      input {
+        color: $stepper-disabled-color;
+        background-color: inherit;
+        -webkit-text-fill-color: currentColor;
+        opacity: 1;
+      }
+    }
+  }
+  &-button {
+    position: relative;
+    box-sizing: border-box;
+    width: $stepper-size;
+    height: $stepper-size;
+    margin: 0;
+    padding: 0;
+    color: $stepper-button-color;
+    vertical-align: middle;
+    background-color: $stepper-button-bgcolor;
+    border: 0;
+    cursor: pointer;
+    &::after,
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      background-color: currentColor;
+      transform: translate(-50%, -50%);
+      content: "";
+    }
+    &.minus {
+      &::before {
+        width: 50%;
+        height: 1px;
+      }
+      &::after {
+        display: none;
+      }
+    }
+    &.plus {
+      &::before {
+        width: 50%;
+        height: 1px;
+      }
+      &::after {
+        width: 1PX;
+        height: 50%;
+      }
+    }
+    &.disabled {
+      color: $stepper-disabled-color;
+      background-color: $stepper-disabled-bgcolor;
+      cursor: not-allowed;
+    }
+  }
+  &-number {
+    margin: 0 4px;
+    min-width: 70px;
+    height: $stepper-size;
+    padding: 0 4px;
+    text-align: center;
+    border-radius: 0;
+    background-color: $stepper-input-bgcolor;
+    input {
+      width: 100%;
+      height: inherit;
+      border: none;
+      outline: 0;
+      font-size: $stepper-font-size;
+      line-height: inherit;
+      background-color: initial;
+      box-sizing: border-box;
+      text-align: center;
+      color: $stepper-input-color;
+    }
+  }
+}
