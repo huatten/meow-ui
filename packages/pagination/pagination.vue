@@ -1,17 +1,31 @@
 <template>
-  <ul class="mw-pagination">
+  <ul class="mw-pagination" :class="{'simple': simple}">
     <li
       class="mw-pagination-item mw-hairline prev"
       :class="{'disabled': isPrev}"
       @click="!isPrev && select(value - 1)"
     >{{prevText}}</li>
-    <li
-      class="mw-pagination-item mw-hairline page"
-      :class="{'active': page.active}"
-      v-for="(page, index) in pages"
-      :key="index"
-      @click="select(page.value)"
-    >{{page.text}}</li>
+    <template v-if="!simple">
+      <li
+        class="mw-pagination-item mw-hairline page"
+        :class="{'active': page.active}"
+        v-for="(page, index) in pages"
+        :key="index"
+        @click="select(page.value)"
+      >{{page.text}}</li>
+    </template>
+    <template v-else>
+      <li class="mw-pagination-desc">
+        <slot
+          v-if="$scopedSlots.desc || $slots.desc"
+          name="desc"
+          :curPage="value"
+          :pageCount="count"
+          :total="total"
+        ></slot>
+        <span v-else>{{value}}/{{count}}</span>
+      </li>
+    </template>
     <li
       class="mw-pagination-item mw-hairline next"
       :class="{'disabled': isNext}"
@@ -59,6 +73,11 @@ export default {
       type: [Number, String],
       default: 5,
     },
+    // 页码模式
+    simple: {
+      type: Boolean,
+      default: false,
+    },
   },
   watch: {
     value: {
@@ -70,6 +89,9 @@ export default {
     },
   },
   computed: {
+    descSlot() {
+      return !!this.$slots.desc;
+    },
     count() {
       const count = this.pageCount || Math.ceil(this.total / this.pageSize);
       return Math.max(1, count);
@@ -82,6 +104,10 @@ export default {
       const pages = [];
       const pageCount = this.count;
       const showPageSize = +this.showPageSize;
+
+      if (this.simple) {
+        return pages;
+      }
 
       // 默认的页码限制
       let startPage = 1;
@@ -139,51 +165,6 @@ export default {
       this.isPrev = this.value === 1;
       this.isNext = this.value === this.count;
     },
-  }
+  },
 };
 </script>
-<style scoped lang="scss" rel="stylesheet/scss">
-.mw-pagination {
-  display: flex;
-  font-size: 28px;
-  &-item {
-    box-sizing: border-box;
-    flex: 1;
-    min-width: 68px;
-    height: 80px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #ff8200;
-    background: #fff;
-    user-select: none;
-    cursor: pointer;
-    &::before {
-      border-width: 1px 0 1px 1px;
-    }
-    &:last-child::before {
-      border-right-width: 1px;
-    }
-    &.page {
-      flex-grow: 0;
-    }
-    &.prev,
-    &.next {
-      font-weight: 500;
-      padding: 0 8px;
-    }
-    &.active {
-      background: #ff8200;
-      color: #fff;
-      font-weight: 500;
-    }
-    &.disabled {
-      background: #f7f8fa;
-      color: #646566;
-      cursor: not-allowed;
-      opacity: 0.35;
-    }
-  }
-}
-</style>
-

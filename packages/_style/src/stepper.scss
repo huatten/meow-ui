@@ -43,7 +43,7 @@
     &.minus {
       &::before {
         width: 50%;
-        height: 1px;
+        height: 1PX;
       }
       &::after {
         display: none;
@@ -52,7 +52,7 @@
     &.plus {
       &::before {
         width: 50%;
-        height: 1px;
+        height: 1PX;
       }
       &::after {
         width: 1PX;
@@ -73,6 +73,12 @@
     text-align: center;
     border-radius: 0;
     background-color: $stepper-input-bgcolor;
+    &.mw-hairline {
+      &::before {
+        border-width: 1px;
+        border-color: $color-primary;
+      }
+    }
     input {
       width: 100%;
       height: inherit;

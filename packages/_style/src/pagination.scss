@@ -1,0 +1,60 @@
+@import "./common/var.scss";
+.mw-pagination {
+  display: flex;
+  font-size: $pagination-font-size;
+  &.simple {
+    .prev {
+      &::before {
+        border-width: 1px;
+      }
+    }
+  }
+  &-item {
+    box-sizing: border-box;
+    flex: 1;
+    min-width: 68px;
+    height: $pagination-height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $color-primary;
+    background: $color-white;
+    user-select: none;
+    cursor: pointer;
+    &::before {
+      border-width: 1px 0 1px 1px;
+    }
+    &:last-child::before {
+      border-right-width: 1px;
+    }
+    &.page {
+      flex-grow: 0;
+    }
+    &.prev,
+    &.next {
+      font-weight: 500;
+      padding: 0 8px;
+    }
+    &.active {
+      background: $color-primary;
+      color: $color-white;
+      font-weight: 500;
+    }
+    &.disabled {
+      background: $pagination-disabled-bgcolor;
+      color: $pagination-disabled-color;
+      cursor: not-allowed;
+      opacity: 0.35;
+    }
+  }
+  &-desc {
+    display: flex;
+    flex: 1;
+    height: $pagination-height;
+    padding: 0 10px;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    color: $pagination-desc-color;
+  }
+}

@@ -6,7 +6,7 @@
       :class="{'disabled': isMin}"
       @click="minus"
     ></button>
-    <div class="mw-stepper-number">
+    <div class="mw-stepper-number" :class="{'mw-hairline': isInputing && !readOnly}">
       <input
         type="tel"
         :value="currentValue"

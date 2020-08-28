@@ -10,12 +10,29 @@
       </div>
     </section>
     <section>
-      <h5>改变操作文案</h5>
+      <h5>改变按钮文案</h5>
       <div class="block">
         <mw-pagination v-model="cur3" :total="50" prev-text="prev" next-text="next"></mw-pagination>
       </div>
       <div class="block">
         <mw-pagination v-model="cur4" :total="100" prev-text="prev" next-text="next"></mw-pagination>
+      </div>
+    </section>
+    <section>
+      <h5>简单用法</h5>
+      <div class="block">
+        <mw-pagination v-model="cur5" :total="300" simple></mw-pagination>
+      </div>
+    </section>
+    <section>
+      <h5>插槽</h5>
+      <div class="block">
+        <mw-pagination v-model="cur6" :total="666" simple>
+          <div class="desc" slot="desc" slot-scope="props">
+            当前<span>{{props.curPage}}</span>页
+            共<span>{{props.pageCount}}</span>页
+          </div>
+        </mw-pagination>
       </div>
     </section>
   </div>
@@ -29,6 +46,8 @@ export default {
       cur2: 3,
       cur3: 3,
       cur4: 7,
+      cur5: 10,
+      cur6: 6,
     };
   },
 };
@@ -48,6 +67,16 @@ section {
   .block {
     margin-bottom: 40px;
     background-color: #fff;
+  }
+  .desc{
+    span{
+      &:first-child{
+        color: #f00;
+      }
+      &:last-child{
+        color: #e99;
+      }
+    }
   }
 }
 </style>
