@@ -33,7 +33,6 @@ export default {
   width: 100%;
   min-height: 100vh;
   padding-top: 105px;
-  padding-bottom: 30px;
   box-sizing: border-box;
   &.in-iframe {
     padding-top: 0;

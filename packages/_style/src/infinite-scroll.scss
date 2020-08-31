@@ -1,0 +1,14 @@
+.mw-infinite-scroll {
+  .infinite-status-prompt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 36px 0;
+    &.no-more {
+      .mw-divider {
+        margin: 0;
+        flex-grow: 0.2;
+      }
+    }
+  }
+}

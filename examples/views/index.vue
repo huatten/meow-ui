@@ -90,16 +90,16 @@ export default {
       form,
       feedback,
       nav,
-      logo: require("../../logo/meow-ui.png")
+      logo: require("../../logo/meow-ui.png"),
     };
   },
   methods: {
     views(path) {
       this.$router.push({
-        path: path
+        path: path,
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -179,6 +179,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-bottom: 30px;
     a {
       display: inline-block;
       width: 36px;

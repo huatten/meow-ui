@@ -8,6 +8,7 @@
   </div>
 </template>
 <script type="text/ecmascript-6">
+import MMarqueeItem from "../marquee-item"
 export default {
   name: "mw-marquee",
   props: {
@@ -54,6 +55,9 @@ export default {
         transitionDuration: 0
       }
     };
+  },
+  components: {
+    [MMarqueeItem.name]: MMarqueeItem
   },
   beforeDestroy() {
     this._destroy();

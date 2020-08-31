@@ -46,6 +46,17 @@ const feedback = [
     meta: {
       docTitle: "action-sheet 动作面板"
     }
+  },
+  {
+    path: "/infinite-scroll",
+    name: "infinite-scroll",
+    components: {
+      main: () => import('@/views/infinite-scroll/index.vue'),
+      nav: Nav
+    },
+    meta: {
+      docTitle: "infinite-scroll 无限滚动"
+    }
   }
 ];
 

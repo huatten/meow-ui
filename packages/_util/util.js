@@ -11,12 +11,13 @@ export function throttle(fn, interval = 200) {
   };
   return function () {
     const now = Date.now();
+    let _this = this;
     if (now - begin > interval) {
       begin = now;
-      fn.apply(this, arguments);
+      fn.apply(_this, arguments);
     } else {
       clearTimeout(setTm);
-      setTm = setTimeout(fn.bind(this, ...arguments), interval - (now - begin));
+      setTm = setTimeout(fn.bind(_this, ...arguments), interval - (now - begin));
     }
   };
 }

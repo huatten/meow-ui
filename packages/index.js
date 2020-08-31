@@ -10,6 +10,7 @@ import MDialog from './dialog';
 import MDivider from './divider';
 import MIcon from './icon';
 import MImage from './image';
+import MInfiniteScroll from './infinite-scroll';
 import MLazyload from './lazyload';
 import MLoading from './loading';
 import MMarquee from './marquee';
@@ -46,6 +47,7 @@ import MTransition from './transition';
   MDivider,
   MIcon,
   MImage,
+  MInfiniteScroll,
   MLazyload,
   MLoading,
   MMarquee,
@@ -91,6 +93,7 @@ import MTransition from './transition';
   MDivider,
   MIcon,
   MImage,
+  MInfiniteScroll,
   MLazyload,
   MLoading,
   MMarquee,
