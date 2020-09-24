@@ -11,15 +11,21 @@
       <div class="block">
         <mw-steps :steps="steps" :current="current">
           <template slot="icon" slot-scope="props">
-            <b v-if="props.index === props.currentIndex">{{ props.index+1 }}</b>
-            <span v-else>{{ props.index+1 }}</span>
+            <b v-if="props.index === props.currentIndex">{{
+              props.index + 1
+            }}</b>
+            <span v-else>{{ props.index + 1 }}</span>
           </template>
         </mw-steps>
       </div>
       <div class="block">
         <mw-steps :steps="steps" :current="current">
           <template slot="icon" slot-scope="props">
-            <mw-icon v-if="props.index === props.currentIndex" name="collection" color="#ff8200"></mw-icon>
+            <mw-icon
+              v-if="props.index === props.currentIndex"
+              name="collection"
+              color="#ff8200"
+            ></mw-icon>
             <mw-icon v-else name="next"></mw-icon>
           </template>
         </mw-steps>
@@ -27,7 +33,11 @@
       <div class="block">
         <mw-steps :steps="steps" :current="2">
           <template slot="reached" slot-scope="props">
-            <mw-icon name="selection" v-if="props.index === 1" color="#ff8200"></mw-icon>
+            <mw-icon
+              name="selection"
+              v-if="props.index === 1"
+              color="#ff8200"
+            ></mw-icon>
             <div class="step-node-default" v-else>
               <div class="step-node-default-icon"></div>
             </div>
@@ -44,13 +54,24 @@
     <section>
       <h5>竖向步骤条两侧排列</h5>
       <div class="logistics">
-        <mw-steps :steps="step" direction="vertical" adaptive arrange-left :current="stepCurrent"></mw-steps>
+        <mw-steps
+          :steps="step"
+          direction="vertical"
+          adaptive
+          arrange-left
+          :current="stepCurrent"
+        ></mw-steps>
       </div>
     </section>
     <section>
       <h5>竖向步骤条右侧排列</h5>
       <div class="logistics">
-        <mw-steps :steps="step" direction="vertical" adaptive :current="stepCurrent"></mw-steps>
+        <mw-steps
+          :steps="step"
+          direction="vertical"
+          adaptive
+          :current="stepCurrent"
+        ></mw-steps>
       </div>
     </section>
   </div>
@@ -63,17 +84,17 @@ export default {
       current: 0,
       steps: [
         {
-          text: "实名认证"
+          text: "实名认证",
         },
         {
-          text: "绑定银行卡"
+          text: "绑定银行卡",
         },
         {
-          text: "设置密码"
+          text: "设置密码",
         },
         {
-          text: "开户成功"
-        }
+          text: "开户成功",
+        },
       ],
       stepCurrent: 0,
       step: [
@@ -83,13 +104,13 @@ export default {
         { text: "快件已到达【成都分拣中心】", desc: "2020.07.07" },
         {
           text: "快件从【成都转运中心】发往【华北转运中心】",
-          desc: "2020.07.08"
+          desc: "2020.07.08",
         },
         {
           text: "快件已到达【华北转运中心】，即将发往【海淀区转运中心】",
-          desc: "2020.07.09"
-        }
-      ]
+          desc: "2020.07.09",
+        },
+      ],
     };
   },
   created() {
@@ -102,11 +123,11 @@ export default {
       if (this.stepCurrent > 5) {
         this.stepCurrent = 0;
       }
-    }, 2000);
+    }, 2000 * 1000);
   },
   beforeDestroy() {
     clearInterval(this.timer);
-  }
+  },
 };
 </script>
 
