@@ -1,0 +1,48 @@
+@import "./common/var.scss";
+.mw-grid {
+  display: flex;
+  flex-wrap: wrap;
+  &-item {
+    box-sizing: border-box;
+    position: relative;
+    &--square {
+      height: 0;
+    }
+    &-content {
+      box-sizing: border-box;
+      display: flex;
+      height: 100%;
+      background: #fff;
+      padding: 30px 15px;
+      &::before {
+        z-index: 1;
+        border-width: 0 1px 1px 0;
+      }
+      &.vertical {
+        flex-direction: column;
+      }
+      &.horizontal {
+        flex-direction: row;
+        .item-text {
+          margin-top: 0;
+          margin-left: 16px;
+        }
+      }
+      &--center {
+        justify-content: center;
+        align-items: center;
+      }
+      &--square {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+      }
+      .item-text {
+        font-size: 28px;
+        color: #666;
+        margin-top: 16px;
+      }
+    }
+  }
+}

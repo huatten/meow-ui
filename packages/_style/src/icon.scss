@@ -8,11 +8,12 @@
   }
   &-font {
     font-family: "MEOW-UI-ICON" !important;
-    font-size: 32px;
+    font-size: inherit;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
     text-transform: none;
+    text-rendering: auto;
     line-height: 1;
     letter-spacing: 0;
     speak: none;

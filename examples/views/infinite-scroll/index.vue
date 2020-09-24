@@ -24,7 +24,7 @@ export default {
       isNoData: false,
       isLoading: false,
       isErr: false,
-      timer: null,
+      timer: null
     };
   },
   methods: {
@@ -42,11 +42,11 @@ export default {
     },
     scrollChange(e) {
       console.log(e);
-    },
+    }
   },
   destroyed() {
     clearTimeout(this.timer);
-  },
+  }
 };
 </script>
 

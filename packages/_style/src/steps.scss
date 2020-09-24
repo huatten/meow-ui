@@ -2,7 +2,7 @@
 .mw-steps {
   display: flex;
   justify-content: space-around;
-  font-size: 28px;
+  font-size: $steps-text-font-size;
   &.mw-steps-horizontal {
     align-items: center;
     padding: 30px 30px 90px;
@@ -132,11 +132,11 @@
       position: absolute;
     }
     .text {
-      font-size: 28px;
+      font-size: $steps-text-font-size;
       color: $steps-text-color;
     }
     .desc {
-      font-size: 26px;
+      font-size: $steps-desc-font-size;
       color: $steps-desc-color;
     }
   }

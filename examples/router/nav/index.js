@@ -15,6 +15,17 @@ const nav = [
     }
   },
   {
+    path: "/grid",
+    name: "grid",
+    components: {
+      main: () => import('@/views/grid/index.vue'),
+      nav: Nav
+    },
+    meta: {
+      docTitle: "grid 宫格"
+    }
+  },
+  {
     path: "/pagination",
     name: "pagination",
     components: {

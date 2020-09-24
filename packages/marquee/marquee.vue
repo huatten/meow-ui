@@ -8,7 +8,7 @@
   </div>
 </template>
 <script type="text/ecmascript-6">
-import MMarqueeItem from "../marquee-item"
+import MMarqueeItem from "../marquee-item";
 export default {
   name: "mw-marquee",
   props: {

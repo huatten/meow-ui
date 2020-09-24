@@ -47,9 +47,9 @@ export default {
       cur3: 3,
       cur4: 7,
       cur5: 10,
-      cur6: 6,
+      cur6: 6
     };
-  },
+  }
 };
 </script>
 

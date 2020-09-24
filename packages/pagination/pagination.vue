@@ -41,43 +41,43 @@ export default {
     // 当前页码
     value: {
       type: Number,
-      default: 0,
+      default: 0
     },
     // 回退文案
     prevText: {
       type: String,
-      default: "上一页",
+      default: "上一页"
     },
     // 前进文案
     nextText: {
       type: String,
-      default: "下一页",
+      default: "下一页"
     },
     // 总条目数
     total: {
       type: [Number, String],
-      default: 0,
+      default: 0
     },
     // 总页数 => 计算得到
     pageCount: {
       type: [Number, String],
-      default: 0,
+      default: 0
     },
     // 每页记录数
     pageSize: {
       type: [Number, String],
-      default: 10,
+      default: 10
     },
     // 页面中可见页码数
     showPageSize: {
       type: [Number, String],
-      default: 5,
+      default: 5
     },
     // 页码模式
     simple: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   watch: {
     value: {
@@ -85,8 +85,8 @@ export default {
         this.select(val || this.value);
         this.checkStatus();
       },
-      immediate: true,
-    },
+      immediate: true
+    }
   },
   computed: {
     descSlot() {
@@ -143,12 +143,12 @@ export default {
       }
 
       return pages;
-    },
+    }
   },
   data() {
     return {
       isPrev: false,
-      isNext: false,
+      isNext: false
     };
   },
   methods: {
@@ -164,7 +164,7 @@ export default {
     checkStatus() {
       this.isPrev = this.value === 1;
       this.isNext = this.value === this.count;
-    },
-  },
+    }
+  }
 };
 </script>

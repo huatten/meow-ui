@@ -90,16 +90,16 @@ export default {
       form,
       feedback,
       nav,
-      logo: require("../../logo/meow-ui.png"),
+      logo: require("../../logo/meow-ui.png")
     };
   },
   methods: {
     views(path) {
       this.$router.push({
-        path: path,
+        path: path
       });
-    },
-  },
+    }
+  }
 };
 </script>
 

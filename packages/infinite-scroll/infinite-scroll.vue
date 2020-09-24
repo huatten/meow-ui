@@ -28,67 +28,67 @@ const DEFAULT_EVENTS = [
   "resize",
   "animationend",
   "transitionend",
-  "touchmove",
+  "touchmove"
 ];
 export default {
   name: "mw-infinite-scroll",
   props: {
     hasMore: {
       type: Boolean,
-      default: true,
+      default: true
     },
     isLoading: {
       type: Boolean,
-      default: false,
+      default: false
     },
     loadType: {
       type: String,
-      default: "roller",
+      default: "roller"
     },
     loadText: {
       type: String,
-      default: "",
+      default: ""
     },
     loadFill: {
       type: String,
-      default: "#898989",
+      default: "#898989"
     },
     loadSize: {
       type: [Number, String],
-      default: 20,
+      default: 20
     },
     loadTextColor: {
       type: String,
-      default: "#666f83",
+      default: "#666f83"
     },
     preLoadDistance: {
       type: Number,
-      default: 100,
+      default: 200
     },
     throttleTime: {
       type: Number,
-      default: 300,
+      default: 300
     },
     noMoreText: {
       type: String,
-      default: "没有更多了～",
+      default: "没有更多了～"
     },
     events: {
       type: Array,
       default() {
         return DEFAULT_EVENTS;
-      },
-    },
+      }
+    }
   },
   data() {
     return {
       scrollParentNode: null,
-      beforeScrollTop: 0,
+      beforeScrollTop: 0
     };
   },
   components: {
     [MLoading.name]: MLoading,
-    [MDivider.name]: MDivider,
+    [MDivider.name]: MDivider
   },
   watch: {},
   mounted() {
@@ -170,7 +170,7 @@ export default {
           this.$emit("onInfinite");
         }
       });
-    },
-  },
+    }
+  }
 };
 </script>

@@ -26,7 +26,6 @@
 
 <script type="text/ecmascript-6">
 import { addUnit } from "../_util/format";
-import MIcon from "../icon";
 export default {
   name: "mw-image",
   props: {
@@ -78,7 +77,6 @@ export default {
       immediate: true
     }
   },
-  components: { MIcon },
   computed: {
     wrapStyle() {
       const style = {};
