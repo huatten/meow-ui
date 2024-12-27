@@ -5,7 +5,7 @@
 <h1 align="center">Meow-UI</h1>
 <div align="center">
 
-一个看着有那么回事的基于[Vue](https://cn.vuejs.org/)的移动端UI组件库
+个人练习基于[Vue](https://cn.vuejs.org/)的移动端UI组件库
 
 [![npm](https://img.shields.io/npm/v/0..svg)](https://www.npmjs.com/package/vue-meow-ui)
 [![vue2](https://img.shields.io/badge/vue-2.5.13-brightgreen.svg)](https://vuejs.org/)
