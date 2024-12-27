@@ -30,13 +30,14 @@ jobs:
         with:
          node-version: '10'
 
-      - name: Use Taobao Registry
+      - name: Setup Npm Registry
         run: npm config set registry https://registry.npmmirror.com
 
       - name: Install dependencies
         run: npm install
 
-      - name: Build and Deploy
+      - name: Build and Deploy to GitHub Pages
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_ACTOR: ${{ github.actor }}
         run: npm run deploy
