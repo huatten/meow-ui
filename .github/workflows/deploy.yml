@@ -29,7 +29,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
          node-version: '16' 
-
+         
+      - name: Use Taobao Registry
+        run: npm config set registry https://registry.npmmirror.com
+      
       - name: Install dependencies
         run: npm install
 
