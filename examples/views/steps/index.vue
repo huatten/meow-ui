@@ -84,17 +84,17 @@ export default {
       current: 0,
       steps: [
         {
-          text: "实名认证",
+          text: "实名认证"
         },
         {
-          text: "绑定银行卡",
+          text: "绑定银行卡"
         },
         {
-          text: "设置密码",
+          text: "设置密码"
         },
         {
-          text: "开户成功",
-        },
+          text: "开户成功"
+        }
       ],
       stepCurrent: 0,
       step: [
@@ -104,13 +104,13 @@ export default {
         { text: "快件已到达【成都分拣中心】", desc: "2020.07.07" },
         {
           text: "快件从【成都转运中心】发往【华北转运中心】",
-          desc: "2020.07.08",
+          desc: "2020.07.08"
         },
         {
           text: "快件已到达【华北转运中心】，即将发往【海淀区转运中心】",
-          desc: "2020.07.09",
-        },
-      ],
+          desc: "2020.07.09"
+        }
+      ]
     };
   },
   created() {
@@ -127,7 +127,7 @@ export default {
   },
   beforeDestroy() {
     clearInterval(this.timer);
-  },
+  }
 };
 </script>
 

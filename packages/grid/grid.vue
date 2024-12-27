@@ -49,6 +49,8 @@ export default {
         return {
           paddingLeft: gapValue
         };
+      } else {
+        return {};
       }
     }
   }

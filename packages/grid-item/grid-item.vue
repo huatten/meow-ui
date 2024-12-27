@@ -74,6 +74,8 @@ export default {
           bottom: gapValue,
           height: "auto"
         };
+      } else {
+        return {};
       }
     },
     square() {
