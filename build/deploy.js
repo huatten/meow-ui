@@ -1,7 +1,7 @@
 const ghpages = require('gh-pages');
 const path = require('path');
 
-ghpages.publish(path.resolve(__dirname, '../demo'), {
+ghpages.publish(path.resolve(__dirname, '../dist'), {
   branch: 'gh-pages',
   message: 'deploy: examples site',
   repo: `https://${process.env.GITHUB_ACTOR}:${process.env.GITHUB_TOKEN}@github.com/${process.env.GITHUB_REPOSITORY}.git`,
