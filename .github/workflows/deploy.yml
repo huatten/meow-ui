@@ -28,13 +28,15 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-         node-version: '10' 
-         
+         node-version: '10'
+
       - name: Use Taobao Registry
         run: npm config set registry https://registry.npmmirror.com
-      
+
       - name: Install dependencies
         run: npm install
 
       - name: Build and Deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: npm run deploy
